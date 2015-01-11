@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{B919494B-D578-4968-B88A-7B7FD856EA53}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TopMedicalNews</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLiteClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\NewsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\SwitchScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\NoBarScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\GridView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MasterPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\DetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DetailMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\NewsCell.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Business\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Control\" />
+  </ItemGroup>
+</Project>
