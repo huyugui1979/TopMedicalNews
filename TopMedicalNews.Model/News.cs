@@ -21,6 +21,10 @@ namespace TopMedicalNews.Model
 		public int PosterNum{get;set;}//跟
 		public int ColumnId{get;set;}//所属栏目
 		public bool Focus{get;set;} //是否是重点
+		public override string ToString ()
+		{
+			return Title;
+		}
 	}
 }
 
