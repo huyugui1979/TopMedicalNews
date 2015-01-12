@@ -14,7 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\NewsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BaseModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\SwitchScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\NoBarScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\GridView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.cs" />
@@ -24,10 +23,25 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\NewsCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\StringToImageSourceConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\DateTimeFormaterConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\CarouselScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SwitchScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectColumnView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
     <Folder Include="$(MSBuildThisFileDirectory)Control\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Images\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test1.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test2.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test3.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test4.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test5.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test6.jpg" />
   </ItemGroup>
 </Project>

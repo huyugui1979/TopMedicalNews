@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Refractored.Xam.Settings.Abstractions;
 using Refractored.Xam.Settings;
-
+using System.Reflection;
 using TinyIoC;
 
 
@@ -16,7 +16,6 @@ namespace TopMedicalNews
 		public static int ScreenHeight;
 		static void Init()
 		{
-         
 			//container.Register<ISQLiteClient,SQLiteClient> ();
 			TinyIoCContainer.Current.Register<ISQLiteClient,SQLiteClient> ();
 			TinyIoCContainer.Current.Register<ICategoryService,CategoryService> ();
