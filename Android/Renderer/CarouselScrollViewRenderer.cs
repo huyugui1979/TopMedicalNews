@@ -7,12 +7,12 @@ using Android.Views;
 using Xamarin.Forms;
 
 
-[assembly:ExportRenderer(typeof(TopMedicalNews.SwitchScrollView), typeof(TopMedicalNews.Android.SwitchScrollViewRenderer))]
+[assembly:ExportRenderer(typeof(TopMedicalNews.CarouselScrollView), typeof(TopMedicalNews.Android.CarouselScrollViewRenderer))]
 namespace TopMedicalNews.Android
 {
-	public class SwitchScrollViewRenderer:ScrollViewRenderer
+	public class CarouselScrollViewRenderer:ScrollViewRenderer
 	{
-		public SwitchScrollViewRenderer ()
+		public CarouselScrollViewRenderer ()
 		{
 
 		}
@@ -25,26 +25,16 @@ namespace TopMedicalNews.Android
 		{
 			base.OnElementChanged (e);
 			e.NewElement.SizeChanged += (object sender, EventArgs ee) => {
-			   _scrollView = (HorizontalScrollView)typeof(ScrollViewRenderer)
+				_scrollView = (HorizontalScrollView)typeof(ScrollViewRenderer)
 					.GetField ("hScrollView", BindingFlags.NonPublic | BindingFlags.Instance)
 					.GetValue (this);
 				_scrollView.HorizontalScrollBarEnabled = false;
 				_scrollView.Touch += HScrollViewTouch;
 			};
-		
-			e.NewElement.PropertyChanged += ElementPropertyChanged;
 		}
-		void ElementPropertyChanged(object sender, PropertyChangedEventArgs e) {
-			if (e.PropertyName == SwitchScrollView.SelectedIndexProperty.PropertyName && _motionDown == false ) {
-				ScrollToIndex (((SwitchScrollView)this.Element).SelectedIndex);
-			}
 
-		}
-		void UpdateSelectedIndex () {
-			var center = _scrollView.ScrollX + (_scrollView.Width / 2);
-			var carouselLayout = (SwitchScrollView)this.Element;
-			carouselLayout.SelectedIndex = (center / _scrollView.Width);
-		}
+	
+
 		void SnapScroll ()
 		{
 			var roughIndex = (float)_scrollView.ScrollX / _scrollView.Width;
@@ -53,8 +43,9 @@ namespace TopMedicalNews.Android
 				_deltaX < 0 ? Java.Lang.Math.Floor (roughIndex)
 				: _deltaX > 0 ? Java.Lang.Math.Ceil (roughIndex)
 				: Java.Lang.Math.Round (roughIndex);
-
 			ScrollToIndex ((int)targetIndex);
+			var carouselLayout = (CarouselScrollView)this.Element;
+			carouselLayout.UpdateSelectIndex((int)targetIndex);
 		}
 		void ScrollToIndex (int targetIndex)
 		{
@@ -62,6 +53,8 @@ namespace TopMedicalNews.Android
 			_scrollView.Post (new Java.Lang.Runnable (() => {
 				_scrollView.SmoothScrollTo (targetX, 0);
 			}));
+
+
 		}
 		void HScrollViewTouch (object sender, TouchEventArgs e)
 		{
@@ -72,7 +65,7 @@ namespace TopMedicalNews.Android
 				_deltaX = _scrollView.ScrollX - _prevScrollX;
 				_prevScrollX = _scrollView.ScrollX;
 
-				UpdateSelectedIndex ();
+
 				break;
 			case MotionEventActions.Down:
 				_motionDown = true;
