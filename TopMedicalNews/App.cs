@@ -17,12 +17,13 @@ namespace TopMedicalNews
 		static void Init()
 		{
 			//container.Register<ISQLiteClient,SQLiteClient> ();
+			TinyIoCContainer.Current.Register<DetailMode> ();
 			TinyIoCContainer.Current.Register<ISQLiteClient,SQLiteClient> ();
 			TinyIoCContainer.Current.Register<ICategoryService,CategoryService> ();
 			TinyIoCContainer.Current.Register<IColumnService,ColumnService> ();
 			TinyIoCContainer.Current.Register<INewsService,NewsService> ();
 			TinyIoCContainer.Current.Register<ISettings,Settings> ();
-			TinyIoCContainer.Current.Register<DetailMode> ();
+
             
         }
 		public static TinyIoCContainer Container {

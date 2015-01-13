@@ -6,5 +6,8 @@ namespace TopMedicalNews
 {
 	class HomeMaterModel:BaseModel
     {
+		//
+
+		//
     }
 }

@@ -26,6 +26,8 @@ namespace TopMedicalNews.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::TopMedicalNews.Android.Resource.Attribute.ahBarColor;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::TopMedicalNews.Android.Resource.Attribute.ahBarLength;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::TopMedicalNews.Android.Resource.Attribute.ahBarWidth;
@@ -102,8 +104,6 @@ namespace TopMedicalNews.Android
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextSize;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -159,19 +159,22 @@ namespace TopMedicalNews.Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ic_errorstatus = 2130837504;
+			public const int Delete = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_successstatus = 2130837505;
+			public const int ic_errorstatus = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int ic_successstatus = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int roundedbg = 2130837507;
+			public const int Icon = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int roundedbgdark = 2130837508;
+			public const int roundedbg = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int roundedbgdark = 2130837509;
 			
 			static Drawable()
 			{
@@ -186,26 +189,23 @@ namespace TopMedicalNews.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int RelativeLayout1 = 2131034112;
-			
-			// aapt resource value: 0x7f050002
-			public const int imageView = 2131034114;
-			
-			// aapt resource value: 0x7f050005
-			public const int loadingImage = 2131034117;
-			
-			// aapt resource value: 0x7f050003
-			public const int loadingProgressBar = 2131034115;
-			
-			// aapt resource value: 0x7f050006
-			public const int loadingProgressWheel = 2131034118;
-			
 			// aapt resource value: 0x7f050001
-			public const int myButton = 2131034113;
+			public const int imageView = 2131034113;
 			
 			// aapt resource value: 0x7f050004
-			public const int textViewStatus = 2131034116;
+			public const int loadingImage = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int loadingProgressBar = 2131034114;
+			
+			// aapt resource value: 0x7f050005
+			public const int loadingProgressWheel = 2131034117;
+			
+			// aapt resource value: 0x7f050000
+			public const int myButton = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int textViewStatus = 2131034115;
 			
 			static Id()
 			{
@@ -248,11 +248,11 @@ namespace TopMedicalNews.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f040002
+			public const int ApplicationName = 2130968578;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f040001
+			public const int Hello = 2130968577;
 			
 			// aapt resource value: 0x7f040004
 			public const int app_name = 2130968580;
@@ -260,8 +260,8 @@ namespace TopMedicalNews.Android
 			// aapt resource value: 0x7f040003
 			public const int hello = 2130968579;
 			
-			// aapt resource value: 0x7f040002
-			public const int library_name = 2130968578;
+			// aapt resource value: 0x7f040000
+			public const int library_name = 2130968576;
 			
 			static String()
 			{

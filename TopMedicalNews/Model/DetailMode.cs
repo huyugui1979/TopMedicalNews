@@ -16,7 +16,7 @@ namespace TopMedicalNews
 		public List<News>   SelectNews{ get; set; }
 		//
 		Column _SelectColumn=null;
-		public Column 			SelectColumn{ get{ return _SelectColumn;
+		public Column 		SelectColumn{ get{ return _SelectColumn;
 			} set{
 				_SelectColumn = value;
 				FocusNews = TinyIoCContainer.Current.Resolve<INewsService> ().GetFocusNews   (_SelectColumn.CategoryID);

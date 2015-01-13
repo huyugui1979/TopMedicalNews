@@ -15,7 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\NoBarScrollView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\GridView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MasterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\DetailPage.cs" />
@@ -28,6 +27,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Control\CarouselScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SwitchScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SelectColumnView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectColumnPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\LikeColumnView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyGridView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyGridViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SelectColumnModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />

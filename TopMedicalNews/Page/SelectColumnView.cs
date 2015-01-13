@@ -22,6 +22,10 @@ namespace TopMedicalNews
 			};
 			//创建下拉栏目按钮
 			Button button = new Button{ Text="v",WidthRequest = 40,BackgroundColor= Color.Transparent,HorizontalOptions = LayoutOptions.End,};
+			button.Clicked += (object sender, EventArgs e) => {
+
+				Navigation.PushAsync(new SelectColumnPage());
+			};
 			Content = new  StackLayout {
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.FillAndExpand,

@@ -48,12 +48,7 @@ namespace TopMedicalNews
 			//
 			BaseModel.CreateAndBind<DetailMode> (this, null);
 			Content = CreateRootView();
-			//
-		
-	
-			//对于选中的每一列，进行更新图像
-			
-			//
+
 		}
 	}
 }
