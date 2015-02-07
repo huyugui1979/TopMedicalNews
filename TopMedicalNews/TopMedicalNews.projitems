@@ -96,18 +96,10 @@
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
     <Folder Include="$(MSBuildThisFileDirectory)Control\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Images\" />
     <Folder Include="$(MSBuildThisFileDirectory)Util\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test1.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test2.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test3.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test4.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test5.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test6.jpg" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Check.png" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -150,8 +142,5 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ForgetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Images\Indicator.png" />
   </ItemGroup>
 </Project>
