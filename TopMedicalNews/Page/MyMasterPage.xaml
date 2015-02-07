@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="个人" BackgroundColor="Black" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyMasterPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,50,0,0" Spacing="0">
+			<Image >
+				<Image.Source>
+					<OnPlatform x:TypeArguments="ImageSource"    iOS="收藏页头像框logo_bg" Android="person_logo.png" />
+				</Image.Source>
+			</Image>
+			<StackLayout Orientation="Horizontal"  >
+				<Image >
+					<Image.Source>
+						<OnPlatform x:TypeArguments="ImageSource" iOS="阅读_btn" Android="myreading.png" />
+					</Image.Source>
+				</Image>
+				<Button BackgroundColor="Transparent" Command="{Binding MyReadingCommand}" HorizontalOptions="Center" Text="我的阅读" TextColor="White" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Image>
+					<Image.Source>
+						<OnPlatform x:TypeArguments="ImageSource" iOS="评论_btn" Android="mycomment.png" />
+					</Image.Source>
+				</Image>
+				<Button BackgroundColor="Transparent" Text="我的评论" Command="{Binding MyCommentCommand}" TextColor="White" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Image>
+					<Image.Source>
+						<OnPlatform x:TypeArguments="ImageSource" iOS="阅读收藏_btn" Android="mycollection.png" />
+					</Image.Source>
+				</Image>
+				<Button BackgroundColor="Transparent" Text="我的收藏" Command="{Binding MyCollectionCommand}" TextColor="White" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Image>
+					<Image.Source>
+						<OnPlatform x:TypeArguments="ImageSource" iOS="修改密码_btn" Android="modify_password.png" />
+					</Image.Source>
+				</Image>
+				<Button BackgroundColor="Transparent" Text="修改密码" Command="{Binding ModifyPasswordCommand}" TextColor="White" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Image>
+					<Image.Source>
+						<OnPlatform x:TypeArguments="ImageSource" iOS="退出登陆_btn" Android="logout.png" />
+					</Image.Source>
+				</Image>
+				<Button BackgroundColor="Transparent" Text="退出登陆" Command="{Binding LogoutCommand}" TextColor="White" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

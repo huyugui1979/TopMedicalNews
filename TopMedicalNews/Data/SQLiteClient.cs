@@ -5,12 +5,12 @@ using Xamarin.Forms;
 using System.Linq.Expressions;
 using System.IO;
 using TopMedicalNews.Model;
-using TinyIoC;
-
+using XLabs.Ioc;
 
 #if __ANDROID__
 using SQLite.Net.Platform.XamarinAndroid;
 #else
+using SQLite.Net.Platform.XamarinIOS;
 #endif
 using SQLite.Net;
 using Refractored.Xam.Settings.Abstractions;
@@ -66,6 +66,8 @@ namespace TopMedicalNews
 		/// <param name="data">Data.</param>
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
 		void DeleteData<T> (List<T> data);
+		//
+		void UpdateAllData<T> (List<T> obs);
 		/// <summary>
 		/// Updates the data.
 		/// </summary>
@@ -126,7 +128,7 @@ namespace TopMedicalNews
 			#if __ANDROID__
 			var platform = new SQLitePlatformAndroid ();
 			#else 
-
+			var platform = new  SQLitePlatformIOS();
 			#endif
 			var connection =new SQLiteConnection(
 				platform,
@@ -151,22 +153,22 @@ namespace TopMedicalNews
 
 			//
 			List<Column> column = new List<Column> ();
-			column.Add (new Column{ Title = "生物制药", Like=true, ID = 1,CategoryID=9});
-			column.Add (new Column{ Title = "医药制药", Like=true,ID = 2,CategoryID=9});
-			column.Add (new Column{ Title = "医改", ID = 3 ,Like=true,CategoryID=9});
-			column.Add (new Column{ Title = "政策解读", ID = 4,Like=true,CategoryID=9});
-			column.Add (new Column{ Title = "头条", ID = 42,Like=true,CategoryID=9});
+			column.Add (new Column{ Title = "生物制药", Like=true, ID = 1,LikeOrder=5,CategoryID=9});
+			column.Add (new Column{ Title = "医药制药", Like=true,ID = 2,LikeOrder=4,CategoryID=9});
+			column.Add (new Column{ Title = "医改", ID = 3 ,Like=true,LikeOrder=3,CategoryID=9});
+			column.Add (new Column{ Title = "政策解读", ID = 4,Like=true,LikeOrder=2,CategoryID=9});
+			column.Add (new Column{ Title = "头条", ID = 42,Like=true,LikeOrder=1,CategoryID=9});
 
-			column.Add (new Column{ Title = "呼吸内科", Like=true,ID = 5,CategoryID=1});
-			column.Add (new Column{ Title = "消化内科", Like=true,ID = 6,CategoryID=1 });
-			column.Add (new Column{ Title = "神经内科", Like=true,ID = 7,CategoryID=1 });
-			column.Add (new Column{ Title = "心血管内科", Like=true,ID = 8,CategoryID=1});
-			column.Add (new Column{ Title = "肾内科", Like=true,ID = 9 ,CategoryID=1});
-			column.Add (new Column{ Title = "血液内科", Like=true,ID = 10,CategoryID=1 });
-			column.Add (new Column{ Title = "免疫科",Like=true, ID = 11 ,CategoryID=1});
-			column.Add (new Column{ Title = "内化泌科",Like=true, ID = 12,CategoryID=1 });
-			column.Add (new Column{ Title = "普通外科",Like=true, ID = 13,CategoryID=2});
-			column.Add (new Column{ Title = "心胸外科",Like=true, ID = 14 ,CategoryID=2});
+			column.Add (new Column{ Title = "呼吸内科", Like=true,ID = 5,LikeOrder=6,CategoryID=1});
+			column.Add (new Column{ Title = "消化内科", Like=true,ID = 6,LikeOrder=7,CategoryID=1 });
+			column.Add (new Column{ Title = "神经内科", Like=true,ID = 7,LikeOrder=8,CategoryID=1 });
+			column.Add (new Column{ Title = "心血管内科", Like=true,LikeOrder=9,ID = 8,CategoryID=1});
+			column.Add (new Column{ Title = "肾内科", Like=true,LikeOrder=10,ID = 9 ,CategoryID=1});
+			column.Add (new Column{ Title = "血液内科", Like=true,LikeOrder=11,ID = 10,CategoryID=1 });
+			column.Add (new Column{ Title = "免疫科",Like=true, LikeOrder=12,ID = 11 ,CategoryID=1});
+			column.Add (new Column{ Title = "内化泌科",Like=true,LikeOrder=13, ID = 12,CategoryID=1 });
+			column.Add (new Column{ Title = "普通外科",Like=true, LikeOrder=14,ID = 13,CategoryID=2});
+			column.Add (new Column{ Title = "心胸外科",Like=true,LikeOrder=15, ID = 14 ,CategoryID=2});
 			column.Add (new Column{ Title = "神经外科", ID = 15 ,CategoryID=2});
 			column.Add (new Column{ Title = "泌尿外科", ID = 16,CategoryID=2 });
 			column.Add (new Column{ Title = "肝胆外科", ID = 17 ,CategoryID=2});
@@ -198,38 +200,61 @@ namespace TopMedicalNews
 			_connection.InsertAll (column);
 			//
 			List<News> news = new List<News> ();
-			news.Add (new News{ ID=1, Focus=true, ColumnId=9, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test1.jpg",FromSource="医脉通", PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse( "2012-03-01") });
-			news.Add(new News { ID = 2, Focus=true,ColumnId = 9, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test2.jpg", FromSource="医脉通",PosterNum = 999, ViewerNum=1000,PublishTime = DateTime.Parse( "2012-03-01")  });
-			news.Add(new News { ID = 3, ColumnId = 9, Focus=true, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test3.jpg", FromSource="医脉通",PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 4, ColumnId = 9, Focus=true, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test4.jpg",FromSource="医脉通",PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 5, ColumnId = 1, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test5.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 6, ColumnId = 1, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test6.jpg",  PosterNum = 999, FromSource="医脉通",ViewerNum=1000,PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 7, Focus=true, ColumnId = 1, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test1.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 8, Focus=true, ColumnId = 1, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test2.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime= DateTime.Parse( "2012-03-01")  });
-			news.Add(new News { ID = 9, Focus=true, ColumnId = 2,  Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test3.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 10, Focus=true, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test4.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 11, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test5.jpg",PosterNum = 999, ViewerNum=1000,FromSource="医脉通", PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 12, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test6.jpg", PosterNum = 999, ViewerNum=1000, FromSource="医脉通",PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 13,  Focus=true,ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test1jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 14, Focus=true, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test2.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 15, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test3.jpg", PosterNum = 999, ViewerNum=1000,FromSource="医脉通", PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 16, Focus=true, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test4jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 17, Focus=true, ColumnId = 4, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test5.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
-			news.Add(new News { ID = 18, Focus=true, ColumnId = 4, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "TopMedicalNews.Android.Test6.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add (new News{ ID=1, Focus=true, ColumnId=9, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test1.jpg",FromSource="医脉通", PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse( "2012-03-01") });
+			news.Add(new News { ID = 2, Focus=true,ColumnId = 9, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test2.jpg", FromSource="医脉通",PosterNum = 999, ViewerNum=1000,PublishTime = DateTime.Parse( "2012-03-01")  });
+			news.Add(new News { ID = 3, ColumnId = 9, Focus=true, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test3.jpg", FromSource="医脉通",PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 4, ColumnId = 9, Focus=true, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test4.jpg",FromSource="医脉通",PosterNum = 999, ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 5, ColumnId = 1, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test5.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 6, ColumnId = 1, Title = "基本药物目录拟调整：", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test6.jpg",  PosterNum = 999, FromSource="医脉通",ViewerNum=1000,PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 7, Focus=true, ColumnId = 1, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test1.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 8, Focus=true, ColumnId = 1, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test2.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime= DateTime.Parse( "2012-03-01")  });
+			news.Add(new News { ID = 9, Focus=true, ColumnId = 2,  Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test3.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 10, Focus=true, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test4.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 11, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test5.jpg",PosterNum = 999, ViewerNum=1000,FromSource="医脉通", PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 12, ColumnId = 2, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test6.jpg", PosterNum = 999, ViewerNum=1000, FromSource="医脉通",PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 13,  Focus=true,ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test1jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 14, Focus=true, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test2.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 15, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "jpg", PosterNum = 999, ViewerNum=1000,FromSource="医脉通", PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 16, Focus=true, ColumnId = 3, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test4jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 17, Focus=true, ColumnId = 4, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test5.jpg", PosterNum = 999, FromSource="医脉通",ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
+			news.Add(new News { ID = 18, Focus=true, ColumnId = 4, Title = "基本药物目录拟调整", Content = "基本药物目录已经进入了三年调整周期。\n\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露，目前正在考虑对现有目录进行梳理，以确定类似鱼精蛋白的药品，并通过遴选定点生产企业保证临床供应。\n\n卫生部医管司医院运行监管处处长钟东波表示，目前看来，支付方式的改革相对较好，同时解决了医院和医生两个主体的激励问题。", Thumb = "基本药物目录已经进入了三年调整周期", ImageUri = "Test6.jpg", PosterNum = 999,FromSource="医脉通", ViewerNum=1000, PublishTime = DateTime.Parse("2012-03-01") });
 			_connection.InsertAll (news);
 			//
+			List<User> users = new List<User> ();
+			users.Add(new User{UserName="王二",ID=2,ImageUri="Portait.jpg"});
+			_connection.InsertAll (users);
+			//
+			List<Comment> comments = new List<Comment> ();
+			comments.Add(new Comment { ID = 1,NewsID=1,UserID=2, Content = "基本药物目录", PublishTime = DateTime.Parse("2012-03-01") });
+//			comments.Add(new Comment { ID = 1,NewsID=1,UserID=1, Content = "基本药物目录已经进入了三年调整周期。\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露", PublishTime = DateTime.Parse("2012-03-01") });
+			comments.Add(new Comment { ID = 2,NewsID=1,UserID=2, Content = "基本药物目录已经进入了三年调整周期。\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露\n基本药物目录已经进入了三年调整周期。\n在10月12日举行的卫生部新闻发布会上，卫生部药政司司长郑宏透露", PublishTime = DateTime.Parse("2012-03-01") });
+			comments.Add(new Comment { ID = 3,NewsID=1,UserID=2, Content = "基本药物目录已经进入了三年调整周期。\n遥遥遥", PublishTime = DateTime.Parse("2012-03-01") });
+//			//
+			_connection.InsertAll (comments);
+			//
+			List<TopMedicalNews.Model.Font> fonts = new List<TopMedicalNews.Model.Font> ();
+			fonts.Add (new TopMedicalNews.Model.Font{Title="小字体",ID=1 });
+			fonts.Add (new TopMedicalNews.Model.Font{Title="中字体",ID=2 });
+			fonts.Add (new TopMedicalNews.Model.Font{Title="大字体",ID=3 });
+			//
+
+			_connection.InsertAll (fonts);
 		}
+			
 		public  SQLiteClient ()
 		{
             _connection = GetConnection();
-
-			if (TinyIoCContainer.Current.Resolve<ISettings>().GetValueOrDefault<bool>("IsInit") == false)
+				if (Resolver.Resolve<ISettings>().GetValueOrDefault<bool>("MyInit",false) == false)
             {
                 _connection.CreateTable<News>();
                 _connection.CreateTable<Column>();
+				_connection.CreateTable<Comment> ();
+				_connection.CreateTable<Collection> ();
+				_connection.CreateTable<User> ();
+				_connection.CreateTable<TopMedicalNews.Model.Font> ();
                 _connection.CreateTable<Category>();
                 AddTestData();
-				TinyIoCContainer.Current.Resolve<ISettings>().AddOrUpdateValue("IsInit", true);
+				Resolver.Resolve<ISettings>().AddOrUpdateValue("MyInit", true);
                 
             }
 			//
@@ -252,6 +277,10 @@ namespace TopMedicalNews
 		public  void UpdateData(object o)
 		{
 			 _connection.Update (o);
+		}
+		public void UpdateAllData<T>(List<T> obs)
+		{
+			_connection.UpdateAll (obs);
 		}
 		public  void DeleteAllData<T>()
 		{

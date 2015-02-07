@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell  xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyStackLayout">
+	<ViewCell.View>
+		<local:OurStackLayout Orientation="Horizontal" Padding="0,0,0,0" >
+			<Image Source="{Binding ImageUri}" HeightRequest="20" VerticalOptions="Start" WidthRequest="20" />
+			<StackLayout Orientation="Vertical" >
+				<StackLayout Orientation="Horizontal" >
+					<Label Text="{Binding UserName}" TextColor="Blue" HorizontalOptions="StartAndExpand" />
+					<Label Text="{Binding PublishTime}" TextColor="Blue" HorizontalOptions="EndAndExpand" />
+				</StackLayout>
+				<Label Text="{Binding Content}" />
+			</StackLayout>
+		</local:OurStackLayout>
+	</ViewCell.View>
+</ViewCell>

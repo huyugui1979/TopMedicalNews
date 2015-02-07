@@ -1,0 +1,24 @@
+﻿<resources>
+  <style name="Theme.Splash"
+    parent="android:Theme">
+    <item name="android:windowBackground">@drawable/splashscreen</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsTranslucent">false</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:backgroundDimEnabled">true</item>
+  </style>
+  <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+   <item name="android:homeAsUpIndicator">@android:color/transparent</item>
+
+  </style>
+   <style name="MyTheme.WithActionBar" parent="@style/MyTheme">
+       <item name="android:actionBarStyle">@style/MyActionBarStyle</item>  // 使用自定义的actionBarStyle
+         
+
+   </style>
+   <style name="MyActionBarStyle" parent="android:style/Widget.DeviceDefault.ActionBar">
+       <item name="android:background">#3688db</item>  //定义ActionBar背景颜色
+      
+   </style>
+  
+</resources>

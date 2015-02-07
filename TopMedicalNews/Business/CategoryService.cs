@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TopMedicalNews;
 using TopMedicalNews.Model;
-using TinyIoC;
+using XLabs.Ioc;
 
 
 namespace TopMedicalNews
@@ -15,7 +15,7 @@ namespace TopMedicalNews
 	{
 		public List<Category> GetAllCategory()
 		{
-			return TinyIoCContainer.Current.Resolve<ISQLiteClient> ().GetAllData<Category> ();
+			return Resolver.Resolve<ISQLiteClient> ().GetAllData<Category> ();
 		}
 
 	}

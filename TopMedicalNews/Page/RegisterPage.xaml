@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="注册" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.RegisterPage">
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical">
+			<StackLayout Orientation="Vertical" Padding="10,30,10,30">
+				<Frame HasShadow="false" BackgroundColor="Yellow">
+					<Label Text="用户名不能以数字开头,不能包含系统关键字4-15个字母,数字(2-7个汉字),不支持特殊符号(除下划线)用来接收激活码,密码限制6〜20位，支持数字,字母及特殊字符" />
+				</Frame>
+				<Frame HasShadow="false" OutlineColor="Gray">
+					<StackLayout Orientation="Vertical">
+						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="用户名:" />
+						<BoxView HeightRequest="1" Color="#c8c7cc" />
+						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="手机/邮箱:" />
+						<BoxView HeightRequest="1" Color="#c8c7cc" />
+						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="密码:" />
+						<BoxView HeightRequest="1" Color="#c8c7cc" />
+						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="科室:" />
+					</StackLayout>
+				</Frame>
+				<StackLayout Orientation="Horizontal">
+				<lc:CheckBox DefaultText="我已阅读并同意"  HorizontalOptions="Start" FontSize="18"/>
+				<Button TextColor="Blue" BackgroundColor="Transparent" HorizontalOptions="Start" Text="爱爱医服务条款"/>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

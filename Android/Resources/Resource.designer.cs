@@ -26,8 +26,6 @@ namespace TopMedicalNews.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::TopMedicalNews.Android.Resource.Attribute.ahBarColor;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::TopMedicalNews.Android.Resource.Attribute.ahBarLength;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::TopMedicalNews.Android.Resource.Attribute.ahBarWidth;
@@ -104,6 +102,69 @@ namespace TopMedicalNews.Android
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::XLabs.Platform.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Platform.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_active_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_bg = global::TopMedicalNews.Android.Resource.Color.calendar_bg;
+			global::XLabs.Forms.Resource.Color.calendar_divider = global::TopMedicalNews.Android.Resource.Color.calendar_divider;
+			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_highlighted_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_inactive_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_range_bg;
+			global::XLabs.Forms.Resource.Color.calendar_text_active = global::TopMedicalNews.Android.Resource.Color.calendar_text_active;
+			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::TopMedicalNews.Android.Resource.Color.calendar_text_inactive;
+			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::TopMedicalNews.Android.Resource.Color.calendar_text_selected;
+			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::TopMedicalNews.Android.Resource.Color.calendar_text_selector;
+			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::TopMedicalNews.Android.Resource.Color.calendar_text_unselectable;
+			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::TopMedicalNews.Android.Resource.Dimension.calendar_day_headers_paddingbottom;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_title_bottommargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_topmargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_medium;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_small;
+			global::XLabs.Forms.Resource.Drawable.ad16 = global::TopMedicalNews.Android.Resource.Drawable.ad16;
+			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::TopMedicalNews.Android.Resource.Drawable.calendar_bg_selector;
+			global::XLabs.Forms.Resource.Id.calendar_grid = global::TopMedicalNews.Android.Resource.Id.calendar_grid;
+			global::XLabs.Forms.Resource.Id.calendar_view = global::TopMedicalNews.Android.Resource.Id.calendar_view;
+			global::XLabs.Forms.Resource.Id.left_arrow = global::TopMedicalNews.Android.Resource.Id.left_arrow;
+			global::XLabs.Forms.Resource.Id.right_arrow = global::TopMedicalNews.Android.Resource.Id.right_arrow;
+			global::XLabs.Forms.Resource.Id.title = global::TopMedicalNews.Android.Resource.Id.title;
+			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::TopMedicalNews.Android.Resource.Layout.calendar_pager_layout;
+			global::XLabs.Forms.Resource.Layout.calendar_picker = global::TopMedicalNews.Android.Resource.Layout.calendar_picker;
+			global::XLabs.Forms.Resource.Layout.dialog = global::TopMedicalNews.Android.Resource.Layout.dialog;
+			global::XLabs.Forms.Resource.Layout.month = global::TopMedicalNews.Android.Resource.Layout.month;
+			global::XLabs.Forms.Resource.Layout.week = global::TopMedicalNews.Android.Resource.Layout.week;
+			global::XLabs.Forms.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Forms.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+			global::XLabs.Forms.Resource.String.day_name_format = global::TopMedicalNews.Android.Resource.String.day_name_format;
+			global::XLabs.Forms.Resource.String.full_date_format = global::TopMedicalNews.Android.Resource.String.full_date_format;
+			global::XLabs.Forms.Resource.String.invalid_date = global::TopMedicalNews.Android.Resource.String.invalid_date;
+			global::XLabs.Forms.Resource.String.library_name = global::TopMedicalNews.Android.Resource.String.library_name;
+			global::XLabs.Forms.Resource.String.month_name_format = global::TopMedicalNews.Android.Resource.String.month_name_format;
+			global::XLabs.Forms.Resource.Style.CalendarCell = global::TopMedicalNews.Android.Resource.Style.CalendarCell;
+			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::TopMedicalNews.Android.Resource.Style.CalendarCell_CalendarDate;
+			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::TopMedicalNews.Android.Resource.Style.CalendarCell_DayHeader;
+			global::XLabs.Forms.Resource.Style.CalendarTitle = global::TopMedicalNews.Android.Resource.Style.CalendarTitle;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+		}
+		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int down_to_up = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int up_to_down = 2130968577;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
 		}
 		
 		public partial class Attribute
@@ -155,26 +216,214 @@ namespace TopMedicalNews.Android
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f080000
+			public const int calendar_active_month_bg = 2131230720;
+			
+			// aapt resource value: 0x7f080001
+			public const int calendar_bg = 2131230721;
+			
+			// aapt resource value: 0x7f080002
+			public const int calendar_divider = 2131230722;
+			
+			// aapt resource value: 0x7f080005
+			public const int calendar_highlighted_day_bg = 2131230725;
+			
+			// aapt resource value: 0x7f080003
+			public const int calendar_inactive_month_bg = 2131230723;
+			
+			// aapt resource value: 0x7f080004
+			public const int calendar_selected_day_bg = 2131230724;
+			
+			// aapt resource value: 0x7f080006
+			public const int calendar_selected_range_bg = 2131230726;
+			
+			// aapt resource value: 0x7f080008
+			public const int calendar_text_active = 2131230728;
+			
+			// aapt resource value: 0x7f080007
+			public const int calendar_text_inactive = 2131230727;
+			
+			// aapt resource value: 0x7f080009
+			public const int calendar_text_selected = 2131230729;
+			
+			// aapt resource value: 0x7f080011
+			public const int calendar_text_selector = 2131230737;
+			
+			// aapt resource value: 0x7f08000a
+			public const int calendar_text_unselectable = 2131230730;
+			
+			// aapt resource value: 0x7f08000c
+			public const int xam_blue = 2131230732;
+			
+			// aapt resource value: 0x7f08000d
+			public const int xam_dark_blue = 2131230733;
+			
+			// aapt resource value: 0x7f08000f
+			public const int xam_gray = 2131230735;
+			
+			// aapt resource value: 0x7f08000e
+			public const int xam_green = 2131230734;
+			
+			// aapt resource value: 0x7f080010
+			public const int xam_light_gray = 2131230736;
+			
+			// aapt resource value: 0x7f08000b
+			public const int xam_purple = 2131230731;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f050002
+			public const int calendar_day_headers_paddingbottom = 2131034114;
+			
+			// aapt resource value: 0x7f050004
+			public const int calendar_month_title_bottommargin = 2131034116;
+			
+			// aapt resource value: 0x7f050003
+			public const int calendar_month_topmargin = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int calendar_text_medium = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int calendar_text_small = 2131034118;
+			
+			// aapt resource value: 0x7f050001
+			public const int head_view_height = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int need_refresh_delta = 2131034112;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Delete = 2130837504;
+			public const int ad16 = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_errorstatus = 2130837505;
+			public const int calendar_bg_selector = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_successstatus = 2130837506;
+			public const int Check = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int collection = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int roundedbg = 2130837508;
+			public const int comment = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int roundedbgdark = 2130837509;
+			public const int Delete = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int down_arrow = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int ic_errorstatus = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int ic_launcher = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int ic_successstatus = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int Icon = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int IndicatorDown = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int IndicatorRight = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int logout = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int modify_password = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int mycollection = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int mycomment = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int myreading = 2130837521;
+			
+			// aapt resource value: 0x7f020012
+			public const int person_center_btnx = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int person_logo = 2130837523;
+			
+			// aapt resource value: 0x7f020014
+			public const int pip = 2130837524;
+			
+			// aapt resource value: 0x7f020015
+			public const int pip_selected = 2130837525;
+			
+			// aapt resource value: 0x7f020016
+			public const int Portait = 2130837526;
+			
+			// aapt resource value: 0x7f020017
+			public const int return_btnx = 2130837527;
+			
+			// aapt resource value: 0x7f020018
+			public const int roundedbg = 2130837528;
+			
+			// aapt resource value: 0x7f020019
+			public const int roundedbgdark = 2130837529;
+			
+			// aapt resource value: 0x7f02001a
+			public const int setting = 2130837530;
+			
+			// aapt resource value: 0x7f02001b
+			public const int shape = 2130837531;
+			
+			// aapt resource value: 0x7f02001c
+			public const int splashscreen = 2130837532;
+			
+			// aapt resource value: 0x7f02001d
+			public const int Test1 = 2130837533;
+			
+			// aapt resource value: 0x7f02001e
+			public const int Test2 = 2130837534;
+			
+			// aapt resource value: 0x7f02001f
+			public const int Test3 = 2130837535;
+			
+			// aapt resource value: 0x7f020020
+			public const int Test4 = 2130837536;
+			
+			// aapt resource value: 0x7f020021
+			public const int Test5 = 2130837537;
+			
+			// aapt resource value: 0x7f020022
+			public const int Test6 = 2130837538;
 			
 			static Drawable()
 			{
@@ -189,23 +438,62 @@ namespace TopMedicalNews.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int imageView = 2131034113;
+			// aapt resource value: 0x7f09000f
+			public const int calendar_grid = 2131296271;
 			
-			// aapt resource value: 0x7f050004
-			public const int loadingImage = 2131034116;
+			// aapt resource value: 0x7f090001
+			public const int calendar_view = 2131296257;
 			
-			// aapt resource value: 0x7f050002
-			public const int loadingProgressBar = 2131034114;
+			// aapt resource value: 0x7f090011
+			public const int content_ly = 2131296273;
 			
-			// aapt resource value: 0x7f050005
-			public const int loadingProgressWheel = 2131034117;
+			// aapt resource value: 0x7f090006
+			public const int foot_layout_progress = 2131296262;
 			
-			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			// aapt resource value: 0x7f090005
+			public const int foot_layout_text = 2131296261;
 			
-			// aapt resource value: 0x7f050003
-			public const int textViewStatus = 2131034115;
+			// aapt resource value: 0x7f090012
+			public const int foot_ly = 2131296274;
+			
+			// aapt resource value: 0x7f090007
+			public const int head_layout_left_arrow = 2131296263;
+			
+			// aapt resource value: 0x7f090008
+			public const int head_layout_left_progressbar = 2131296264;
+			
+			// aapt resource value: 0x7f090009
+			public const int head_layout_title = 2131296265;
+			
+			// aapt resource value: 0x7f090010
+			public const int head_ly = 2131296272;
+			
+			// aapt resource value: 0x7f090003
+			public const int left_arrow = 2131296259;
+			
+			// aapt resource value: 0x7f09000c
+			public const int loadingImage = 2131296268;
+			
+			// aapt resource value: 0x7f09000a
+			public const int loadingProgressBar = 2131296266;
+			
+			// aapt resource value: 0x7f09000d
+			public const int loadingProgressWheel = 2131296269;
+			
+			// aapt resource value: 0x7f09000e
+			public const int myButton = 2131296270;
+			
+			// aapt resource value: 0x7f090002
+			public const int right_arrow = 2131296258;
+			
+			// aapt resource value: 0x7f09000b
+			public const int textViewStatus = 2131296267;
+			
+			// aapt resource value: 0x7f090000
+			public const int title = 2131296256;
+			
+			// aapt resource value: 0x7f090004
+			public const int wall_progress_ly = 2131296260;
 			
 			static Id()
 			{
@@ -221,19 +509,40 @@ namespace TopMedicalNews.Android
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int ListItem = 2130903040;
+			public const int calendar_pager_layout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int loading = 2130903041;
+			public const int calendar_picker = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int loadingimage = 2130903042;
+			public const int dialog = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int loadingprogress = 2130903043;
+			public const int foot_layout = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Main = 2130903044;
+			public const int head_layout = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int loading = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int loadingimage = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int loadingprogress = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int Main = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int month = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int pull_refresh_scroll_view = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int week = 2130903051;
 			
 			static Layout()
 			{
@@ -248,20 +557,47 @@ namespace TopMedicalNews.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int ApplicationName = 2130968578;
+			// aapt resource value: 0x7f060007
+			public const int ApplicationName = 2131099655;
 			
-			// aapt resource value: 0x7f040001
-			public const int Hello = 2130968577;
+			// aapt resource value: 0x7f060006
+			public const int Hello = 2131099654;
 			
-			// aapt resource value: 0x7f040004
-			public const int app_name = 2130968580;
+			// aapt resource value: 0x7f060000
+			public const int app_name = 2131099648;
 			
-			// aapt resource value: 0x7f040003
-			public const int hello = 2130968579;
+			// aapt resource value: 0x7f060009
+			public const int day_name_format = 2131099657;
 			
-			// aapt resource value: 0x7f040000
-			public const int library_name = 2130968576;
+			// aapt resource value: 0x7f06000c
+			public const int full_date_format = 2131099660;
+			
+			// aapt resource value: 0x7f06000d
+			public const int hello = 2131099661;
+			
+			// aapt resource value: 0x7f06000a
+			public const int invalid_date = 2131099658;
+			
+			// aapt resource value: 0x7f060008
+			public const int library_name = 2131099656;
+			
+			// aapt resource value: 0x7f06000b
+			public const int month_name_format = 2131099659;
+			
+			// aapt resource value: 0x7f060001
+			public const int pull_to_refresh = 2131099649;
+			
+			// aapt resource value: 0x7f060004
+			public const int pull_up_to_get_more = 2131099652;
+			
+			// aapt resource value: 0x7f060002
+			public const int refreshing = 2131099650;
+			
+			// aapt resource value: 0x7f060005
+			public const int release_to_get_more = 2131099653;
+			
+			// aapt resource value: 0x7f060003
+			public const int release_to_refresh = 2131099651;
 			
 			static String()
 			{
@@ -269,6 +605,49 @@ namespace TopMedicalNews.Android
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int AppBaseTheme = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int AppTheme = 2131165185;
+			
+			// aapt resource value: 0x7f070003
+			public const int CalendarCell = 2131165187;
+			
+			// aapt resource value: 0x7f070005
+			public const int CalendarCell_CalendarDate = 2131165189;
+			
+			// aapt resource value: 0x7f070004
+			public const int CalendarCell_DayHeader = 2131165188;
+			
+			// aapt resource value: 0x7f070002
+			public const int CalendarTitle = 2131165186;
+			
+			// aapt resource value: 0x7f070009
+			public const int MyActionBarStyle = 2131165193;
+			
+			// aapt resource value: 0x7f070007
+			public const int MyTheme = 2131165191;
+			
+			// aapt resource value: 0x7f070008
+			public const int MyTheme_WithActionBar = 2131165192;
+			
+			// aapt resource value: 0x7f070006
+			public const int Theme_Splash = 2131165190;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

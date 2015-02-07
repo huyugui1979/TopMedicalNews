@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.SetColumnPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+			<StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+				<Label Text="长按排序,点击删除" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+				<Button WidthRequest="40" FontSize="15" BackgroundColor="Transparent" Text="V" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+			</StackLayout>
+			<local:MyGridView ColumnSpacing="5" DragMode="true" ItemsSource="{Binding LikeColumns}" VerticalOptions="StartAndExpand" ItemWidth="100" RowSpacing="10" ItemHeight="40">
+				<local:MyGridView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+							<Button Text="{Binding Title}" BorderRadius="10" WidthRequest="100" HeightRequest="50" FontSize="12">
+							</Button>
+							</ViewCell.View>
+
+						</ViewCell>
+					</DataTemplate>
+				</local:MyGridView.ItemTemplate>
+			</local:MyGridView>
+		
+		<ListView  HasUnevenRows="true" ItemsSource="{Binding SelectColumns}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.View>
+							<StackLayout Orientation="Vertical">
+								<Label Text="{Binding Title}"/>
+
+								<local:MyGridView ColumnSpacing="5" DragMode="false" ItemWidth="100" RowSpacing="10" ItemHeight="40" VerticalOptions="StartAndExpand" ItemsSource="{Binding Columns}">
+									<local:MyGridView.ItemTemplate>
+										<DataTemplate>
+											<ViewCell>
+												<ViewCell.View>
+												<Button Text="{Binding Title}" BorderRadius="10" WidthRequest="100" HeightRequest="50" FontSize="12">
+												</Button>
+												</ViewCell.View>
+
+											</ViewCell>
+										</DataTemplate>
+									</local:MyGridView.ItemTemplate>
+								</local:MyGridView>
+								<BoxView />
+							
+							</StackLayout>
+						</ViewCell.View>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

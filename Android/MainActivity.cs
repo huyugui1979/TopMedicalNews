@@ -7,14 +7,19 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-
 using Xamarin.Forms.Platform.Android;
+using XLabs.Forms;
+using System.Reflection;
+using XLabs.Ioc;
+using Refractored.Xam.Settings.Abstractions;
+using Xamarin.Forms;
+using Android.Graphics.Drawables;
 
 
 namespace TopMedicalNews.Android
 {
-	[Activity (Label = "TopMedicalNews.Android.Android", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : AndroidActivity
+	[Activity (Label = "",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : XFormsApplicationDroid
 	{
         
 		protected override void OnCreate (Bundle bundle)
@@ -24,8 +29,35 @@ namespace TopMedicalNews.Android
 			Xamarin.Forms.Forms.Init (this, bundle);
 			App.ScreenWidth = (int)(Resources.DisplayMetrics.WidthPixels/Resources.DisplayMetrics.Density); // real pixels
 			App.ScreenHeight = (int)(Resources.DisplayMetrics.HeightPixels/Resources.DisplayMetrics.Density); // real pixels
+//			var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
+//			foreach (var res in assembly.GetManifestResourceNames()) 
+//				System.Diagnostics.Debug.WriteLine("found resource: " + res);
 
+		
 			SetPage (App.GetMainPage ());
+		}
+
+//		public override bool OnCreateOptionsMenu (IMenu menu)
+//		{
+//			//ActionBar.SetHomeButtonEnabled (true);
+//			//ActionBar.set (Resource.Drawable.person_center_btnx);
+//			ActionBar.SetBackgroundDrawable (new ColorDrawable (global::Android.Graphics.Color.ParseColor ("#ff2b82d9")));
+//			ActionBar.SetDisplayHomeAsUpEnabled (false);
+//			//
+//			ActionBar.SetDisplayShowTitleEnabled (false);
+////			ActionBar.SetDisplayShowCustomEnabled (true);//ActionBar.DISPLAY_SHOW_CUSTOM);  
+////			ActionBar.SetCustomView (Resource.Layout.Main);
+//			return base.OnCreateOptionsMenu (menu);
+//		}
+		public override bool OnOptionsItemSelected (IMenuItem item)
+		{
+			if (item.TitleFormatted != null && item.TitleFormatted.ToString() == "医界头条") {
+				if (Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("LoginUserId", -1) == -1) {
+					MessagingCenter.Send<object>(this, "ClickLogin");
+					return true;
+				}
+			}
+			return base.OnOptionsItemSelected (item);
 		}
 	}
 }

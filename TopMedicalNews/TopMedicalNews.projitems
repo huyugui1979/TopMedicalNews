@@ -13,25 +13,84 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\SQLiteClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\NewsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\BaseModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\NoBarScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\MasterPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\DetailPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\DetailMode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\NewsCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\StringToImageSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\DateTimeFormaterConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\CarouselScrollView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\SwitchScrollView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectColumnView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectColumnPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\LikeColumnView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyGridView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\MyGridViewCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SelectColumnModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyCollectionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FirstModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MainModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SettingModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ChoseFontModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\FontService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\CacheService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FeedBackModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AboutUsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MyCollectionModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MyDiscussionModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml.cs">
+      <DependentUpon>MyFirstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\NoScrollListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyPullToRefreshScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml.cs">
+      <DependentUpon>SetColumnPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SetttingPage.xaml.cs">
+      <DependentUpon>SetttingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyMasterPage.xaml.cs">
+      <DependentUpon>MyMasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyAboutUs.xaml.cs">
+      <DependentUpon>MyAboutUs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ChoseFontPage.xaml.cs">
+      <DependentUpon>ChoseFontPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\FeedBackPage.xaml.cs">
+      <DependentUpon>FeedBackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\NewsDetailPage.xaml.cs">
+      <DependentUpon>NewsDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\NewsDetailModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\CommentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\MyStackLayout.xaml.cs">
+      <DependentUpon>MyStackLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\PipSet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\OurStackLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Business\CollectionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SplashScreenPage.xaml.cs">
+      <DependentUpon>SplashScreenPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\LoginModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ForgetPage.xaml.cs">
+      <DependentUpon>ForgetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RegisterModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ForgetModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\UserService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\BindableRadioGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\CustomRadioButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
@@ -39,6 +98,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Control\" />
     <Folder Include="$(MSBuildThisFileDirectory)Images\" />
     <Folder Include="$(MSBuildThisFileDirectory)Util\" />
+    <Folder Include="$(MSBuildThisFileDirectory)View\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test1.jpg" />
@@ -47,5 +107,51 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test4.jpg" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test5.jpg" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Test6.jpg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Check.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SetttingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyMasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyAboutUs.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ChoseFontPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\FeedBackPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\NewsDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MyStackLayout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CollectionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SplashScreenPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ForgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Images\Indicator.png" />
   </ItemGroup>
 </Project>

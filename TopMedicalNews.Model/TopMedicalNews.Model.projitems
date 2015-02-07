@@ -12,6 +12,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)News.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Column.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Category.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SystemConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Font.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Comment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collection.cs" />
   </ItemGroup>
 </Project>

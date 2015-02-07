@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-
+using Foundation;
+using UIKit;
 using Xamarin.Forms;
+using XLabs.Forms;
+using CoreGraphics;
 
 namespace TopMedicalNews.iOS
 {
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : XFormsApplicationDelegate
 	{
 		UIWindow window;
 
@@ -19,7 +20,8 @@ namespace TopMedicalNews.iOS
 			Forms.Init ();
 
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
+			CGRect rect  = UIScreen.MainScreen.Bounds;
+			App.ScreenWidth = (int)rect.Width ;
 			window.RootViewController = App.GetMainPage ().CreateViewController ();
 			window.MakeKeyAndVisible ();
 			

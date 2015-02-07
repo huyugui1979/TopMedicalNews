@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using System.Collections;
+using TopMedicalNews.Model;
+using System.Collections.ObjectModel;
 
 namespace TopMedicalNews
 {
@@ -10,19 +12,34 @@ namespace TopMedicalNews
 		{
 
 		}
-		public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create ("ItemsSource",
-			typeof(IEnumerable), 
-			typeof(MyGridView), 
-			null, BindingMode.OneWay, 
-			null, null, null, null);
+		public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create<MyGridView,ObservableCollection<Column>>(
+			v=>v.ItemsSource,null
+			);
 
-		public IEnumerable ItemsSource {
+		public ObservableCollection<Column> ItemsSource {
 			get {
-				return (IEnumerable)base.GetValue (MyGridView.ItemsSourceProperty);
+				return (ObservableCollection<Column> )base.GetValue (MyGridView.ItemsSourceProperty);
 			}
 			set {
 				base.SetValue (MyGridView.ItemsSourceProperty, value);
+
 			}
+		}
+		public bool DragMode{
+			get;set;
+		}
+
+		public void SwapItem(int oldPos,int newPos)
+		{
+			(this.BindingContext as SelectColumnModel).ChangeLikeColumnsOrder (oldPos, newPos);
+		}
+		public void DeleteLikeItem(int pos)
+		{
+			(this.BindingContext as SelectColumnModel).DeleteLikeColumn (pos);
+		}
+		public void InsertLikeItem(Column c)
+		{
+			(this.BindingContext as SelectColumn).Parent.InsertLikeColumn(c );
 		}
 
 		public DataTemplate ItemTemplate {
@@ -33,8 +50,6 @@ namespace TopMedicalNews
 			get;
 			set;
 		}
-
-
 		public double ColumnSpacing {
 			get;
 			set;
@@ -49,11 +64,6 @@ namespace TopMedicalNews
 			set;
 		}
 		//
-		public void DeleteItem(object Item)
-		{
-			(this.ItemsSource as IList).Remove (Item);
-
-		}
 		//
 	}
 }

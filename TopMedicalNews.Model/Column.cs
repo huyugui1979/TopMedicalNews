@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 #if __ANDROID__ || __IOS__
 using SQLite.Net.Attributes;
 using SQLite.Net;
@@ -14,6 +14,12 @@ namespace TopMedicalNews.Model
 		public int ID{get;set;}
 		public int  CategoryID{get;set;}
 		public bool Like{get;set;}
+		public int  LikeOrder{get;set;}
+		public override bool Equals(object obj)
+		{
+			Column e = obj as Column;
+			return e.ID == ID;
+		}
 	}
 }
 

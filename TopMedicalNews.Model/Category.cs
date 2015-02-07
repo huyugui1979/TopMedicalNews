@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 #if __ANDROID__ || __IOS__
 using SQLite.Net.Attributes;
 using SQLite.Net;

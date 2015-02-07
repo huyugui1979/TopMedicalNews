@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyPage Title="登录" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.LoginPage">
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical">
+			<StackLayout Orientation="Vertical" Padding="10,30,10,0">
+				<Image Source="Icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+				<Frame OutlineColor="Gray" HasShadow="false" Padding="0,0,0,0">
+					<StackLayout Orientation="Vertical">
+						<StackLayout Orientation="Horizontal" Padding="10,0,0,0">
+							<Image>
+								<Image.Source>
+									<OnPlatform x:TypeArguments="ImageSource" iOS="个人中心_btn" Android="setting.png" />
+								</Image.Source>
+							</Image>
+							<lc:ExtendedEntry HasBorder="false" Text="{Binding User.UserName, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="账号:" />
+						</StackLayout>
+						<BoxView Color="#c8c7cc" HeightRequest="1" />
+						<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Padding="10,0,0,0">
+							<Image>
+								<Image.Source>
+									<OnPlatform x:TypeArguments="ImageSource" iOS="密码_bg" Android="setting.png" />
+								</Image.Source>
+							</Image>
+							<lc:ExtendedEntry HasBorder="false" Text="{Binding User.Password, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="密码:" />
+						</StackLayout>
+					</StackLayout>
+				</Frame>
+				<Button Command="{Binding LoginCommand}" BackgroundColor="Blue" Text="登录" TextColor="White" />
+				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+					<Button BackgroundColor="Transparent" Text="注册" HorizontalOptions="Start" Command="{Binding RegisterCommand}" />
+					<Button BackgroundColor="Transparent" Text="忘记密码" Command="{Binding ForgetCommand}" HorizontalOptions="EndAndExpand" />
+					<Image WidthRequest="10" HeightRequest="10" Source="IndicatorRight.png" HorizontalOptions="End" />
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</MyPage>

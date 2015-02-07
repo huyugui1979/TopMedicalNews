@@ -9,21 +9,25 @@ using TopMedicalNews.Model;
 [assembly:ExportRenderer(typeof(TopMedicalNews.MyGridView), typeof(TopMedicalNews.Android.MyGridViewRenderer))]
 namespace TopMedicalNews.Android
 {
-	public class MyGridViewRenderer:ViewRenderer<MyGridView,GridView>
+	public class MyGridViewRenderer:ViewRenderer<MyGridView,DragGridView>
 	{
 		public MyGridViewRenderer ()
 		{
 		}
-		public global::Android.Widget.GridView CollectionView;
+	
+	
+		public DragGridView CollectionView;
 		protected override void OnElementChanged (ElementChangedEventArgs<MyGridView> e)
 		{
 			base.OnElementChanged (e);
 			//
-			CollectionView = new global::Android.Widget.GridView (Xamarin.Forms.Forms.Context);
+			CollectionView = new DragGridView(Xamarin.Forms.Forms.Context){};
+			CollectionView.DragMode = this.Element.DragMode;
 			CollectionView.SetGravity(GravityFlags.Center);
 			CollectionView.SetColumnWidth (Convert.ToInt32(Element.ItemWidth));
 			CollectionView.StretchMode = StretchMode.StretchColumnWidth;
 
+			//
 			var metrics = Resources.DisplayMetrics;
 
 			var spacing = (int)e.NewElement.ColumnSpacing;
@@ -43,7 +47,10 @@ namespace TopMedicalNews.Android
 		
 
 			CollectionView.Adapter = new MyGridAdapter (this);
-
+			//
+			//CollectionView.Touch += OnTouchEvent;
+			//
+		   
 			this.SetNativeControl (CollectionView);
 			//
 		}
@@ -56,6 +63,32 @@ namespace TopMedicalNews.Android
 		public MyGridAdapter(MyGridViewRenderer view)
 		{
 			_MyGridView = view;
+
+			view.CollectionView.OnSwitchItemEvent += (int oldPos, int newPos) => {
+				_MyGridView.Element.SwapItem(oldPos,newPos);
+				NotifyDataSetChanged();
+			};
+			view.CollectionView.OnClickItemEvent += (int pos) => {
+				if(_MyGridView.Element.DragMode)
+				{
+					_MyGridView.Element.DeleteLikeItem(pos);
+
+				}else
+				{
+					_MyGridView.Element.InsertLikeItem(_MyGridView.Element.ItemsSource[pos]);
+				}
+
+			};
+			//通知栏目已经改变
+			view.Element.ItemsSource.CollectionChanged+= (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e) => {
+				//
+				NotifyDataSetChanged();
+				_MyGridView.CollectionView.Post(()=>{
+					_MyGridView.Element.HeightRequest = _MyGridView.CollectionView.LayoutParameters.Height/Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density;
+				});
+				
+			};
+
 		}
 		public override Java.Lang.Object GetItem (int position)
 		{
@@ -69,46 +102,32 @@ namespace TopMedicalNews.Android
 
 		public override int Count {
 			get {
-				return (_MyGridView.Element.ItemsSource as IList).Count;
+				return _MyGridView.Element.ItemsSource.Count;
 			}
 		}
 
-
+		//
+		//
 		public override global::Android.Views.View GetView (int position, global::Android.Views.View convertView, global::Android.Views.ViewGroup parent)
 		{
 
-			var item = (_MyGridView.Element.ItemsSource as IList)[position] as Column;
-			if(convertView == null)
-			{
-			var inflater = LayoutInflater.From(Xamarin.Forms.Forms.Context);
 
-				 convertView = inflater.Inflate(Resource.Layout.ListItem, parent, false);
-				convertView.Tag = new Java.Lang.Integer (position);
-				convertView.LayoutParameters = new  global::Android.Widget.GridView.LayoutParams 
-				(Convert.ToInt32(_MyGridView.Element.ItemWidth*Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density), 
-				Convert.ToInt32(_MyGridView.Element.ItemHeight*Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density));
-				global::Android.Widget.Button button = (global::Android.Widget.Button)convertView.FindViewById (Resource.Id.myButton);
-				button.LongClick += (object sender, global::Android.Views.View.LongClickEventArgs e) => {
-					//
-					for (int i = 0; i < _MyGridView.CollectionView.ChildCount; i++) {
-						var c = _MyGridView.CollectionView.GetChildAt (i);
-						global::Android.Widget.ImageView b = (global::Android.Widget.ImageView)c.FindViewById (Resource.Id.imageView);
-						b.Visibility= ViewStates.Visible;
-					}
-				};
-				global::Android.Widget.ImageView imageView = (global::Android.Widget.ImageView)convertView.FindViewById (Resource.Id.imageView);
-				imageView.Click+= (object sender, EventArgs e) => {
-					global::Android.Views.View  view = (sender as global::Android.Views.View).Parent as global::Android.Views.View ;
-					Java.Lang.Integer index = view.Tag as Java.Lang.Integer;
-					var it =(_MyGridView.Element.ItemsSource as IList)[index.IntValue()];
-					_MyGridView.Element.DeleteItem(it);
-					NotifyDataSetChanged();
-				};
+			var item = _MyGridView.Element.ItemsSource [position];
+
+			if (convertView == null) {
+		
+				var viewCellBinded = (_MyGridView.Element.ItemTemplate.CreateContent () as ViewCell);
+				viewCellBinded.BindingContext = item;
+				var view = RendererFactory.GetRenderer (viewCellBinded.View);
+				// Platform.SetRenderer (viewCellBinded.View, view);
+				view.ViewGroup.LayoutParameters = new  global::Android.Widget.GridView.LayoutParams (Convert.ToInt32 (_MyGridView.Element.ItemWidth * Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density),
+					Convert.ToInt32 (_MyGridView.Element.ItemHeight * Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density));
+				//
+				return view.ViewGroup;
+			} else {
+				(convertView as ButtonRenderer).Control.Text = item.Title;
+				return convertView;
 			}
-
-			var name = convertView.FindViewById<TextView>(Resource.Id.myButton);
-			name.Text = item.Title;
-			return convertView;
 		}
 		//
 	}

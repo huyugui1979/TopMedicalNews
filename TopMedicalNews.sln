@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TopMedicalNews", "TopMedicalNews\TopMedicalNews.shproj", "{B919494B-D578-4968-B88A-7B7FD856EA53}"
@@ -11,14 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMedicalNews.Android", "A
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TopMedicalNews.Model", "TopMedicalNews.Model\TopMedicalNews.Model.shproj", "{4579FA38-A6D4-45F2-A375-4E128A61EDE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PullRefreshScrollViewLib", "PullRefreshScrollViewLib\PullRefreshScrollViewLib.csproj", "{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		TopMedicalNews\TopMedicalNews.projitems*{69c8144f-a600-43b0-a203-47d633a38256}*SharedItemsImports = 4
-		TopMedicalNews.Model\TopMedicalNews.Model.projitems*{4579fa38-a6d4-45f2-a375-4e128a61ede9}*SharedItemsImports = 13
-		TopMedicalNews\TopMedicalNews.projitems*{b919494b-d578-4968-b88a-7b7fd856ea53}*SharedItemsImports = 13
-		TopMedicalNews\TopMedicalNews.projitems*{b978f963-8f5d-40b8-8e6b-2ab977769c85}*SharedItemsImports = 4
-		TopMedicalNews.Model\TopMedicalNews.Model.projitems*{b978f963-8f5d-40b8-8e6b-2ab977769c85}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -34,6 +29,30 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhone.Build.0 = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhoneSimulator
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
@@ -82,10 +101,14 @@ Global
 		{B978F963-8F5D-40B8-8E6B-2AB977769C85}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{B978F963-8F5D-40B8-8E6B-2AB977769C85}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TopMedicalNews\TopMedicalNews.projitems*{69c8144f-a600-43b0-a203-47d633a38256}*SharedItemsImports = 4
+		TopMedicalNews.Model\TopMedicalNews.Model.projitems*{4579fa38-a6d4-45f2-a375-4e128a61ede9}*SharedItemsImports = 13
+		TopMedicalNews\TopMedicalNews.projitems*{b919494b-d578-4968-b88a-7b7fd856ea53}*SharedItemsImports = 13
+		TopMedicalNews\TopMedicalNews.projitems*{b978f963-8f5d-40b8-8e6b-2ab977769c85}*SharedItemsImports = 4
+		TopMedicalNews.Model\TopMedicalNews.Model.projitems*{b978f963-8f5d-40b8-8e6b-2ab977769c85}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Android\TopMedicalNews.Android.csproj
 	EndGlobalSection
 EndGlobal
