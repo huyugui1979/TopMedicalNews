@@ -10,7 +10,7 @@
 			</local:InvertTypeToVisibleConverter>
 		</ResourceDictionary>
 	</ContentView.Resources>
-	<local:OurStackLayout x:Name="ourstack" Orientation="Vertical">
+	<StackLayout x:Name="ourstack" Orientation="Vertical">
 		<StackLayout Orientation="Horizontal">
 			<Image Source="{Binding ImageUri}" WidthRequest="80" HeightRequest="60" />
 <!--			<Image.HeightRequest>
@@ -30,5 +30,5 @@
 			<Label BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" TextColor="#878787" FontSize="14" Text="{Binding ViewerNum,StringFormat='{0}查看'}" />
 			<Label HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" TextColor="#878787" FontSize="14" Text="{Binding PosterNum,StringFormat='{0}评论'}" />
 		</StackLayout>
-	</local:OurStackLayout>
+	</StackLayout>
 </ContentView>

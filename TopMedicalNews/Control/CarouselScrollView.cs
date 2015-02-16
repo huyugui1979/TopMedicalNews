@@ -68,7 +68,7 @@ namespace TopMedicalNews
 			_stack.Children.Clear ();
 			foreach (var item in ItemsSource) {
 				var view = (View)ItemTemplate.CreateContent ();
-				view.WidthRequest = App.ScreenWidth;
+				view.WidthRequest =  App.ScreenWidth;
 				var bindableObject = view as BindableObject;
 
 				if (bindableObject != null)

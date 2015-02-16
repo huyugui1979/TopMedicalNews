@@ -97,7 +97,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Util\TypeToVisibleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\InvertTypeToVisibleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToImageConvert.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\OurStackLayout.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyStackLayout.cs" />
   </ItemGroup>
   <ItemGroup>

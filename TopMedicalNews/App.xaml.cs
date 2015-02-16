@@ -21,8 +21,8 @@ namespace TopMedicalNews
 	public partial class App:Application
 	{
 
-		public static float ScreenWidth;
-		public static float ScreenHeight;
+		public static double ScreenWidth;
+		public static double ScreenHeight;
 		static void Init()
 		{
 
