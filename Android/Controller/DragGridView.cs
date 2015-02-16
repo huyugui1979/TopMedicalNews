@@ -102,7 +102,7 @@ namespace TopMedicalNews.Android
 						//根据我们按下的点显示item镜像  
 						createDragImage (mDragBitmap, mDownX, mDownY);  
 					}
-				}, 1000);  
+				}, 200);  
 
 					//
 				mStartDragItemView = GetChildAt (mDragPosition - FirstVisiblePosition);
@@ -138,7 +138,9 @@ namespace TopMedicalNews.Android
 						onStopDrag ();  
 						isDrag = false;  
 					} else {
+
 						if (mDragPosition != AdapterView.InvalidPosition)
+
 						OnClickItemEvent (mDragPosition);
 					}
 
@@ -223,17 +225,15 @@ namespace TopMedicalNews.Android
 
 				if (OnSwitchItemEvent != null) {  
 				
+//					System.Diagnostics.Debug.WriteLine ("m:" + mDragPosition + "t:" + tempPosition);
 					OnSwitchItemEvent (mDragPosition, tempPosition);
 
 				}
-			
-				this.Post (() => {
-				
-					GetChildAt (tempPosition - FirstVisiblePosition).Visibility = ViewStates.Invisible;//(View.INVISIBLE);//拖动到了新的item,新的item隐藏掉  
-					GetChildAt (mDragPosition - FirstVisiblePosition).Visibility = ViewStates.Visible;//的item显示出来  
+				GetChildAt (tempPosition).Visibility = ViewStates.Invisible;//(View.INVISIBLE);//拖动到了新的item,新的item隐藏掉  
+				GetChildAt (mDragPosition).Visibility = ViewStates.Visible;//的item显示出来  
+				mDragPosition = tempPosition; 
+					 
 
-					mDragPosition = tempPosition;  
-				});
 
 
 			}  

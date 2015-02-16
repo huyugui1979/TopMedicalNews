@@ -9,7 +9,6 @@
     <Import_RootNamespace>TopMedicalNews</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\SQLiteClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\NewsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
@@ -25,7 +24,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MainModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SettingModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ChoseFontModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\FontService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\CacheService.cs" />
@@ -51,9 +49,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\MyAboutUs.xaml.cs">
       <DependentUpon>MyAboutUs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page\ChoseFontPage.xaml.cs">
-      <DependentUpon>ChoseFontPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Page\FeedBackPage.xaml.cs">
       <DependentUpon>FeedBackPage.xaml</DependentUpon>
     </Compile>
@@ -62,11 +57,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\NewsDetailModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\CommentService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\MyStackLayout.xaml.cs">
-      <DependentUpon>MyStackLayout.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\PipSet.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\OurStackLayout.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
     </Compile>
@@ -91,6 +82,23 @@
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\BindableRadioGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\CustomRadioButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\CommentCell.xaml.cs">
+      <DependentUpon>CommentCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\MyGridChildView.xaml.cs">
+      <DependentUpon>MyGridChildView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\NewsListCell.xaml.cs">
+      <DependentUpon>NewsListCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Util\TypeToVisibleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\InvertTypeToVisibleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToImageConvert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\OurStackLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyStackLayout.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
@@ -115,16 +123,10 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyAboutUs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ChoseFontPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\FeedBackPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\NewsDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MyStackLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CollectionPage.xaml">
@@ -140,6 +142,18 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ForgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\CommentCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MyGridChildView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\NewsListCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

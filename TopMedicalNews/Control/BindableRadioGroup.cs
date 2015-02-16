@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XLabs;
 
 
 namespace TopMedicalNews
@@ -60,6 +61,7 @@ namespace TopMedicalNews
                 foreach (var item in newvalue)
                 {
                     var rad = new CustomRadioButton();
+
                     rad.Text = item.ToString();
                     rad.Id = radIndex;  
                    

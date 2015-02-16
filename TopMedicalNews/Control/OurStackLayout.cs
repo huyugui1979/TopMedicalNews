@@ -14,9 +14,10 @@ namespace TopMedicalNews
 		{
 			SizeRequest sr =  base.OnSizeRequest (widthConstraint, heightConstraint);
 			NoScrollListView.TotalHeight += sr.Request.Height;
+			System.Diagnostics.Debug.WriteLine ("height:" + sr.Request.Height);
+			System.Diagnostics.Debug.WriteLine ("total:" + NoScrollListView.TotalHeight);
 			return sr;
 		}
-	
+
 	}
 }
-

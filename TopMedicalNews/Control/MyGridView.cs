@@ -11,7 +11,15 @@ namespace TopMedicalNews
 		public MyGridView ()
 		{
 
+			if (Device.OS == TargetPlatform.iOS)  {
+				ItemWidth = 60;
+				ItemHeight = 30;
+			} else {
+				ItemWidth = 80;
+				ItemHeight = 40;
+			}
 		}
+
 		public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create<MyGridView,ObservableCollection<Column>>(
 			v=>v.ItemsSource,null
 			);
@@ -60,6 +68,10 @@ namespace TopMedicalNews
 		}
 			
 		public double ItemHeight {
+			get;
+			set;
+		}
+		public bool SelectionEnabled {
 			get;
 			set;
 		}

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyGridChildView">
+	<ContentView.Content>
+		<StackLayout Orientation="Vertical">
+			<Label Text="{Binding Title}" />
+			<local:MyGridView ColumnSpacing="5" x:Name="grid" DragMode="false"  RowSpacing="5"  ItemsSource="{Binding Columns}">
+				<local:MyGridView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<Button Text="{Binding Title}" BorderRadius="10" FontSize="12">
+								</Button>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</local:MyGridView.ItemTemplate>
+			</local:MyGridView>
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>

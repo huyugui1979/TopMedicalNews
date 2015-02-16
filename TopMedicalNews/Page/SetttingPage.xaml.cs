@@ -11,10 +11,7 @@ namespace TopMedicalNews
 		public SetttingPage ()
 		{
 			InitializeComponent ();
-			var choseFont = this.FindByName<StackLayout> ("choseFont");
-			choseFont.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-				(this.BindingContext as SettingModel).NavigateToChoseFont.Execute(null);
-			}));
+
 			//
 			var cacheNum = this.FindByName<StackLayout> ("cacheNum");
 			cacheNum.GestureRecognizers.Add(new TapGestureRecognizer(v=>{

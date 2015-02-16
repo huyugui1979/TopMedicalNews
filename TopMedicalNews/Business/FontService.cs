@@ -6,8 +6,8 @@ using XLabs.Ioc;
 namespace TopMedicalNews
 {
 	public interface IFontService{
-		 List<Font> GetAllFont();
-		 Font GetFontById (int id);
+		 List<MyFont> GetAllFont();
+		MyFont GetFontById (int id);
 	}
 	public class FontService:IFontService
 	{
@@ -15,13 +15,13 @@ namespace TopMedicalNews
 		{
 
 		}
-		public List<Font> GetAllFont()
+		public List<MyFont> GetAllFont()
 		{
-			return Resolver.Resolve<ISQLiteClient> ().GetAllData<Font> ();
+			return Resolver.Resolve<ISQLiteClient> ().GetAllData<MyFont> ();
 		}
-		public Font GetFontById(int id)
+		public MyFont GetFontById(int id)
 		{
-			return Resolver.Resolve<ISQLiteClient> ().GetData<Font> (r => r.ID == id);
+			return Resolver.Resolve<ISQLiteClient> ().GetData<MyFont> (r => r.ID == id);
 
 		}
 	}

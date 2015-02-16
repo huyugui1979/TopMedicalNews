@@ -24,6 +24,7 @@ namespace TopMedicalNews.iOS
 			var pullToRefreshListView = (MyPullToRefreshScrollView)this.Element; 
 
 			refreshControl = new UIRefreshControl ();
+
 			refreshControl.AttributedTitle = new Foundation.NSAttributedString ("正在加载");
 			refreshControl.AddTarget(RefreshEventHandler,UIControlEvent.ValueChanged);
 			this.AddSubview (refreshControl);

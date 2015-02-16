@@ -9,6 +9,7 @@ namespace TopMedicalNews
 		{
 
 		}
+
 		public static double TotalHeight=0;
 
 	}

@@ -27,13 +27,20 @@ namespace TopMedicalNews
 				(this.BindingContext as FirstModel).GotoNewsDetailCommand.Execute(newsId);
 				(sender as ListView).SelectedItem =null;
 				//
-			};
-			//
 
-			//
+				//
+			};
 		}
-	
-	
+		protected override void OnAppearing ()
+		{ 
+
+			base.OnAppearing ();
+//			var newsList = this.FindByName<ListView> ("newsList");
+////			newsList.HeightRequest = 1000;
+//			#if __IOS__
+//			newsList.HeightRequest = 1000;//NewsListCell.TotalHeight;
+//			#endif
+		}
 		protected override void OnBindingContextChanged ()
 		{
 			base.OnBindingContextChanged ();
@@ -43,18 +50,20 @@ namespace TopMedicalNews
 			
 				button.BindingContext = column;
 				button.BackgroundColor = Color.Transparent;
+				button.TextColor = Color.Black;
 				button.SetBinding (Button.TextProperty, "Title");
 				button.Clicked += (object sender, EventArgs e) => {
 					//
 					scrollContent.Children.ToList().ForEach(v=>(v as Button).TextColor=Color.Black);
-					(sender as Button).TextColor=Color.Red;
+					(sender as Button).TextColor=Color.Blue;
 					(this.BindingContext as FirstModel).SelectColumnCommand.Execute(button.BindingContext);
 					//
 				};
 				scrollContent.Children.Add (button);
 			}
-			(scrollContent.Children [0] as Button).TextColor = Color.Red;
-
+			(scrollContent.Children [0] as Button).TextColor = Color.Blue;
+			//
+		
 		}
 	}
 }

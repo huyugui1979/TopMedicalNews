@@ -27,6 +27,7 @@ namespace TopMedicalNews
 					}else
 					{
 						MessagingCenter.Send<object> (this, "LoginSucceed");
+						//
 
 						//
 						Navigation.GoBack();

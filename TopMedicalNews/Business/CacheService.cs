@@ -22,7 +22,7 @@ namespace TopMedicalNews
 				for(int i=0;i<100;i++)
 				{
 					Thread.Sleep(100);
-					System.Diagnostics.Debug.WriteLine("persent is "+i);
+
 					action(i);
 				}
 			});

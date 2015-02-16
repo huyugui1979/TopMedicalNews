@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace TopMedicalNews
 {
-	public partial class MyAboutUs : ContentPage
+	public partial class MyAboutUs : MyPage
 	{
 		public MyAboutUs ()
 		{

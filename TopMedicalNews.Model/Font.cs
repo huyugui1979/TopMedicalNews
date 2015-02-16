@@ -7,14 +7,19 @@ using ServiceStack.DataAnnotations;
 #endif
 namespace TopMedicalNews.Model
 {
-	public class Font
+	public class MyFont
 	{
-		public Font ()
+		public MyFont ()
 		{
 		}
 		[PrimaryKey]
 		public int ID{get;set;}
 		public string Title{get;set;}
+		public override string ToString ()
+		{
+			return Title;
+		}
+
 	}
 }
 

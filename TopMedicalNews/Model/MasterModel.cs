@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using System.Windows.Input;
 using Refractored.Xam.Settings.Abstractions;
 using XLabs.Ioc;
+using Acr.XamForms.UserDialogs;
 
 namespace TopMedicalNews
 {
@@ -12,6 +13,15 @@ namespace TopMedicalNews
 		public MasterModel ()
 		{
 
+		}
+		public ICommand SelectPicCommand{
+			get{ 
+				return new Command(()=>{
+
+					MessagingCenter.Send<object> (this, "TakePicture");
+
+				});
+			}
 		}
 		public ICommand MyReadingCommand {
 			get { 

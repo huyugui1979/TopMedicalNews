@@ -5,6 +5,8 @@ using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using Acr.XamForms.UserDialogs;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using TopMedicalNews.Model;
 
 namespace TopMedicalNews
 {
@@ -15,9 +17,11 @@ namespace TopMedicalNews
 			_VerInfo =  "最新系统";
 			_CacheNum = "缓存100M";
 			_FeedBack = "输入你对本系统的意见，谢谢";
-			int fontId = Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("SelectFontId",1);
-			this.FontName = Resolver.Resolve<IFontService> ().GetFontById (fontId).Title;
+			//int fontId = Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("SelectFontId",1);
+			Fonts = Resolver.Resolve<IFontService> ().GetAllFont ();
+
 		}
+		public List<MyFont> Fonts{ get; set; }
 	    String  _FontName;
 		public 	 string FontName { 
 			get { return _FontName; } 
@@ -42,16 +46,7 @@ namespace TopMedicalNews
 			get{ return _FeedBack; }
 			set{ SetProperty (ref _FeedBack, value); }
 		}
-		private Command _navigateToChoseFont;
-		public Command NavigateToChoseFont 
-		{
-			get
-			{
-				return _navigateToChoseFont ?? (_navigateToChoseFont = new Command(
-					 () => Navigation.NavigateTo<ChoseFontModel>(null,true),
-					() => true));
-			}
-		}
+
 		//
 		private Command _clearCache;
 		public Command ClearCache 

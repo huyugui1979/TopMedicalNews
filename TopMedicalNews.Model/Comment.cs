@@ -11,7 +11,7 @@ namespace TopMedicalNews.Model
 	{
 		public int  UserID{ get; set; }
 		public int  NewsID{ get; set; }
-		[PrimaryKey]
+		[PrimaryKey,AutoIncrement]
 		public int    ID{ get; set; }
 		public DateTime PublishTime{ get; set; }
 		public string Content{ get; set; }

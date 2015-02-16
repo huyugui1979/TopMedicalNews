@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.FeedBackPage">
+<MyPage Title="意见反馈" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.FeedBackPage">
 	<ContentPage.Content>
-	<StackLayout Padding="10,10,10,10">
-	<Frame OutlineColor="Blue"  HasShadow="false" Padding="0,0,0,0">
+	<StackLayout Padding="10,10,10,10" BackgroundColor="#f7f7f7">
+	<Frame OutlineColor="#d9d9d9"  HasShadow="false" Padding="0,0,0,0">
 
 <!--	<Entry  Placeholder="输入你对本软件的意见"/>-->
-	<lc:ExtendedEditor Font="18" x:Name="editor" Text="请输入你对本软件的意见"  HorizontalOptions="Fill" HeightRequest="150"/>
+	<lc:ExtendedEditor Font="18" x:Name="editor" BackgroundColor="White"   HorizontalOptions="Fill" HeightRequest="150"/>
 
 	</Frame>
-	<Frame OutlineColor="Blue"  HasShadow="false" Padding="0,0,0,0">
-	<lc:ExtendedEntry  HorizontalOptions="FillAndExpand" Font="18"  x:Name="address" Text="邮箱/QQ/手机号码:选填"/>
-	</Frame>
-	<Button  HorizontalOptions="FillAndExpand"  Text="发送"/>
+<!--	<Frame OutlineColor="#d9d9d9"  HasShadow="false" Padding="0,0,0,0">-->
+	<lc:ExtendedEntry  HorizontalOptions="FillAndExpand" Font="18" BackgroundColor="White" x:Name="address"  Placeholder ="邮箱/QQ/手机号码:选填"/>
+<!--	</Frame>-->
+
+	<Button  HorizontalOptions="FillAndExpand" BackgroundColor="#2b82d9"  TextColor="White" Text="发送"/>
 	</StackLayout>
 	</ContentPage.Content>
-</ContentPage>
+</MyPage>

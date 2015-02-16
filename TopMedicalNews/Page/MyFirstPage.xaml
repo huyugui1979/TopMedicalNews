@@ -1,31 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<local:MyPage Title="医界头条" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyFirstPage">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<!--			<OnPlatform x:Key="imageContact" iOS="设置_btn" Android="setting.png" />-->
-			<local:DateTimeFormaterConverter x:Key="dateTimeConverter" />
-		</ResourceDictionary>
-	</ContentPage.Resources>
+<local:MyPage Title="医界头条" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyFirstPage">
 	<ContentPage.ToolbarItems>
-		<ToolbarItem  Command="{Binding SettingCommand}">
+		<ToolbarItem Command="{Binding SettingCommand}">
 			<ToolbarItem.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource" iOS="设置_btn" Android="setting.png" />
 			</ToolbarItem.Icon>
 		</ToolbarItem>
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical">
+		<StackLayout Orientation="Vertical" Spacing="0">
 			<StackLayout Orientation="Horizontal">
-				<ScrollView Padding="0,0,0,0" Orientation="Horizontal" VerticalOptions="Center">
+				<StackLayout.HeightRequest>
+					<OnPlatform x:TypeArguments="x:Double" iOS="30" Android="40" />
+				</StackLayout.HeightRequest>
+				<ScrollView Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="White">
 					<StackLayout x:Name="scrollContent" Orientation="Horizontal">
 					</StackLayout>
 				</ScrollView>
-				<Image WidthRequest="30" Source="IndicatorDown.png" HorizontalOptions="End" VerticalOptions="Center" />
+				<lc:ImageButton WidthRequest="30" Source="下拉_btn" Command="{Binding OrderColumnCommand}" HorizontalOptions="End" VerticalOptions="Fill" />
 			</StackLayout>
 			<local:MyPullToRefreshScrollView VerticalOptions="FillAndExpand">
-				<StackLayout Orientation="Vertical">
+				<local:MyStackLayout Orientation="Vertical" >
 					<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-						<local:CarouselScrollView Orientation="Horizontal" HeightRequest="100" SelectedItem="{Binding SelectedFocusNews}" ItemsSource="{Binding FocusNews}">
+						<local:CarouselScrollView Orientation="Horizontal" HeightRequest="140" SelectedItem="{Binding SelectedFocusNews}" ItemsSource="{Binding FocusNews}">
 							<local:CarouselScrollView.ItemTemplate>
 								<DataTemplate>
 									<Image Aspect="AspectFill" Source="{Binding ImageUri}" />
@@ -37,32 +34,17 @@
 							<local:PipSet ItemsSource="{Binding FocusNews}" SelectedItem="{Binding SelectedFocusNews}" />
 						</StackLayout>
 					</StackLayout>
-					<ListView RowHeight="100" x:Name="newsList" ItemsSource="{Binding SelectNews}">
+					<local:NoScrollListView x:Name="newsList" HasUnevenRows="true"  ItemsSource="{Binding SelectNews}">
+						<ListView.HeightRequest>
+							<OnPlatform x:TypeArguments="x:Double" iOS="312" />
+						</ListView.HeightRequest>
 						<ListView.ItemTemplate>
 							<DataTemplate>
-								<ViewCell>
-									<ViewCell.View>
-										<StackLayout Orientation="Vertical">
-											<StackLayout Orientation="Horizontal">
-												<Image Source="{Binding ImageUri}" WidthRequest="80" HeightRequest="60" />
-												<StackLayout Orientation="Vertical">
-													<Label Text="{Binding Title}" />
-													<Label Text="{Binding Thumb}" />
-												</StackLayout>
-											</StackLayout>
-											<StackLayout Orientation="Horizontal">
-												<Label Text="{Binding PublishTime,Converter={StaticResource dateTimeConverter}}" />
-												<Label Text="{Binding FromSource}" />
-												<Label Text="{Binding ViewerNum}" />
-												<Label Text="{Binding PosterNum}" />
-											</StackLayout>
-										</StackLayout>
-									</ViewCell.View>
-								</ViewCell>
+								<local:NewsListCell />
 							</DataTemplate>
 						</ListView.ItemTemplate>
-					</ListView>
-				</StackLayout>
+					</local:NoScrollListView>
+				</local:MyStackLayout>
 			</local:MyPullToRefreshScrollView>
 		</StackLayout>
 	</ContentPage.Content>

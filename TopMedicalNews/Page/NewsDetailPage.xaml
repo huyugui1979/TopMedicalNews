@@ -1,42 +1,49 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MyPage Title="" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.NewsDetailPage">
+<local:MyPage Title="新闻详情" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.NewsDetailPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<local:DateTimeFormaterConverter x:Key="timeFormater">
+			</local:DateTimeFormaterConverter>
+			<local:BoolToImageConvert x:Key="imageConvert">
+			</local:BoolToImageConvert>
+		</ResourceDictionary>
+	</ContentPage.Resources>
 	<ContentPage.Content>
+	<ScrollView Orientation="Vertical">
 		<StackLayout Orientation="Vertical">
 			<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-				<StackLayout Orientation="Vertical">
-					<Label TextColor="Black" Text="{Binding News.Title}" />
+				<StackLayout Orientation="Vertical" Padding="10,0,10,0">
+					<Label  Text="{Binding News.Title}"  />
 					<StackLayout Orientation="Horizontal">
-						<Label Text="{Binding News.FromSource}" />
-						<Label Text="{Binding News.PublishTime}" />
+						<Label Text="{Binding News.FromSource,StringFormat='来自{0}'}" TextColor="#878787" FontSize="14" />
+						<Label Text="{Binding News.PublishTime,Converter={StaticResource timeFormater}}" TextColor="#878787" FontSize="14" />
 					</StackLayout>
-					<lc:Separator Color="Gray" StrokeType="Dotted" />
-					<Frame OutlineColor="Black" HasShadow="false">
-						<Image Source="{Binding News.ImageUri}" />
-					</Frame>
-					<Label Text="{Binding News.Content}" />
-					<local:NoScrollListView HasUnevenRows="true" x:Name="scroll" ItemsSource="{Binding Comments}">
-						<local:NoScrollListView.ItemTemplate>
+					<lc:Separator Color="#D5D5D5"/>
+
+					<Image Source="{Binding News.ImageUri}" HorizontalOptions="FillAndExpand" />
+
+					<Label Text="{Binding News.Content}" FontSize="14"  />
+					<StackLayout Orientation="Horizontal" >
+					<Image Source="标签_bg"/>
+					<Label Text="{Binding News.Tag}" TextColor="#878787" FontSize="14" />
+					</StackLayout>
+					<lc:Separator Color="#D5D5D5"/>
+					<local:NoScrollListView x:Name="commentListView"  HasUnevenRows="true" ItemsSource="{Binding Comments}">
+						<ListView.ItemTemplate>
 							<DataTemplate>
-								<local:MyStackLayout />
+								<local:CommentCell />
 							</DataTemplate>
-						</local:NoScrollListView.ItemTemplate>
+						</ListView.ItemTemplate>
 					</local:NoScrollListView>
 				</StackLayout>
 			</ScrollView>
-			<StackLayout Orientation="Horizontal"  VerticalOptions="End" BackgroundColor="White" Padding="10,5,10,5">
-				
-				<local:MyEntry  Source="输入框_bg" Placeholder="我来说两句" HorizontalOptions="FillAndExpand"  /> 
 
-				<Image HorizontalOptions="End" IsVisible="false">
-					<Image.Source>
-						<OnPlatform x:TypeArguments="ImageSource" iOS="收藏_btn_" Android="myreading.png" />
-					</Image.Source>
+			<StackLayout Orientation="Horizontal" VerticalOptions="End" BackgroundColor="White"  Padding="10,5,10,5">
+				<local:MyEntry Source="输入框_bg" Placeholder="我来说两句" HorizontalOptions="FillAndExpand" />
+				<Image HorizontalOptions="End" x:Name="collectionImage" Source="{Binding IsCollection,Converter={StaticResource imageConvert}}" >
+					
 				</Image>
-				<Image HorizontalOptions="End" IsVisible="true">
-					<Image.Source>
-						<OnPlatform x:TypeArguments="ImageSource" iOS="收藏_pressed_btn" Android="myreading.png" />
-					</Image.Source>
-				</Image>
+
 				<Image HorizontalOptions="End">
 					<Image.Source>
 						<OnPlatform x:TypeArguments="ImageSource" iOS="分享_btn" Android="myreading.png" />
@@ -44,5 +51,6 @@
 				</Image>
 			</StackLayout>
 		</StackLayout>
+</ScrollView>
 	</ContentPage.Content>
-</MyPage>
+</local:MyPage>

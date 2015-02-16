@@ -34,7 +34,7 @@ namespace TopMedicalNews.Android
 			//var width = App.ScreenWidth;
 			var itemWidth = (int)e.NewElement.ItemWidth;
 
-			int noOfColumns = App.ScreenWidth / (itemWidth + spacing);
+			int noOfColumns = (int)App.ScreenWidth / (itemWidth + spacing);
 			// If possible add another row without spacing (because the number of columns will be one less than the number of spacings)
 			if (App.ScreenWidth - (noOfColumns * (itemWidth + spacing)) >= itemWidth)
 				noOfColumns++;
@@ -45,11 +45,7 @@ namespace TopMedicalNews.Android
 			CollectionView.SetHorizontalSpacing (Convert.ToInt32(Element.RowSpacing));
 			CollectionView.SetVerticalSpacing(Convert.ToInt32(Element.ColumnSpacing));
 		
-
 			CollectionView.Adapter = new MyGridAdapter (this);
-			//
-			//CollectionView.Touch += OnTouchEvent;
-			//
 		   
 			this.SetNativeControl (CollectionView);
 			//
@@ -82,13 +78,14 @@ namespace TopMedicalNews.Android
 			//通知栏目已经改变
 			view.Element.ItemsSource.CollectionChanged+= (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e) => {
 				//
+
 				NotifyDataSetChanged();
+
 				_MyGridView.CollectionView.Post(()=>{
 					_MyGridView.Element.HeightRequest = _MyGridView.CollectionView.LayoutParameters.Height/Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density;
 				});
 				
 			};
-
 		}
 		public override Java.Lang.Object GetItem (int position)
 		{
@@ -113,7 +110,7 @@ namespace TopMedicalNews.Android
 
 
 			var item = _MyGridView.Element.ItemsSource [position];
-
+			System.Diagnostics.Debug.WriteLine ("item:" + item.Title);
 			if (convertView == null) {
 		
 				var viewCellBinded = (_MyGridView.Element.ItemTemplate.CreateContent () as ViewCell);
@@ -125,7 +122,9 @@ namespace TopMedicalNews.Android
 				//
 				return view.ViewGroup;
 			} else {
-				(convertView as ButtonRenderer).Control.Text = item.Title;
+				(convertView as ButtonRenderer).Element.BindingContext = item;
+
+
 				return convertView;
 			}
 		}

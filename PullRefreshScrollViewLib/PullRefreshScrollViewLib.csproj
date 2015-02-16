@@ -53,13 +53,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <EmbeddedJar Include="..\..\..\example\PullRefreshScrollView-master\lib\bin\pullrefreshscrollview.jar">
-      <Link>Jars\pullrefreshscrollview.jar</Link>
-    </EmbeddedJar>
-  </ItemGroup>
-  <ItemGroup>
     <LibraryProjectZip Include="..\..\..\example\PullRefreshScrollView-master\lib\pull.zip">
       <Link>pull.zip</Link>
     </LibraryProjectZip>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="..\..\..\example\PullRefreshScrollView-master\lib\bin\pullrefreshscrollview.jar">
+      <Link>Jars\pullrefreshscrollview.jar</Link>
+    </EmbeddedJar>
   </ItemGroup>
 </Project>

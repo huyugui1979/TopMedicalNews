@@ -2,7 +2,7 @@
 <ContentPage Title="个人" BackgroundColor="Black" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyMasterPage">
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,50,0,0" Spacing="0">
-			<Image >
+			<Image x:Name="selectPictureImage" Source="{Binding }">
 				<Image.Source>
 					<OnPlatform x:TypeArguments="ImageSource"    iOS="收藏页头像框logo_bg" Android="person_logo.png" />
 				</Image.Source>

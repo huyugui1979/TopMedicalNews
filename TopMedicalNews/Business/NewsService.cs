@@ -21,6 +21,12 @@ namespace TopMedicalNews
 		{
 
 		}
+//		public async List<News> DownloadNews(int columnId)
+//		{
+//			//
+//
+//			//
+//		}
 
 		public List<News> GetNewsByColumn(int columnId)
 		{

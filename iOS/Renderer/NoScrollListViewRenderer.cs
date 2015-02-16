@@ -21,16 +21,12 @@ namespace TopMedicalNews.iOS
 		{
 			base.OnElementChanged (e);
 			this.Control.ScrollEnabled = false;
+
 			//
 			 // The 50 is just padding
 
 		}
 
-		public override void LayoutSubviews ()
-		{
-			this.Element.HeightRequest = TotalHeight.Total;
-			base.LayoutSubviews ();
-		}
 	}
 
 }

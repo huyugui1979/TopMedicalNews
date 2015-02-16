@@ -33,8 +33,8 @@ namespace TopMedicalNews.Android
 //			foreach (var res in assembly.GetManifestResourceNames()) 
 //				System.Diagnostics.Debug.WriteLine("found resource: " + res);
 
-		
-			SetPage (App.GetMainPage ());
+			LoadApplication (new App ());
+
 		}
 
 //		public override bool OnCreateOptionsMenu (IMenu menu)

@@ -6,6 +6,7 @@ using System.Reflection;
 using XLabs.Ioc;
 using XLabs.Forms.Mvvm;
 using Acr.XamForms.UserDialogs;
+using XLabs.Platform.Device;
 
 
 #if __ANDROID__
@@ -17,18 +18,23 @@ using Acr.XamForms.UserDialogs.iOS;
 namespace TopMedicalNews
 {
 
-	public class App
+	public partial class App:Application
 	{
-     
-		public static int ScreenWidth;
-		public static int ScreenHeight;
+
+		public static float ScreenWidth;
+		public static float ScreenHeight;
 		static void Init()
 		{
-	
+
 			var resolverContainer = new SimpleContainer();
 
 			Resolver.SetResolver(resolverContainer.GetResolver());
 			resolverContainer.RegisterSingle<ISettings,Settings>();
+			#if __IOS__
+			resolverContainer.Register<IDevice> (t => AppleDevice.CurrentDevice);
+			#else
+			resolverContainer.Register<IDevice> (t => AndroidDevice.CurrentDevice);
+			#endif
 			resolverContainer.Register<IDependencyContainer> (t => resolverContainer);
 			resolverContainer.Register<ISQLiteClient> (new SQLiteClient());
 			resolverContainer.RegisterSingle<ICategoryService,CategoryService> ();
@@ -46,7 +52,7 @@ namespace TopMedicalNews
 			ViewFactory.Register<ForgetPage,ForgetModel> ();
 			ViewFactory.Register<RegisterPage,RegisterModel> ();
 			ViewFactory.Register<NewsDetailPage,NewsDetailModel> ();
-			ViewFactory.Register<ChoseFontPage,ChoseFontModel> ();
+
 			ViewFactory.Register<SetttingPage,SettingModel> ();
 			ViewFactory.Register<MyMasterPage,MasterModel> ();
 			ViewFactory.Register<FeedBackPage,FeedBackModel> ();
@@ -56,16 +62,13 @@ namespace TopMedicalNews
 			ViewFactory.Register<MainPage,MainModel> ();
 
 
-        }
-
-		public static Page GetMainPage ()
+		}
+		public App()
 		{
 			Init ();
-
-			return ViewFactory.CreatePage<
+			MainPage = ViewFactory.CreatePage<
 				MainModel,Page>() as Page;
-
 		}
+	
 	}
 }
-	

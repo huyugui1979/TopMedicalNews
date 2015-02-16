@@ -11,11 +11,22 @@ using System.Collections;
 using System.Reflection;
 using Android.Widget;
 
+[assembly:ExportRenderer (typeof(TopMedicalNews.MyStackLayout), typeof(TopMedicalNews.Android.MyStackLayoutRenderer))]
 
 [assembly:ExportRenderer (typeof(TopMedicalNews.MyPullToRefreshScrollView), typeof(TopMedicalNews.Android.MyPullToRefreshSCrollViewRenderer))]
 namespace TopMedicalNews.Android
 {
+	public class MyStackLayoutRenderer: VisualElementRenderer<Xamarin.Forms.View>{
 
+		public override void MeasureAndLayout (int p0, int p1, int p2, int p3, int p4, int p5)
+		{
+			base.MeasureAndLayout (p0, p1, p2, p3, p4, p5);
+		}
+		protected override void OnMeasure (int widthMeasureSpec, int heightMeasureSpec)
+		{
+			base.OnMeasure (widthMeasureSpec, heightMeasureSpec);
+		}
+	}
 	public class MyPullToRefreshSCrollViewRenderer:PullRefreshScrollView,
 	IVisualElementRenderer,IRegisterable, IDisposable
 	{
@@ -42,7 +53,7 @@ namespace TopMedicalNews.Android
 				if (bLoading)
 					return this.MContentLy;
 				else
-				return this;
+					return this;
 			}
 		}
 
@@ -67,7 +78,7 @@ namespace TopMedicalNews.Android
 			return new SizeRequest (new Size ((double)base.MeasuredWidth, (double)base.MeasuredHeight), default(Size));
 		}
 
-	
+
 
 
 
@@ -86,17 +97,18 @@ namespace TopMedicalNews.Android
 			MyPullToRefreshScrollView oldView = this.view;
 			this.view = (MyPullToRefreshScrollView)element;
 			if (oldView != null) {
-	
+
 			}
 			if (element != null) {
 
 				this.tracker = new VisualElementTracker (this);
+
 				packager = new VisualElementPackager (this);
 				packager.Load ();
 				bLoading = false;
-				var content = this.MContentLy;
 				SizeRequest sz = this.Element.GetSizeRequest (0, 0);
-				this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams (App.ScreenWidth * 3, (int)sz.Request.Height * 3);
+				this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels(sz.Request.Width),
+					(int)this.Context.ToPixels((int)sz.Request.Height));
 
 			}
 		}
@@ -114,4 +126,3 @@ namespace TopMedicalNews.Android
 	}
 
 }
-

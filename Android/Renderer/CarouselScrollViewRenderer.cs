@@ -45,7 +45,7 @@ namespace TopMedicalNews.Android
 		public override bool OnTouchEvent (MotionEvent e)
 		{
 			var r =  base.OnTouchEvent (e);
-			System.Diagnostics.Debug.WriteLine ("touch scroll is " + r);
+
 			return r;
 		}
 //		public override bool OnInterceptTouchEvent (MotionEvent ev)

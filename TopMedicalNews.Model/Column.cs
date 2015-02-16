@@ -10,7 +10,7 @@ namespace TopMedicalNews.Model
 	public class Column
 	{
 		public string Title{get;set;}
-		[PrimaryKey]
+		[PrimaryKey,AutoIncrement]
 		public int ID{get;set;}
 		public int  CategoryID{get;set;}
 		public bool Like{get;set;}

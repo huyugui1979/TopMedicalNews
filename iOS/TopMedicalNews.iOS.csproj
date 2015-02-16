@@ -136,15 +136,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinIOS.2.5.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.1.3.2.6316\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.3.2.6316\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.3.2.6316\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
     <Reference Include="Acr.XamForms.UserDialogs">
       <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.dll</HintPath>
     </Reference>
@@ -153,6 +144,15 @@
     </Reference>
     <Reference Include="BTProgressHUD">
       <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +248,22 @@
     <BundleResource Include="Resources\笔_bg%402x.png" />
     <BundleResource Include="Resources\笔_bg%403x.png" />
     <BundleResource Include="Resources\笔_bg%40x.png" />
+    <BundleResource Include="Resources\checked.png" />
+    <BundleResource Include="Resources\checked%402x.png" />
+    <BundleResource Include="Resources\unchecked.png" />
+    <BundleResource Include="Resources\unchecked%402x.png" />
+    <BundleResource Include="Resources\下拉_btn%402x_pressed.png" />
+    <BundleResource Include="Resources\下拉_btn%402x.png" />
+    <BundleResource Include="Resources\下拉_btn%403x_pressed.png" />
+    <BundleResource Include="Resources\下拉_btn%403x.png" />
+    <BundleResource Include="Resources\下拉_btnx_pressed.png" />
+    <BundleResource Include="Resources\下拉_btnx.png" />
+    <BundleResource Include="Resources\列表查看评论_bg%402x.png" />
+    <BundleResource Include="Resources\列表查看评论_bg%403x.png" />
+    <BundleResource Include="Resources\列表查看评论_bgx.png" />
+    <BundleResource Include="Resources\标签_bg%402x.png" />
+    <BundleResource Include="Resources\标签_bg%403x.png" />
+    <BundleResource Include="Resources\标签_bgx.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -258,23 +274,28 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderer\MyGridViewRenderer.cs" />
-    <Compile Include="Renderer\GridCollectionView.cs" />
-    <Compile Include="Renderer\GridViewCell.cs" />
     <Compile Include="Renderer\NoScrollListViewRenderer.cs" />
     <Compile Include="Renderer\MyPullToRefreshSCrollViewRenderer.cs" />
     <Compile Include="Renderer\CarouselScrollViewRenderer.cs" />
     <Compile Include="Renderer\MyPageRenderer.cs" />
     <Compile Include="Renderer\MyEntryRenderer.cs" />
     <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
+    <Compile Include="Renderer\RadioButtonRenderer.cs" />
+    <Compile Include="Renderer\RadioButtonView.cs" />
+    <Compile Include="Renderer\MyGridView\GridCollectionView.cs" />
+    <Compile Include="Renderer\MyGridView\GridDataSource.cs" />
+    <Compile Include="Renderer\MyGridView\GridViewCell.cs" />
+    <Compile Include="Renderer\MyGridView\GridViewDelegate.cs" />
+    <Compile Include="Renderer\MyGridView\MyGridViewRenderer.cs" />
   </ItemGroup>
   <Import Project="..\TopMedicalNews\TopMedicalNews.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews\TopMedicalNews.projitems')" />
   <Import Project="..\TopMedicalNews.Model\TopMedicalNews.Model.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews.Model\TopMedicalNews.Model.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.3.2.6316\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.2.6316\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Folder Include="Renderer\" />
     <Folder Include="Control\" />
+    <Folder Include="Renderer\MyGridView\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Delete.png" />

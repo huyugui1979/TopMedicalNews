@@ -37,10 +37,13 @@ namespace TopMedicalNews.iOS
 			// this.BringSubviewToFront (SelectedBackgroundView);
 
 		}
+		public delegate void ClickItemEvent(int pos);
+		public event ClickItemEvent OnClickItemEvent;
+	
 		private void UpdateCell (ViewCell cell)
 		{
 			if (_viewCell != null) {
-				//this.viewCell.SendDisappearing ();
+			//this.viewCell.SendDisappearing ();
 				_viewCell.PropertyChanged -= new PropertyChangedEventHandler (HandlePropertyChanged);
 			}
 			_viewCell = cell;
@@ -62,13 +65,18 @@ namespace TopMedicalNews.iOS
 			_view.AutoresizingMask = UIViewAutoresizing.All;
 			_view.ContentMode = UIViewContentMode.ScaleToFill;
 			UIButton btton = (_view as ButtonRenderer).Control;
+			btton.TouchUpInside += (object sender, System.EventArgs e) => {
+
+				OnClickItemEvent((int)this.Tag);
+
+			};
 			btton.Layer.BorderWidth = 1;
 			btton.Layer.CornerRadius = 5;
 			btton.Layer.BorderColor = UIColor.Gray.CGColor;
 			AddSubview (_view);
 		
 		}
-	
+//	
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
