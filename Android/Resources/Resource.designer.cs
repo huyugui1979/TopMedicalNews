@@ -387,7 +387,7 @@ namespace TopMedicalNews.Android
 			public const int pip_selected = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int Portait = 2130837526;
+			public const int portait = 2130837526;
 			
 			// aapt resource value: 0x7f020017
 			public const int return_btnx = 2130837527;
@@ -425,6 +425,9 @@ namespace TopMedicalNews.Android
 			// aapt resource value: 0x7f020022
 			public const int Test6 = 2130837538;
 			
+			// aapt resource value: 0x7f020023
+			public const int xiala = 2130837539;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -452,6 +455,9 @@ namespace TopMedicalNews.Android
 			
 			// aapt resource value: 0x7f090005
 			public const int foot_layout_text = 2131296261;
+			
+			// aapt resource value: 0x7f090012
+			public const int foot_ly = 2131296274;
 			
 			// aapt resource value: 0x7f090007
 			public const int head_layout_left_arrow = 2131296263;

@@ -14,15 +14,15 @@ namespace TopMedicalNews.Android
 	{
 		public MyPageRenderer ()
 		{
+			//
 
+			//
 		} 
 		public override void MeasureAndLayout (int p0, int p1, int p2, int p3, int p4, int p5)
 		{
 			base.MeasureAndLayout (p0, p1, p2, p3, p4, p5);
 			AdjustActionBar ();
-			//Added padding because it is slightly off centered.
-	
-
+		
 		}
 		public void AdjustActionBar()
 		{
@@ -36,14 +36,14 @@ namespace TopMedicalNews.Android
 			ImageView view = (ImageView)(Forms.Context as MainActivity).FindViewById (global::Android.Resource.Id.Home);
 			view.SetPadding(30, 0, 0, 0);
 			//(Forms.Context as MainActivity).ActionBar.DisplayOptions = global::Android.App.ActionBarDisplayOptions.ShowTitle;
-			var titleId = Resources.GetIdentifier("action_bar_title", "id", "android");
-
-			var titleTextView = (Forms.Context as MainActivity).FindViewById<TextView>(titleId);
-			var layoutParams = (LinearLayout.LayoutParams) titleTextView.LayoutParameters;
-			layoutParams.Gravity = GravityFlags.CenterHorizontal;
-			layoutParams.Width = Resources.DisplayMetrics.WidthPixels;
-			titleTextView.LayoutParameters = layoutParams;
-			titleTextView.Gravity = GravityFlags.Center;
+//			var titleId = Resources.GetIdentifier("action_bar_title", "id", "android");
+//
+//			var titleTextView = (Forms.Context as MainActivity).FindViewById<TextView>(titleId);
+//			var layoutParams = (LinearLayout.LayoutParams) titleTextView.LayoutParameters;
+//			layoutParams.Gravity = GravityFlags.CenterHorizontal;
+//			layoutParams.Width = Resources.DisplayMetrics.WidthPixels;
+//			titleTextView.LayoutParameters = layoutParams;
+//			titleTextView.Gravity = GravityFlags.Center;
 		}
 	
 	}

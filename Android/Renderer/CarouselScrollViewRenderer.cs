@@ -30,12 +30,14 @@ namespace TopMedicalNews.Android
 					.GetValue (this);
 				_scrollView.HorizontalScrollBarEnabled = true;
 				_scrollView.Touch += HScrollViewTouch;
-
+				this.ScrollbarFadingEnabled=false;
 
 			};
 
 
+
 		}
+
 //		public override bool DispatchTouchEvent (MotionEvent e)
 //		{
 //			var r=  base.DispatchTouchEvent (e);

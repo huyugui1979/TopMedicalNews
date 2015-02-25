@@ -87,25 +87,25 @@
       <HintPath>..\packages\SQLite.Net.Platform.XamarinAndroid.2.5.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.Android">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Acr.XamForms.UserDialogs">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\MonoAndroid10\Acr.XamForms.UserDialogs.dll</HintPath>
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\MonoAndroid10\Acr.XamForms.UserDialogs.dll</HintPath>
     </Reference>
     <Reference Include="Acr.XamForms.UserDialogs.Droid">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\MonoAndroid10\Acr.XamForms.UserDialogs.Droid.dll</HintPath>
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\MonoAndroid10\Acr.XamForms.UserDialogs.Droid.dll</HintPath>
     </Reference>
     <Reference Include="AndHUD">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\MonoAndroid10\AndHUD.dll</HintPath>
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\MonoAndroid10\AndHUD.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +116,6 @@
     <Compile Include="Renderer\MyGridViewRenderer.cs" />
     <Compile Include="Controller\DragGridView.cs" />
     <Compile Include="Renderer\PullToRefreshContentViewRenderer.cs" />
-    <Compile Include="Renderer\NoScrollListViewRenderer.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Renderer\MyPageRenderer.cs" />
     <Compile Include="Renderer\MyEntryRenderer.cs" />
@@ -137,13 +136,6 @@
     <AndroidResource Include="Resources\drawable\Delete.png" />
     <AndroidResource Include="Resources\drawable\shape.xml" />
     <AndroidResource Include="Resources\drawable\Check.png" />
-    <AndroidResource Include="Resources\drawable\Portait.jpg" />
-    <AndroidResource Include="Resources\drawable\Test1.jpg" />
-    <AndroidResource Include="Resources\drawable\Test2.jpg" />
-    <AndroidResource Include="Resources\drawable\Test3.jpg" />
-    <AndroidResource Include="Resources\drawable\Test4.jpg" />
-    <AndroidResource Include="Resources\drawable\Test5.jpg" />
-    <AndroidResource Include="Resources\drawable\Test6.jpg" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\IndicatorDown.png" />
     <AndroidResource Include="Resources\drawable\IndicatorRight.png" />
@@ -162,11 +154,19 @@
     <AndroidResource Include="Resources\drawable\person_logo.png" />
     <AndroidResource Include="Resources\drawable\mycomment.png" />
     <AndroidResource Include="Resources\drawable\comment.png" />
+    <AndroidResource Include="Resources\drawable\portait.png" />
+    <AndroidResource Include="Resources\drawable\Test1.png" />
+    <AndroidResource Include="Resources\drawable\Test2.png" />
+    <AndroidResource Include="Resources\drawable\Test3.png" />
+    <AndroidResource Include="Resources\drawable\Test4.png" />
+    <AndroidResource Include="Resources\drawable\Test5.png" />
+    <AndroidResource Include="Resources\drawable\Test6.png" />
+    <AndroidResource Include="Resources\drawable\xiala.png" />
   </ItemGroup>
   <Import Project="..\TopMedicalNews\TopMedicalNews.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews\TopMedicalNews.projitems')" />
   <Import Project="..\TopMedicalNews.Model\TopMedicalNews.Model.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews.Model\TopMedicalNews.Model.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Controller\" />

@@ -16,7 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\StringToImageSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\DateTimeFormaterConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\CarouselScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyGridView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SelectColumnModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MyCollectionPage.cs" />
@@ -35,7 +34,6 @@
       <DependentUpon>MyFirstPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToColorConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\NoScrollListView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyPullToRefreshScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml.cs">
       <DependentUpon>SetColumnPage.xaml</DependentUpon>
@@ -82,14 +80,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\BindableRadioGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\CustomRadioButton.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\CommentCell.xaml.cs">
-      <DependentUpon>CommentCell.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\MyGridChildView.xaml.cs">
       <DependentUpon>MyGridChildView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\NewsListCell.xaml.cs">
-      <DependentUpon>NewsListCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -97,7 +89,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Util\TypeToVisibleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\InvertTypeToVisibleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToImageConvert.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\MyStackLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\NewsListView.xaml.cs">
+      <DependentUpon>NewsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Util\InvertBoolCoverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\CarouselScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml.cs">
+      <DependentUpon>ColumnView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
@@ -143,16 +145,19 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ForgetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\CommentCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MyGridChildView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\NewsListCell.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\NewsListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

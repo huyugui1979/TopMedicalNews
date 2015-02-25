@@ -29,6 +29,7 @@ namespace TopMedicalNews.Android
 			Xamarin.Forms.Forms.Init (this, bundle);
 			App.ScreenWidth = this.FromPixels(Resources.DisplayMetrics.WidthPixels); // real pixels
 			App.ScreenHeight =this.FromPixels(Resources.DisplayMetrics.HeightPixels); // real pixels
+
 //			var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
 //			foreach (var res in assembly.GetManifestResourceNames()) 
 //				System.Diagnostics.Debug.WriteLine("found resource: " + res);

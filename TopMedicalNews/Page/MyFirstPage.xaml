@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <local:MyPage Title="医界头条" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyFirstPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:DateTimeFormaterConverter x:Key="timeFormater">
+			</local:DateTimeFormaterConverter>
+			<local:TypeToVisibleConverter x:Key="TypeToVisibleConverter">
+			</local:TypeToVisibleConverter>
+			<local:InvertTypeToVisibleConverter x:Key="InvertTypeToVisibleConverter">
+			</local:InvertTypeToVisibleConverter>
+		</ResourceDictionary>
+	</ContentPage.Resources>
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Command="{Binding SettingCommand}">
 			<ToolbarItem.Icon>
@@ -9,20 +19,25 @@
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" Spacing="0">
-			<StackLayout Orientation="Horizontal">
+			<StackLayout Orientation="Horizontal" IsVisible="{Binding }" >
 				<StackLayout.HeightRequest>
 					<OnPlatform x:TypeArguments="x:Double" iOS="30" Android="40" />
 				</StackLayout.HeightRequest>
-				<ScrollView Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="White">
-					<StackLayout x:Name="scrollContent" Orientation="Horizontal">
-					</StackLayout>
-				</ScrollView>
-				<lc:ImageButton WidthRequest="30" Source="下拉_btn" Command="{Binding OrderColumnCommand}" HorizontalOptions="End" VerticalOptions="Fill" />
+				<local:ColumnView ItemsSource="{Binding LikeColumns}" VerticalOptions="Center" SelectedColumnIndex="{Binding SelectedColumnIndex}">
+					<local:ColumnView.ItemTemplate>
+						<DataTemplate>
+							<Label Text="{Binding Title}" TextColor="Black">
+							</Label>
+						</DataTemplate>
+					</local:ColumnView.ItemTemplate>
+				</local:ColumnView>
+
+				<Image  Source="xiala" HeightRequest="20" WidthRequest="20" HorizontalOptions="End"/>
 			</StackLayout>
-			<local:MyPullToRefreshScrollView VerticalOptions="FillAndExpand">
-				<local:MyStackLayout Orientation="Vertical" >
-					<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-						<local:CarouselScrollView Orientation="Horizontal" HeightRequest="140" SelectedItem="{Binding SelectedFocusNews}" ItemsSource="{Binding FocusNews}">
+			<local:MyPullToRefreshScrollView x:Name="pull" RefreshCommand="{Binding RefreshCommand}" RequestMoreCommand="{Binding RequestMoreCommand}" RequestMoring="{Binding RequestMoring}" IsRefreshing="{Binding IsRefreshing}" VerticalOptions="FillAndExpand">
+				<StackLayout Orientation="Vertical">
+					<StackLayout Orientation="Vertical" BackgroundColor="White" HorizontalOptions="FillAndExpand">
+						<local:CarouselScrollView Orientation="Horizontal" SelectedItem="{Binding SelectedFocusNews}" ItemsSource="{Binding FocusNews}">
 							<local:CarouselScrollView.ItemTemplate>
 								<DataTemplate>
 									<Image Aspect="AspectFill" Source="{Binding ImageUri}" />
@@ -34,17 +49,29 @@
 							<local:PipSet ItemsSource="{Binding FocusNews}" SelectedItem="{Binding SelectedFocusNews}" />
 						</StackLayout>
 					</StackLayout>
-					<local:NoScrollListView x:Name="newsList" HasUnevenRows="true"  ItemsSource="{Binding SelectNews}">
-						<ListView.HeightRequest>
-							<OnPlatform x:TypeArguments="x:Double" iOS="312" />
-						</ListView.HeightRequest>
-						<ListView.ItemTemplate>
+					<local:NewsListView x:Name="newsList" ItemTapCommand="{Binding GotoNewsDetailCommand}" ItemsSource="{Binding SelectNews}">
+						<local:NewsListView.ItemTemplate>
 							<DataTemplate>
-								<local:NewsListCell />
+								<StackLayout x:Name="ourstack" Orientation="Vertical">
+									<StackLayout Orientation="Horizontal">
+										<Image Source="{Binding ImageUri}" WidthRequest="80" HeightRequest="60" />
+										<StackLayout Orientation="Vertical" Padding="0,0,10,0">
+											<Label Text="{Binding Title}" />
+											<Label Text="{Binding Thumb}" FontSize="14" TextColor="#878787" />
+											<Label Text="专题" IsVisible="{Binding Type,Converter={StaticResource TypeToVisibleConverter}}" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Blue" FontSize="11" TextColor="White" />
+										</StackLayout>
+									</StackLayout>
+									<StackLayout Orientation="Horizontal" IsVisible="{Binding Type,Converter={StaticResource InvertTypeToVisibleConverter}}">
+										<Label TextColor="#878787" FontSize="14" x:Name="publishTime" Text="{Binding PublishTime,Converter={StaticResource timeFormater}}" HorizontalOptions="Start" />
+										<Label TextColor="#878787" FontSize="14" Text="{Binding FromSource,StringFormat='来自{0}'}}" HorizontalOptions="Start" />
+										<Label BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" TextColor="#878787" FontSize="14" Text="{Binding ViewerNum,StringFormat='{0}查看'}" />
+										<Label HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" TextColor="#878787" FontSize="14" Text="{Binding PosterNum,StringFormat='{0}评论'}" />
+									</StackLayout>
+								</StackLayout>
 							</DataTemplate>
-						</ListView.ItemTemplate>
-					</local:NoScrollListView>
-				</local:MyStackLayout>
+						</local:NewsListView.ItemTemplate>
+					</local:NewsListView>
+				</StackLayout>
 			</local:MyPullToRefreshScrollView>
 		</StackLayout>
 	</ContentPage.Content>

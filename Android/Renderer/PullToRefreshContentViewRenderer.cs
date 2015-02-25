@@ -10,26 +10,28 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Reflection;
 using Android.Widget;
+using System.Threading.Tasks;
 
-[assembly:ExportRenderer (typeof(TopMedicalNews.MyStackLayout), typeof(TopMedicalNews.Android.MyStackLayoutRenderer))]
 
 [assembly:ExportRenderer (typeof(TopMedicalNews.MyPullToRefreshScrollView), typeof(TopMedicalNews.Android.MyPullToRefreshSCrollViewRenderer))]
 namespace TopMedicalNews.Android
 {
-	public class MyStackLayoutRenderer: VisualElementRenderer<Xamarin.Forms.View>{
 
-		public override void MeasureAndLayout (int p0, int p1, int p2, int p3, int p4, int p5)
-		{
-			base.MeasureAndLayout (p0, p1, p2, p3, p4, p5);
-		}
-		protected override void OnMeasure (int widthMeasureSpec, int heightMeasureSpec)
-		{
-			base.OnMeasure (widthMeasureSpec, heightMeasureSpec);
-		}
-	}
-	public class MyPullToRefreshSCrollViewRenderer:PullRefreshScrollView,
+	public class MyPullToRefreshSCrollViewRenderer:PullRefreshScrollView,Com.Li6a209.PullRefreshScrollView.IOnRefereshListener,
+	Com.Li6a209.PullRefreshScrollView.IOnReqMoreListener,
 	IVisualElementRenderer,IRegisterable, IDisposable
 	{
+		public void OnReqMore ()
+		{
+			this.view.RequestMoreCommand.Execute (null);
+		}
+
+		public void  OnReferesh ()
+		{
+			this.view.RefreshCommand.Execute (null);
+	
+		}
+
 		//
 		// Fields
 		//
@@ -53,13 +55,19 @@ namespace TopMedicalNews.Android
 				if (bLoading)
 					return this.MContentLy;
 				else
-					return this;
+					return layout;
 			}
 		}
+		private LinearLayout layout;
+	
 
 		public MyPullToRefreshSCrollViewRenderer () : base (Forms.Context)
 		{
-
+			this.SetOnRefereshListener (this);
+			this.SetOnReqMoreListener (this);
+			layout = new LinearLayout (Forms.Context);
+			layout.SetBackgroundColor(global::Android.Graphics.Color.White);
+				layout.AddView (this);
 		}
 		protected override void Dispose (bool disposing)
 		{
@@ -77,10 +85,6 @@ namespace TopMedicalNews.Android
 			base.Measure (widthConstraint, heightConstraint);
 			return new SizeRequest (new Size ((double)base.MeasuredWidth, (double)base.MeasuredHeight), default(Size));
 		}
-
-
-
-
 
 		protected virtual void OnElementChanged (VisualElementChangedEventArgs e)
 		{
@@ -106,13 +110,43 @@ namespace TopMedicalNews.Android
 				packager = new VisualElementPackager (this);
 				packager.Load ();
 				bLoading = false;
-				SizeRequest sz = this.Element.GetSizeRequest (0, 0);
-				this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels(sz.Request.Width),
+				var sz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
+				this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)sz.Request.Width),
 					(int)this.Context.ToPixels((int)sz.Request.Height));
+				this.Element.PropertyChanged += (object sender, PropertyChangedEventArgs e) => {
+					//
+					if(e.PropertyName == "IsRefreshing")
+					{
+						if(view.IsRefreshing == false)
+						{
+							this.RefreshOver();
 
+							var szz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
+							this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)szz.Request.Width),
+								(int)this.Context.ToPixels((int)szz.Request.Height));
+						}else
+						{
+							this.SetToRefreshing();
+						}
+
+					}
+					if(e.PropertyName =="RequestMoring")
+					{
+						if(view.RequestMoring == false)
+						{
+
+							this.GetMoreOver();
+							var szz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
+
+							this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)szz.Request.Width),
+								(int)this.Context.ToPixels((int)szz.Request.Height));
+						}
+					}
+					//
+				};
 			}
 		}
-
+	
 		public void UpdateLayout ()
 		{
 			if (this.tracker != null) {

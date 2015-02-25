@@ -46,6 +46,7 @@ namespace TopMedicalNews
 			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> (r => r.ColumnId == columnId);
 		}
 
+
 	}
 }
 

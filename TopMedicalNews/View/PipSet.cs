@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using System.Collections;
 using System.Linq;
+using System.Collections.Specialized;
 
 
 namespace TopMedicalNews
@@ -66,18 +67,32 @@ namespace TopMedicalNews
         void ItemsSourceChanged ()
         {
             if (ItemsSource == null) return;
-
-            var countDelta = ItemsSource.Count - Children.Count;
-
-            if (countDelta > 0) {
-                for (var i = 0; i < countDelta; i++) {
-                    Children.Add (CreatePip ());
-                }
-            } else if (countDelta < 0) {
-                for (var i = 0; i < -countDelta; i++) {
-                    Children.RemoveAt (0);
-                }
-            }
+			(ItemsSource as INotifyCollectionChanged).CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) => {
+				switch( e.Action)
+				{
+				case NotifyCollectionChangedAction.Add:
+					//
+					Children.Add (CreatePip ());
+					//
+					break;
+				case  NotifyCollectionChangedAction.Reset:
+					//
+					Children.Clear();
+					//
+					break;
+				}
+			};
+//            var countDelta = ItemsSource.Count - Children.Count;
+//
+//            if (countDelta > 0) {
+//                for (var i = 0; i < countDelta; i++) {
+//                    Children.Add (CreatePip ());
+//                }
+//            } else if (countDelta < 0) {
+//                for (var i = 0; i < -countDelta; i++) {
+//                    Children.RemoveAt (0);
+//                }
+//            }
 
 //            if (_selectedIndex >= 0 && _selectedIndex < ItemsSource.Count)
 //                SelectedItem = ItemsSource [_selectedIndex];

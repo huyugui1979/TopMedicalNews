@@ -2,6 +2,9 @@ using System;
 using Xamarin.Forms;
 using System.Collections;
 using System.Linq;
+using System.Collections.Specialized;
+
+
 namespace TopMedicalNews
 {
 	public class CarouselScrollView:ScrollView
@@ -66,6 +69,28 @@ namespace TopMedicalNews
 		void ItemsSourceChanged ()
 		{
 			_stack.Children.Clear ();
+			(ItemsSource as INotifyCollectionChanged).CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) => {
+				switch( e.Action)
+				{
+				case NotifyCollectionChangedAction.Add:
+					//
+					var view = (View)ItemTemplate.CreateContent ();
+					view.WidthRequest =  App.ScreenWidth;
+					var bindableObject = view as BindableObject;
+
+					if (bindableObject != null)
+						bindableObject.BindingContext = e.NewItems[0];
+					_stack.Children.Add (view);
+
+					//
+					break;
+				case  NotifyCollectionChangedAction.Reset:
+					//
+					_stack.Children.Clear();
+					//
+					break;
+				}
+			};
 			foreach (var item in ItemsSource) {
 				var view = (View)ItemTemplate.CreateContent ();
 				view.WidthRequest =  App.ScreenWidth;
@@ -86,6 +111,8 @@ namespace TopMedicalNews
 				SetValue (SelectedItemProperty, value);
 			}
 		}
+		//
+
 		//
 		public static readonly BindableProperty SelectedIndexProperty =
 			BindableProperty.Create<CarouselScrollView, int> (
@@ -113,7 +140,7 @@ namespace TopMedicalNews
 		}
 		void UpdateSelectedIndex ()
 		{
-			if (SelectedItem == BindingContext || ItemsSource==null) return;
+			if (SelectedItem == BindingContext || ItemsSource==null || SelectedItem == null) return;
 
 			SelectedIndex = ItemsSource
 				.IndexOf (SelectedItem);

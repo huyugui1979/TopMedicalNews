@@ -9,6 +9,12 @@ namespace TopMedicalNews
 		{
 
 		}
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+//			var model = this.BindingContext as BaseViewModel;
+//			model.OnAppearing ();
+		}
 	}
 }
 

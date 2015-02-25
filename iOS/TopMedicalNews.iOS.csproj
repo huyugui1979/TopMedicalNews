@@ -274,7 +274,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderer\NoScrollListViewRenderer.cs" />
     <Compile Include="Renderer\MyPullToRefreshSCrollViewRenderer.cs" />
     <Compile Include="Renderer\CarouselScrollViewRenderer.cs" />
     <Compile Include="Renderer\MyPageRenderer.cs" />
