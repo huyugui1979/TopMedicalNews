@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:MyPage  Title="我的评论" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyCommentPage">
+	<ContentPage.Content>
+<StackLayout Orientation="Vertical">
+			<local:CommentListView  ItemsSource="{Binding Comments}">
+			<local:CommentListView.ItemTemplate>
+				<DataTemplate>
+					<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="20">
+							</RowDefinition>
+							<RowDefinition Height="20">
+							</RowDefinition>
+							<RowDefinition Height="*">
+							</RowDefinition>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="20">
+							</ColumnDefinition>
+							<ColumnDefinition Width="*">
+							</ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="3" x:Name="image" />
+						<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
+						<Label Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
+						<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
+					</Grid>
+				</DataTemplate>
+			</local:CommentListView.ItemTemplate>
+		</local:CommentListView>
+</StackLayout>
+	</ContentPage.Content>
+</local:MyPage>

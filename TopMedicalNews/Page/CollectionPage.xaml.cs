@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace TopMedicalNews
 {
-	public partial class CollectionPage : ContentPage
+	public partial class CollectionPage : MyPage
 	{
 		public CollectionPage ()
 		{

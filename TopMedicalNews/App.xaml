@@ -3,11 +3,4 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
      xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews"
     x:Class="TopMedicalNews.App">
-    <Application.Resources>
-       
-        <ResourceDictionary>
-            <local:DateTimeFormaterConverter x:Key="timeFormater"></local:DateTimeFormaterConverter>
-        </ResourceDictionary>
-       
-    </Application.Resources>
 </Application>

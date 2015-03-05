@@ -28,11 +28,12 @@ namespace TopMedicalNews.Android
 				_scrollView = (HorizontalScrollView)typeof(ScrollViewRenderer)
 					.GetField ("hScrollView", BindingFlags.NonPublic | BindingFlags.Instance)
 					.GetValue (this);
-				_scrollView.HorizontalScrollBarEnabled = true;
+				_scrollView.HorizontalScrollBarEnabled = false;
 				_scrollView.Touch += HScrollViewTouch;
-				this.ScrollbarFadingEnabled=false;
+
 
 			};
+
 
 
 
@@ -44,12 +45,12 @@ namespace TopMedicalNews.Android
 //			System.Diagnostics.Debug.WriteLine ("scroll is " + r);
 //			return r;
 //		}
-		public override bool OnTouchEvent (MotionEvent e)
-		{
-			var r =  base.OnTouchEvent (e);
-
-			return r;
-		}
+//		public override bool OnTouchEvent (MotionEvent e)
+//		{
+//			var r =  base.OnTouchEvent (e);
+//
+//			return r;
+//		}
 //		public override bool OnInterceptTouchEvent (MotionEvent ev)
 //		{
 //			//var r=  base.OnInterceptTouchEvent (ev);
@@ -75,6 +76,7 @@ namespace TopMedicalNews.Android
 				_scrollView.SmoothScrollTo (targetX, 0);
 			}));
 		}
+		bool _scrolling=false;
 		void HScrollViewTouch (object sender, TouchEventArgs e)
 		{
 			e.Handled = false;
@@ -83,14 +85,25 @@ namespace TopMedicalNews.Android
 			case MotionEventActions.Move:
 				_deltaX = _scrollView.ScrollX - _prevScrollX;
 				_prevScrollX = _scrollView.ScrollX;
+				_scrolling = true;
 				break;
 			case MotionEventActions.Down:
 				_motionDown = true;
 				break;
 			case MotionEventActions.Up:
+				if (_scrolling == true) {
+					SnapScroll ();
+				} else {
+					//
+					(this.Element as CarouselScrollView).SelectCommand.Execute (null);
+					//
+				}
+				_scrolling = false;
 				_motionDown = false;
-				SnapScroll ();
+
+
 				break;
+
 			}
 		}
 	}

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.ColumnView">
 	<ContentView.Content>
-	<ScrollView Orientation="Horizontal">
-	<StackLayout Orientation="Horizontal" x:Name="stack">
+	<local:NoScrollView Orientation="Horizontal" >
+	<StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" x:Name="stack">
 
 	</StackLayout>
-	</ScrollView>
+	</local:NoScrollView>
 	</ContentView.Content>
 </ContentView>

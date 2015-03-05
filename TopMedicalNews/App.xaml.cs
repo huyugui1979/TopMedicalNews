@@ -44,12 +44,15 @@ namespace TopMedicalNews
 			resolverContainer.RegisterSingle<IFontService,FontService> ();
 			resolverContainer.RegisterSingle<IFontService,FontService> ();
 			resolverContainer.RegisterSingle<IUserService,UserService> ();
+			resolverContainer.RegisterSingle<IReadingService,ReadingService> ();
 			resolverContainer.RegisterSingle<ICommentService,CommentService> ();
 			resolverContainer.RegisterSingle<IUserDialogService,UserDialogService> ();
 			//Resolver.SetResolver(resolverContainer.GetResolver());
 			ViewFactory.Register<MyFirstPage,FirstModel> ();
 			ViewFactory.Register<LoginPage,LoginModel> ();
+			ViewFactory.Register<NewsThemePage,NewsThemeModel> ();
 			ViewFactory.Register<ForgetPage,ForgetModel> ();
+			ViewFactory.Register<ModifyPasswordPage,ModifyPasswordModel> ();
 			ViewFactory.Register<RegisterPage,RegisterModel> ();
 			ViewFactory.Register<NewsDetailPage,NewsDetailModel> ();
 
@@ -58,7 +61,9 @@ namespace TopMedicalNews
 			ViewFactory.Register<FeedBackPage,FeedBackModel> ();
 			ViewFactory.Register<SetColumnPage,SelectColumnModel> ();
 			ViewFactory.Register<MyAboutUs,AboutUsModel> ();
-			ViewFactory.Register<MyCollectionPage,MyCollectionModel> ();
+			ViewFactory.Register<CollectionPage,MyCollectionModel> ();
+			ViewFactory.Register<MyCommentPage,MyCommentModel> ();
+			ViewFactory.Register<MyReadingPage,MyReadingModel> ();
 			ViewFactory.Register<MainPage,MainModel> ();
 
 

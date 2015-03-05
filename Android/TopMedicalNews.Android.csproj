@@ -12,10 +12,10 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AssemblyName>TopMedicalNews</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,8 +25,8 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -86,18 +86,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinAndroid">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinAndroid.2.5.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.Android">
-      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="FormsViewGroup">
-      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
     <Reference Include="Acr.XamForms.UserDialogs">
       <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\MonoAndroid10\Acr.XamForms.UserDialogs.dll</HintPath>
     </Reference>
@@ -106,6 +94,18 @@
     </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\MonoAndroid10\AndHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.1.3.5.6335\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.1.3.5.6335\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.3.5.6335\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.3.5.6335\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +121,7 @@
     <Compile Include="Renderer\MyEntryRenderer.cs" />
     <Compile Include="Renderer\RadioButtonRenderer.cs" />
     <Compile Include="Renderer\MyContainer.cs" />
+    <Compile Include="Renderer\NoScrollViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -133,9 +134,7 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
-    <AndroidResource Include="Resources\drawable\Delete.png" />
     <AndroidResource Include="Resources\drawable\shape.xml" />
-    <AndroidResource Include="Resources\drawable\Check.png" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\IndicatorDown.png" />
     <AndroidResource Include="Resources\drawable\IndicatorRight.png" />
@@ -145,28 +144,25 @@
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
     <AndroidResource Include="Resources\drawable\person_center_btnx.png" />
     <AndroidResource Include="Resources\drawable\return_btnx.png" />
-    <AndroidResource Include="Resources\drawable\setting.png" />
-    <AndroidResource Include="Resources\drawable\collection.png" />
-    <AndroidResource Include="Resources\drawable\logout.png" />
-    <AndroidResource Include="Resources\drawable\modify_password.png" />
-    <AndroidResource Include="Resources\drawable\mycollection.png" />
-    <AndroidResource Include="Resources\drawable\myreading.png" />
-    <AndroidResource Include="Resources\drawable\person_logo.png" />
-    <AndroidResource Include="Resources\drawable\mycomment.png" />
-    <AndroidResource Include="Resources\drawable\comment.png" />
     <AndroidResource Include="Resources\drawable\portait.png" />
-    <AndroidResource Include="Resources\drawable\Test1.png" />
-    <AndroidResource Include="Resources\drawable\Test2.png" />
-    <AndroidResource Include="Resources\drawable\Test3.png" />
-    <AndroidResource Include="Resources\drawable\Test4.png" />
-    <AndroidResource Include="Resources\drawable\Test5.png" />
-    <AndroidResource Include="Resources\drawable\Test6.png" />
     <AndroidResource Include="Resources\drawable\xiala.png" />
+    <AndroidResource Include="Resources\values\instapaper_strings.xml" />
+    <AndroidResource Include="Resources\drawable\setting_btn.png" />
+    <AndroidResource Include="Resources\drawable\collection.png" />
+    <AndroidResource Include="Resources\drawable\collection_pressed.png" />
+    <AndroidResource Include="Resources\drawable\share.png" />
+    <AndroidResource Include="Resources\drawable\tag_bg.png" />
+    <AndroidResource Include="Resources\drawable\portait_logo_bg.png" />
+    <AndroidResource Include="Resources\drawable\comment_btn.png" />
+    <AndroidResource Include="Resources\drawable\reading_collection_btn.png" />
+    <AndroidResource Include="Resources\drawable\password.png" />
+    <AndroidResource Include="Resources\drawable\logout_btn.png" />
+    <AndroidResource Include="Resources\drawable\reading_btn.png" />
   </ItemGroup>
   <Import Project="..\TopMedicalNews\TopMedicalNews.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews\TopMedicalNews.projitems')" />
   <Import Project="..\TopMedicalNews.Model\TopMedicalNews.Model.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews.Model\TopMedicalNews.Model.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Controller\" />
@@ -176,5 +172,8 @@
       <Project>{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}</Project>
       <Name>PullRefreshScrollViewLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ShareSDK.xml" />
   </ItemGroup>
 </Project>

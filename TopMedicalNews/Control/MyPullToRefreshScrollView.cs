@@ -42,24 +42,15 @@ namespace TopMedicalNews
 			get { return (Command)GetValue (RefreshCommandProperty); }
 			set { SetValue (RefreshCommandProperty, value); }
 		}
-//		protected override void LayoutChildren (double x, double y, double width, double height)
-//		{
-//			#if __ANDROID__
-//			var stack = (this.Content as VisualElement);
-//		
-//			//SizeRequest sz= stack.GetSizeRequest (0, 0);
-//
-//			base.LayoutChildren (x, y, width,height);
-//			#else
-//			base.LayoutChildren ( x,  y,  width,  height);
-//			#endif
-//			//
-//		
-//		}
 
-	
+		public static readonly BindableProperty IsEndProperty = 
+			BindableProperty.Create<MyPullToRefreshScrollView,bool> (
+				p => p.IsEnd,false);
 
-
+		public bool IsEnd {
+			get { return (bool)GetValue (IsEndProperty); }
+			set { SetValue (IsEndProperty, value); }
+		}
 	}
 }
 

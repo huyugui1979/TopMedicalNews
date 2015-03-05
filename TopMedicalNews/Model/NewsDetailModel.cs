@@ -13,16 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace TopMedicalNews
 {
-	public class CommentData
-	{
-		public string UserName{ get; set; }
 
-		public string ImageUri{ get; set; }
-
-		public DateTime PublishTime{ get; set; }
-
-		public string Content{ get; set; }
-	}
 
 	public class NewsDetailModel:BaseViewModel
 	{
@@ -30,13 +21,14 @@ namespace TopMedicalNews
 		{
 			_Comments = new ObservableCollection<CommentData> ();
 		}
-
+		//
 		public ICommand AddNewsCollectionCmd {
 			get { 
 				return new Command (() => {
 					int userId = Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("LoginUserId", -1);
 					if (userId == -1) {
-						Resolver.Resolve<IUserDialogService> ().AlertAsync ("请登录系统");
+						//Resolver.Resolve<IUserDialogService> ().AlertAsync ("请登录系统");
+						Navigation.NavigateTo<LoginModel>();
 						return;
 					}
 					if (_IsCollection == false) {
@@ -78,26 +70,19 @@ namespace TopMedicalNews
 			set{ SetProperty (ref _Comments, value); }
 		}
 
-		//		public override void OnAppearing ()
-		//		{
-		//
-		//			base.OnAppearing ();
-		//		}
-		public int NewsID{ get; set; }
 
-		public  async void Init ()
+		public  async void Init (News news)
 		{
+			News = news;
 			IsBusy = true;
-			await Task.Delay (TimeSpan.FromSeconds (1));
-			await Task.Factory.StartNew (() => {
-				News = Resolver.Resolve<INewsService> ().GetNewById (NewsID);
-				var list = Resolver.Resolve<ICommentService> ().GetCommentsByNewsId (NewsID);
-				foreach (var c in list) {
-					_Comments.Add (c);
-				}
-			});
-			IsBusy = false;
+			await Task.Delay (TimeSpan.FromSeconds (3));
 
+			var list = Resolver.Resolve<ICommentService> ().GetCommentsByNewsId (News.ID);
+			foreach (var c in list) {
+				_Comments.Add (c);
+			}
+			IsBusy = false;
+			//
 		}
 	
 

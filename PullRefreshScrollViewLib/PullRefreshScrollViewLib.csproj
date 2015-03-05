@@ -58,8 +58,8 @@
     </LibraryProjectZip>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="..\..\..\example\PullRefreshScrollView-master\lib\bin\pullrefreshscrollview.jar">
+    <InputJar Include="..\..\..\example\PullRefreshScrollView-master\lib\bin\pullrefreshscrollview.jar">
       <Link>Jars\pullrefreshscrollview.jar</Link>
-    </EmbeddedJar>
+    </InputJar>
   </ItemGroup>
 </Project>

@@ -136,134 +136,124 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinIOS.2.5.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs.iOS">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.1\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.3.3.6323\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.1.3.4.6332\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs.iOS">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Check.png" />
-    <BundleResource Include="Resources\Test1.jpg" />
-    <BundleResource Include="Resources\Test2.jpg" />
-    <BundleResource Include="Resources\Test3.jpg" />
-    <BundleResource Include="Resources\Test4.jpg" />
-    <BundleResource Include="Resources\Test5.jpg" />
-    <BundleResource Include="Resources\Test6.jpg" />
     <BundleResource Include="Resources\Icon.png" />
-    <BundleResource Include="Resources\Portait.jpg" />
-    <BundleResource Include="Resources\IndicatorDown.png" />
-    <BundleResource Include="Resources\IndicatorRight.png" />
     <BundleResource Include="Resources\pip.png" />
     <BundleResource Include="Resources\pip_selected.png" />
-    <BundleResource Include="Resources\个人中心_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\个人中心_btn%402x.png" />
-    <BundleResource Include="Resources\个人中心_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\个人中心_btn%403x.png" />
-    <BundleResource Include="Resources\个人中心_btnx_pressed.png" />
-    <BundleResource Include="Resources\个人中心_btnx.png" />
-    <BundleResource Include="Resources\设置_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\设置_btn%402x.png" />
-    <BundleResource Include="Resources\设置_btnx_pressed.png" />
-    <BundleResource Include="Resources\设置_btnx.png" />
-    <BundleResource Include="Resources\返回_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\返回_btn%402x.png" />
-    <BundleResource Include="Resources\返回_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\返回_btn%403x.png" />
-    <BundleResource Include="Resources\返回_btnx_pressed.png" />
-    <BundleResource Include="Resources\返回_btnx.png" />
-    <BundleResource Include="Resources\收藏_btn_%402x.png" />
-    <BundleResource Include="Resources\收藏_btn_%403x.png" />
-    <BundleResource Include="Resources\密码_bg%402x.png" />
-    <BundleResource Include="Resources\密码_bg%403x.png" />
-    <BundleResource Include="Resources\密码_bgx.png" />
-    <BundleResource Include="Resources\用户登陆页LOGO_bg%402x.png" />
-    <BundleResource Include="Resources\用户登陆页LOGO_bg%403x.png" />
-    <BundleResource Include="Resources\用户登陆页LOGO_bgx.png" />
-    <BundleResource Include="Resources\医界头条_bg%402x.png" />
-    <BundleResource Include="Resources\医界头条_bg%403x.png" />
-    <BundleResource Include="Resources\医界头条_bgx.png" />
-    <BundleResource Include="Resources\退出登陆_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\退出登陆_btn%402x.png" />
-    <BundleResource Include="Resources\退出登陆_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\退出登陆_btn%403x.png" />
-    <BundleResource Include="Resources\退出登陆_btnx_pressed.png" />
-    <BundleResource Include="Resources\退出登陆_btnx.png" />
-    <BundleResource Include="Resources\阅读_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\阅读_btn%402x.png" />
-    <BundleResource Include="Resources\阅读_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\阅读_btn%403x.png" />
-    <BundleResource Include="Resources\阅读_btnx_pressed.png" />
-    <BundleResource Include="Resources\阅读_btnx.png" />
-    <BundleResource Include="Resources\阅读收藏_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\阅读收藏_btn%402x.png" />
-    <BundleResource Include="Resources\阅读收藏_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\阅读收藏_btn%403x.png" />
-    <BundleResource Include="Resources\阅读收藏_btnx_pressed.png" />
-    <BundleResource Include="Resources\阅读收藏_btnx.png" />
-    <BundleResource Include="Resources\修改密码_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\修改密码_btn%402x.png" />
-    <BundleResource Include="Resources\修改密码_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\修改密码_btn%403x.png" />
-    <BundleResource Include="Resources\修改密码_btnx_pressed.png" />
-    <BundleResource Include="Resources\修改密码_btnx.png" />
-    <BundleResource Include="Resources\评论_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\评论_btn%402x.png" />
-    <BundleResource Include="Resources\评论_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\评论_btn%403x.png" />
-    <BundleResource Include="Resources\评论_btnx_pressed.png" />
-    <BundleResource Include="Resources\评论_btnx.png" />
-    <BundleResource Include="Resources\收藏页头像框logo_bg%402x.png" />
-    <BundleResource Include="Resources\收藏页头像框logo_bg%403x.png" />
-    <BundleResource Include="Resources\收藏页头像框logo_bgx.png" />
-    <BundleResource Include="Resources\分享_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\分享_btn%402x.png" />
-    <BundleResource Include="Resources\分享_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\分享_btn%403x.png" />
-    <BundleResource Include="Resources\分享_btnx_pressed.png" />
-    <BundleResource Include="Resources\分享_btnx.png" />
     <BundleResource Include="Resources\收藏_btn_x.png">
-      <DependentUpon>分享_btn%403x_pressed.png</DependentUpon>
+      <DependentUpon>share_pressed%403x.png</DependentUpon>
     </BundleResource>
-    <BundleResource Include="Resources\输入框_bg%402x.png" />
-    <BundleResource Include="Resources\输入框_bg%403x.png" />
-    <BundleResource Include="Resources\输入框_bgx.png" />
-    <BundleResource Include="Resources\收藏_pressed_btnx.png" />
-    <BundleResource Include="Resources\收藏_pressed_btn%402x.png" />
-    <BundleResource Include="Resources\收藏_pressed_btn%403x.png" />
-    <BundleResource Include="Resources\笔_bg%402x.png" />
-    <BundleResource Include="Resources\笔_bg%403x.png" />
-    <BundleResource Include="Resources\笔_bg%40x.png" />
     <BundleResource Include="Resources\checked.png" />
     <BundleResource Include="Resources\checked%402x.png" />
     <BundleResource Include="Resources\unchecked.png" />
     <BundleResource Include="Resources\unchecked%402x.png" />
-    <BundleResource Include="Resources\下拉_btn%402x_pressed.png" />
-    <BundleResource Include="Resources\下拉_btn%402x.png" />
-    <BundleResource Include="Resources\下拉_btn%403x_pressed.png" />
-    <BundleResource Include="Resources\下拉_btn%403x.png" />
-    <BundleResource Include="Resources\下拉_btnx_pressed.png" />
-    <BundleResource Include="Resources\下拉_btnx.png" />
-    <BundleResource Include="Resources\列表查看评论_bg%402x.png" />
-    <BundleResource Include="Resources\列表查看评论_bg%403x.png" />
-    <BundleResource Include="Resources\列表查看评论_bgx.png" />
-    <BundleResource Include="Resources\标签_bg%402x.png" />
-    <BundleResource Include="Resources\标签_bg%403x.png" />
-    <BundleResource Include="Resources\标签_bgx.png" />
+    <BundleResource Include="Resources\person_center%402x.png" />
+    <BundleResource Include="Resources\person_center_pressed%402x.png" />
+    <BundleResource Include="Resources\person_center%403x.png" />
+    <BundleResource Include="Resources\person_center_pressed%403x.png" />
+    <BundleResource Include="Resources\person_center.png" />
+    <BundleResource Include="Resources\person_center_pressed.png" />
+    <BundleResource Include="Resources\password%402x.png" />
+    <BundleResource Include="Resources\password_pressed%402x.png" />
+    <BundleResource Include="Resources\password%403x.png" />
+    <BundleResource Include="Resources\password_pressed%403x.png" />
+    <BundleResource Include="Resources\password.png" />
+    <BundleResource Include="Resources\password_pressed.png" />
+    <BundleResource Include="Resources\share%402x.png" />
+    <BundleResource Include="Resources\share_pressed%402x.png" />
+    <BundleResource Include="Resources\share%403x.png" />
+    <BundleResource Include="Resources\share_pressed%403x.png" />
+    <BundleResource Include="Resources\share.png" />
+    <BundleResource Include="Resources\share_pressed.png" />
+    <BundleResource Include="Resources\comment%403x.png" />
+    <BundleResource Include="Resources\comment.png" />
+    <BundleResource Include="Resources\top_medical%403x.png" />
+    <BundleResource Include="Resources\top_medical.png" />
+    <BundleResource Include="Resources\password1%402x.png" />
+    <BundleResource Include="Resources\password1%403x.png" />
+    <BundleResource Include="Resources\password1.png" />
+    <BundleResource Include="Resources\collection%402x.png" />
+    <BundleResource Include="Resources\collection%403x.png" />
+    <BundleResource Include="Resources\portait_logo_bg%402x.png" />
+    <BundleResource Include="Resources\portait_logo_bg%403x.png" />
+    <BundleResource Include="Resources\portait_logo_bg.png" />
+    <BundleResource Include="Resources\tag_bg%402x.png" />
+    <BundleResource Include="Resources\tag_bg%403x.png" />
+    <BundleResource Include="Resources\pencil_bg%402x.png" />
+    <BundleResource Include="Resources\pencil_bg%403x.png" />
+    <BundleResource Include="Resources\setting_btn%402x.png" />
+    <BundleResource Include="Resources\setting_btnx_pressed.png" />
+    <BundleResource Include="Resources\comment_btn%402x.png" />
+    <BundleResource Include="Resources\comment_btn%403x.png" />
+    <BundleResource Include="Resources\input_bg%402x.png" />
+    <BundleResource Include="Resources\input_bg%403x.png" />
+    <BundleResource Include="Resources\return_btn%402x.png" />
+    <BundleResource Include="Resources\return_btn%403x.png" />
+    <BundleResource Include="Resources\logout_btn%402x.png" />
+    <BundleResource Include="Resources\logout_btn%403x.png" />
+    <BundleResource Include="Resources\reading_btn%402x.png" />
+    <BundleResource Include="Resources\reading_btn%403x.png" />
+    <BundleResource Include="Resources\reading_collection_btn%402x.png" />
+    <BundleResource Include="Resources\reading_collection_btn%403x.png" />
+    <BundleResource Include="Resources\dropdown.png" />
+    <BundleResource Include="Resources\dropdown%402x.png" />
+    <BundleResource Include="Resources\dropdown%403x.png" />
+    <BundleResource Include="Resources\dropdown_pressed.png" />
+    <BundleResource Include="Resources\dropdown_pressed%402x.png" />
+    <BundleResource Include="Resources\dropdown_pressed%403x.png" />
+    <BundleResource Include="Resources\comment%402x.png" />
+    <BundleResource Include="Resources\comment_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\comment_btn_pressed%403x.png" />
+    <BundleResource Include="Resources\comment_btn.png" />
+    <BundleResource Include="Resources\comment_btn_pressed.png" />
+    <BundleResource Include="Resources\input_bg.png" />
+    <BundleResource Include="Resources\logout_btn.png" />
+    <BundleResource Include="Resources\logout_btn_pressed.png" />
+    <BundleResource Include="Resources\logout_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\logout_btn_pressed%403x.png" />
+    <BundleResource Include="Resources\pencil_bg.png" />
+    <BundleResource Include="Resources\reading_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\reading_btn_pressed%403x.png" />
+    <BundleResource Include="Resources\reading_btn.png" />
+    <BundleResource Include="Resources\reading_btn_pressed.png" />
+    <BundleResource Include="Resources\reading_collection_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\reading_collection_btn_pressed%403x.png" />
+    <BundleResource Include="Resources\reading_collection_btn.png" />
+    <BundleResource Include="Resources\reading_collection_btn_pressed.png" />
+    <BundleResource Include="Resources\return_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\return_btn.png" />
+    <BundleResource Include="Resources\return_btn_pressed.png" />
+    <BundleResource Include="Resources\return_btn_pressed%403x.png" />
+    <BundleResource Include="Resources\setting_btn_pressed%402x.png" />
+    <BundleResource Include="Resources\setting_btn.png" />
+    <BundleResource Include="Resources\tag_bg.png" />
+    <BundleResource Include="Resources\top_medical%402x.png" />
+    <BundleResource Include="Resources\collection_pressed.png" />
+    <BundleResource Include="Resources\collection_pressed%402x.png" />
+    <BundleResource Include="Resources\collection_pressed%403x.png" />
+    <BundleResource Include="Resources\login_logo_bg%403x.png" />
+    <BundleResource Include="Resources\login_logo_bg%402x.png" />
+    <BundleResource Include="Resources\login_logo_bg.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -278,7 +268,6 @@
     <Compile Include="Renderer\CarouselScrollViewRenderer.cs" />
     <Compile Include="Renderer\MyPageRenderer.cs" />
     <Compile Include="Renderer\MyEntryRenderer.cs" />
-    <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
     <Compile Include="Renderer\RadioButtonRenderer.cs" />
     <Compile Include="Renderer\RadioButtonView.cs" />
     <Compile Include="Renderer\MyGridView\GridCollectionView.cs" />
@@ -286,18 +275,18 @@
     <Compile Include="Renderer\MyGridView\GridViewCell.cs" />
     <Compile Include="Renderer\MyGridView\GridViewDelegate.cs" />
     <Compile Include="Renderer\MyGridView\MyGridViewRenderer.cs" />
+    <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
   </ItemGroup>
   <Import Project="..\TopMedicalNews\TopMedicalNews.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews\TopMedicalNews.projitems')" />
   <Import Project="..\TopMedicalNews.Model\TopMedicalNews.Model.projitems" Label="Shared" Condition="Exists('..\TopMedicalNews.Model\TopMedicalNews.Model.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.4.6332\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Folder Include="Renderer\" />
     <Folder Include="Control\" />
     <Folder Include="Renderer\MyGridView\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Delete.png" />
     <AndroidResource Include="Resources\shape.xml" />
   </ItemGroup>
 </Project>

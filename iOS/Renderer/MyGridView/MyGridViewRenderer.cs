@@ -69,6 +69,7 @@ namespace  TopMedicalNews.iOS
 		/// </summary>
 		public GridViewRenderer ()
 		{
+
 		}
 
 		protected override void OnElementChanged (ElementChangedEventArgs<MyGridView> e)
@@ -77,7 +78,7 @@ namespace  TopMedicalNews.iOS
 
 			if (this.Control != null)
 				this.Subviews [0].RemoveFromSuperview ();
-			var collectionView = new GridCollectionView (new CoreGraphics.CGRect (0, 0, App.ScreenWidth, App.ScreenHeight));
+			var collectionView = new GridCollectionView (new CoreGraphics.CGRect (0, 0, (nfloat)App.ScreenWidth, (nfloat)App.ScreenHeight));
 
 			collectionView.AllowsMultipleSelection = false;
 //			collectionView.SelectionEnable = e.NewElement.SelectionEnabled;

@@ -26,28 +26,39 @@ namespace TopMedicalNews
 		public ICommand MyReadingCommand {
 			get { 
 				return new Command (() => {
-
+					MessagingCenter.Send<object> (this, "IsPresented");
+					Navigation.NavigateTo<MyReadingModel> (initialiser: (m, v) => {
+						(m as MyReadingModel).Init();
+					});
 				});
 			}
 		}
 		public ICommand MyCommentCommand {
 			get { 
 				return new Command (() => {
-
+					MessagingCenter.Send<object> (this, "IsPresented");
+					Navigation.NavigateTo<MyCommentModel> (initialiser: (m, v) => {
+						(m as MyCommentModel).Init();
+					});
 				});
 			}
 		}
 		public ICommand MyCollectionCommand {
 			get { 
 				return new Command (() => {
-
+					MessagingCenter.Send<object> (this, "IsPresented");
+					Navigation.NavigateTo<MyCollectionModel> (initialiser: (m, v) => {
+						(m as MyCollectionModel).Init();
+					});
 				});
 			}
 		}
 		public ICommand ModifyPasswordCommand {
 			get { 
 				return new Command (() => {
-
+					MessagingCenter.Send<object> (this, "IsPresented");
+					Navigation.NavigateTo<ModifyPasswordModel>();
+				
 				});
 			}
 		}
@@ -55,7 +66,7 @@ namespace TopMedicalNews
 			get { 
 				return new Command (() => {
 					Resolver.Resolve<ISettings>().AddOrUpdateValue <int> ("LoginUserId", -1);
-					MessagingCenter.Send<object> (this, "LogoutSucceed");
+					MessagingCenter.Send<object> (this, "IsPresented");
 
 				});
 			}

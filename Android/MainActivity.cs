@@ -15,7 +15,6 @@ using Refractored.Xam.Settings.Abstractions;
 using Xamarin.Forms;
 using Android.Graphics.Drawables;
 
-
 namespace TopMedicalNews.Android
 {
 	[Activity (Label = "",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -35,7 +34,7 @@ namespace TopMedicalNews.Android
 //				System.Diagnostics.Debug.WriteLine("found resource: " + res);
 
 			LoadApplication (new App ());
-
+			//showShare ();
 		}
 
 //		public override bool OnCreateOptionsMenu (IMenu menu)
@@ -50,6 +49,7 @@ namespace TopMedicalNews.Android
 ////			ActionBar.SetCustomView (Resource.Layout.Main);
 //			return base.OnCreateOptionsMenu (menu);
 //		}
+	
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
 			if (item.TitleFormatted != null && item.TitleFormatted.ToString() == "医界头条") {

@@ -38,6 +38,14 @@ namespace TopMedicalNews
 				}
 			);
 		//
+		public static readonly BindableProperty SelectCommandProperty = 
+			BindableProperty.Create<CarouselScrollView,Command> (
+				p => p.SelectCommand, null);
+
+		public Command SelectCommand {
+			get { return (Command)GetValue (SelectCommandProperty); }
+			set { SetValue (SelectCommandProperty, value); }
+		} 
 		//
 		public IList ItemsSource {
 			get {

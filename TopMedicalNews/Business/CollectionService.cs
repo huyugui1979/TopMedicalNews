@@ -10,7 +10,7 @@ namespace TopMedicalNews
 		List<News> GetNewsCollectionByUser(int userId);
 	    void AddNewsToCollection(int userId,int newsId);
 		void DelNewsToCollection (int userId, int newsId);
-	    bool ContainNewsInCollection(int newsId,int userId);
+	    bool ContainNewsInCollection(int userId,int newsId);
 	}
 	public class CollectionService:ICollectionService
 	{
@@ -21,7 +21,7 @@ namespace TopMedicalNews
 		{
 			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News>("select * from collection as a join news as b on a.newsid =b.id");
 		}
-		public bool ContainNewsInCollection(int newsId,int userId)
+		public bool ContainNewsInCollection(int userId,int newsId)
 		{
 			bool b=  Resolver.Resolve<ISQLiteClient> ().Exist<Collection> (r => r.NewsID == newsId && r.UserID == userId);
 			return b;

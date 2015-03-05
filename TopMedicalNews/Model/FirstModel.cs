@@ -10,6 +10,7 @@ using XLabs.Data;
 using System.Windows.Input;
 using XLabs.Forms.Behaviors;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace TopMedicalNews
 {
@@ -46,26 +47,45 @@ namespace TopMedicalNews
 		//
 	
 		int _SelectedColumnIndex;
+		CancellationTokenSource cts;
+
 
 		public int SelectedColumnIndex {
 			get{ return _SelectedColumnIndex; }
 			set {
+				if (IsRefreshing == true) {
+					cts.Cancel ();
+					cts.Dispose ();
+				}
 				SetProperty (ref _SelectedColumnIndex, value);	
+//				Xamarin.Forms.Device.BeginInvokeOnMainThread (() => {
+					ClearData ();
+					LoadData ();
+//				});
 				Task.Factory.StartNew (async () => {
 					IsRefreshing = true;
+					try{
 
-					await Task.Delay (TimeSpan.FromSeconds (3));
+						cts = new CancellationTokenSource ();
+						await Task.Delay (TimeSpan.FromSeconds (3),cts.Token);
+					}catch(OperationCanceledException){
+						IsRefreshing=false;
+						System.Diagnostics.Debug.WriteLine("cancel a task");
+						return;
+					}
 					Xamarin.Forms.Device.BeginInvokeOnMainThread(()=>{
-					ClearData ();
-
-					LoadData ();
-					IsRefreshing = false;});
+						//LoadUpdateData();加载更新的数据
+						//LoadData ();
+						//
+						IsRefreshing = false;});
 				});
 
 			}
 		}
 
-
+		/// <summary>
+		/// Clears the data.
+		/// </summary>
 		void ClearData ()
 		{
 			SelectedFocusNews = null;
@@ -74,9 +94,7 @@ namespace TopMedicalNews
 
 			GC.Collect ();
 		}
-
-	
-
+		//
 		void LoadData ()
 		{
 		
@@ -104,7 +122,7 @@ namespace TopMedicalNews
 			get{ return _FocusNewsNotEmpty; }
 			set{ SetProperty (ref _FocusNewsNotEmpty, value); }
 		}
-
+	
 		public FirstModel ()
 		{
 
@@ -113,7 +131,6 @@ namespace TopMedicalNews
 
 			LikeColumns = Resolver.Resolve<IColumnService> ().GetLikeColumns ();
 
-		
 			MessagingCenter.Subscribe<object> (this, "ClickLogin", sender => {
 				//
 				Navigation.NavigateTo<LoginModel> ();	
@@ -129,7 +146,11 @@ namespace TopMedicalNews
 		public ICommand OrderColumnCommand { get { return new Command (r => {
 				Navigation.NavigateTo<SelectColumnModel> ();
 			}); } }
-
+		bool _IsEnd=false;
+		public bool IsEnd {
+			get{ return _IsEnd; }
+			set{ SetProperty (ref _IsEnd, value); }
+		}
 		bool _IsRefreshing = false;
 
 		public bool IsRefreshing {
@@ -153,6 +174,8 @@ namespace TopMedicalNews
 					//
 					if (_SelectNews.Count < 15)
 						LoadData ();
+					else
+						IsEnd=true;
 					RequestMoring = false;
 
 				});
@@ -167,16 +190,45 @@ namespace TopMedicalNews
 					//
 					if (_SelectNews.Count < 15)
 						LoadData ();
+
 					IsRefreshing = false;
 					//
 				});
 			}
 		}
+		public ICommand SelectFocusNewsCommand{
 
+			get { return new Command (async () => {
+				if(SelectedFocusNews.Type == 2)
+				await Navigation.NavigateTo<NewsThemeModel> (null, true, (m, p) => {
+						(m as NewsThemeModel).Init(SelectedFocusNews);
+
+				});
+				else
+					await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+						(m as NewsDetailModel).Init(SelectedFocusNews);
+					
+					});
+
+
+			}); } 
+		}
+		public ICommand GotoThemeCommand {
+			get { return new Command<News> (async (r) => {
+
+				await Navigation.NavigateTo<NewsThemeModel> (null, true, (m, p) => {
+					(m as NewsThemeModel).Init(r);
+
+				});
+
+
+			}); } 
+		}
 		public ICommand GotoNewsDetailCommand { get { return new Command<News> (async (r) => {
 	
 				await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
-					(m as NewsDetailModel).NewsID = r.ID;
+				(m as NewsDetailModel).Init(r);
+
 				});
 
 			    

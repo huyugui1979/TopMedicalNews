@@ -16,5 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Theme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reading.cs" />
   </ItemGroup>
 </Project>

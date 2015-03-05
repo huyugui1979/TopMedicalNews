@@ -67,6 +67,7 @@ namespace TopMedicalNews
         void ItemsSourceChanged ()
         {
             if (ItemsSource == null) return;
+
 			(ItemsSource as INotifyCollectionChanged).CollectionChanged += (object sender, NotifyCollectionChangedEventArgs e) => {
 				switch( e.Action)
 				{
@@ -82,22 +83,6 @@ namespace TopMedicalNews
 					break;
 				}
 			};
-//            var countDelta = ItemsSource.Count - Children.Count;
-//
-//            if (countDelta > 0) {
-//                for (var i = 0; i < countDelta; i++) {
-//                    Children.Add (CreatePip ());
-//                }
-//            } else if (countDelta < 0) {
-//                for (var i = 0; i < -countDelta; i++) {
-//                    Children.RemoveAt (0);
-//                }
-//            }
-
-//            if (_selectedIndex >= 0 && _selectedIndex < ItemsSource.Count)
-//                SelectedItem = ItemsSource [_selectedIndex];
-
-//            UpdateSelection ();
         }
 
         void SelectedItemChanged () {
@@ -105,7 +90,8 @@ namespace TopMedicalNews
             var pips = Children.Cast<Image> ().ToList ();
 
             foreach (var pip in pips) UnselectPip (pip);
-
+			if (pips.Count == 0)
+				return;
             if (selectedIndex > -1) SelectPip (pips [selectedIndex]);
         }
 

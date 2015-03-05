@@ -20,34 +20,14 @@ namespace TopMedicalNews
 
 			InitializeComponent ();
 
-//			var newsList = this.FindByName<ListView> ("newsList");
-//			newsList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
-//				//
-//				if(e.SelectedItem == null)return;
-//				int  newsId = (e.SelectedItem as News).ID;
-//				(this.BindingContext as FirstModel).GotoNewsDetailCommand.Execute(newsId);
-//				(sender as ListView).SelectedItem =null;
-//				//
-//
-//				//
-//			};
 		}
-		protected override void OnAppearing ()
-		{ 
-
-			base.OnAppearing ();
-//			var newsList = this.FindByName<ListView> ("newsList");
-////			newsList.HeightRequest = 1000;
-//			#if __IOS__
-//			newsList.HeightRequest = 1000;//NewsListCell.TotalHeight;
-//			#endif
-		}
-
 		protected override void OnBindingContextChanged ()
 		{
 			base.OnBindingContextChanged ();
-			//栏目列表
+			//SelectedColumnIndex="{Binding SelectedColumnIndex}"
+			columnView.SetBinding (ColumnView.SelectedColumnIndexProperty, "SelectedColumnIndex");
 		}
+
 	}
 }
 

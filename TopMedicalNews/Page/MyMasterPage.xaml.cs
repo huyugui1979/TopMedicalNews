@@ -10,13 +10,7 @@ namespace TopMedicalNews
 		public MyMasterPage ()
 		{
 			InitializeComponent ();
-			var selectPictureImage = this.FindByName<Image> ("selectPictureImage");
-			selectPictureImage.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-
-				var model = this.BindingContext as MasterModel;
-				model.SelectPicCommand.Execute(null);
-				//
-			}));
+		
 		}
 	}
 }

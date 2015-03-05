@@ -14,11 +14,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\CategoryService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Util\StringToImageSourceConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Util\DateTimeFormaterConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyGridView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SelectColumnModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\MyCollectionPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FirstModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MainModel.cs" />
@@ -29,11 +26,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\FeedBackModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\AboutUsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MyCollectionModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\MyDiscussionModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml.cs">
       <DependentUpon>MyFirstPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyPullToRefreshScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml.cs">
       <DependentUpon>SetColumnPage.xaml</DependentUpon>
@@ -86,26 +81,40 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Util\TypeToVisibleConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Util\InvertTypeToVisibleConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Util\BoolToImageConvert.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\NewsListView.xaml.cs">
-      <DependentUpon>NewsListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Util\InvertBoolCoverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\CarouselScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml.cs">
       <DependentUpon>ColumnView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Control\NoScrollView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\NewsThemeModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\NewsThemePage.xaml.cs">
+      <DependentUpon>NewsThemePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\BaseCustomListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\NewsListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\CommentListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\ThemeNewsListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MyReadingModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MyCommentModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ModifyPasswordModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ModifyPasswordPage.xaml.cs">
+      <DependentUpon>ModifyPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyCommentPage.xaml.cs">
+      <DependentUpon>MyCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyReadingPage.xaml.cs">
+      <DependentUpon>MyReadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Business\ReadingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
     <Folder Include="$(MSBuildThisFileDirectory)Control\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Util\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
   </ItemGroup>
   <ItemGroup>
@@ -154,10 +163,19 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\NewsListView.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\NewsThemePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ModifyPasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyCommentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyReadingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

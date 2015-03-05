@@ -12,7 +12,8 @@ namespace TopMedicalNews.Model
 	{
 		[PrimaryKey]
 		public int   ID{ get; set; }
-		public int   SubID{ get; set; }
+
+		public int   ThemeID{ get; set; } //是某个主题
 		public string Thumb{ get; set; }//缩写
 		public string Title{get;set;}//标题
 		public string Content{get;set;}//内容
@@ -25,7 +26,6 @@ namespace TopMedicalNews.Model
 		public bool Focus{get;set;} //是否是重点
 		public int Type{ get; set; }//新闻类型
 		public string Tag{ get; set; }//标签
-		public bool IsCollection{get;set;}//是否收藏
 		public override string ToString ()
 		{
 			return Title;

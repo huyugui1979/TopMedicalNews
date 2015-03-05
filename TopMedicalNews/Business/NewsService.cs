@@ -12,6 +12,7 @@ namespace TopMedicalNews
          List<News> GetNewsByColumn(int columnId);
 		 List<News> GetFocusNews (int categoryId);
 		 List<News> GetSelectNews(int columnId);
+		 List<News> GetNewsByTheme (int newsId);
 		 News  GetNewById(int Id);
 
     }
@@ -28,6 +29,10 @@ namespace TopMedicalNews
 //			//
 //		}
 
+		public List<News> GetCollectonNews(int userId)
+		{
+			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> ("select * from Collection as a join News as b on b.ID=a.NewsID where a.UserId={0}",userId);
+		}
 		public List<News> GetNewsByColumn(int columnId)
 		{
 			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> (r=>r.ColumnId==columnId);
@@ -43,9 +48,12 @@ namespace TopMedicalNews
 		}
 		public List<News> GetSelectNews(int columnId)
 		{
-			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> (r => r.ColumnId == columnId);
+			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> (r => r.ColumnId == columnId && r.ThemeID == 0);
 		}
-
+		public List<News> GetNewsByTheme (int newsId)
+		{
+			return Resolver.Resolve<ISQLiteClient> ().GetAllData<News> (r => r.ThemeID == newsId);
+		}
 
 	}
 }

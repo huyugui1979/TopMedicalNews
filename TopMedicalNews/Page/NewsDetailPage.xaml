@@ -1,93 +1,67 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <local:MyPage Title="新闻详情" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.NewsDetailPage">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<local:DateTimeFormaterConverter x:Key="timeFormater"/>
-			<local:BoolToImageConvert x:Key="imageConvert"/>
-			<local:InvertBoolCoverter x:Key="InvertBoolCoverter"/>
-
-		</ResourceDictionary>
-	</ContentPage.Resources>
 	<ContentPage.Content>
-		<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-			<StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="{Binding IsBusy}">
-				<ActivityIndicator IsRunning="{Binding IsBusy}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
-			</StackLayout>
-			<ScrollView Orientation="Vertical" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="{Binding IsBusy,Converter={StaticResource InvertBoolCoverter}}">
-				<StackLayout Orientation="Vertical">
-					<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-						<StackLayout Orientation="Vertical" Padding="10,0,10,0">
-							<Label Text="{Binding News.Title}" />
-							<StackLayout Orientation="Horizontal">
-								<Label Text="{Binding News.FromSource,StringFormat='来自{0}'}" TextColor="#878787" FontSize="14" />
-								<Label Text="{Binding News.PublishTime,Converter={StaticResource timeFormater}}" TextColor="#878787" FontSize="14" />
-							</StackLayout>
-							<lc:Separator Color="#D5D5D5" />
-							<Image Source="{Binding News.ImageUri}" HorizontalOptions="FillAndExpand" />
-							<Label Text="{Binding News.Content}" FontSize="14" />
-							<StackLayout Orientation="Horizontal">
-								<Image Source="标签_bg" />
-								<Label Text="{Binding News.Tag}" TextColor="#878787" FontSize="14" />
-							</StackLayout>
-							<lc:Separator Color="#D5D5D5" />
-							<local:NewsListView x:Name="commentList" ItemsSource="{Binding Comments}">
-								<local:NewsListView.ItemTemplate>
-									<DataTemplate>
-										<!--									<StackLayout Orientation="Vertical">
-										<StackLayout Orientation="Horizontal">
-											<Image Source="{Binding ImageUri}" x:Name="image" VerticalOptions="FillAndExpand" WidthRequest="20"/>
-											<StackLayout Orientation="Vertical">
-												<Label Text="{Binding UserName}" FontSize="12" TextColor="Blue" HorizontalOptions="StartAndExpand" />
-												<Label Text="{Binding PublishTime,Converter={StaticResource timeFormater}}" FontSize="12" TextColor="#878787" HorizontalOptions="EndAndExpand" />
-											</StackLayout>
-										</StackLayout>
-										<StackLayout Padding="20,0,0,0" Orientation="Horizontal">
-											<Label Text="{Binding Content}" FontSize="14" />
-										</StackLayout>
-									</StackLayout>-->
-										<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
-											<Grid.RowDefinitions>
-												<RowDefinition Height="20">
-												</RowDefinition>
-												<RowDefinition Height="20">
-												</RowDefinition>
-												<RowDefinition Height="*">
-												</RowDefinition>
-											</Grid.RowDefinitions>
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="20">
-												</ColumnDefinition>
-												<ColumnDefinition Width="*">
-												</ColumnDefinition>
-											</Grid.ColumnDefinitions>
-											<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="3" x:Name="image" />
-											<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
-											<Label Text="{Binding PublishTime,Converter={StaticResource timeFormater}}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
-											<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
-										</Grid>
-										<!--									<StackLayout Orientation="Vertical">
-										<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" x:Name="image" WidthRequest="20" />
-										<Label Text="{Binding UserName}" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
-										<Label Text="{Binding PublishTime,Converter={StaticResource timeFormater}}" VerticalOptions="Start" HorizontalOptions="Start" FontSize="12" TextColor="#878787" />
-										<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" FontSize="14" />
-									</StackLayout>-->
-									</DataTemplate>
-								</local:NewsListView.ItemTemplate>
-							</local:NewsListView>
-						</StackLayout>
-					</ScrollView>
-					<StackLayout Orientation="Horizontal" VerticalOptions="End" BackgroundColor="White" Padding="10,5,10,5">
-						<local:MyEntry Source="输入框_bg" Placeholder="我来说两句" HorizontalOptions="FillAndExpand" />
-						<Image HorizontalOptions="End" x:Name="collectionImage" Source="{Binding IsCollection,Converter={StaticResource imageConvert}}">
-						</Image>
-						<Image HorizontalOptions="End">
-							<Image.Source>
-								<OnPlatform x:TypeArguments="ImageSource" iOS="分享_btn" Android="myreading.png" />
-							</Image.Source>
-						</Image>
+		<StackLayout Orientation="Vertical">
+			<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+				<StackLayout Orientation="Vertical" Padding="10,0,10,0">
+					<Label Text="{Binding News.Title}" />
+					<StackLayout Orientation="Horizontal">
+						<Label Text="{Binding News.FromSource,StringFormat='来自{0}'}" TextColor="#878787" FontSize="14" />
+						<Label Text="{Binding News.PublishTime,StringFormat='{0:yyyy-MM-dd}'}" TextColor="#878787" FontSize="14" />
 					</StackLayout>
+					<lc:Separator Color="#D5D5D5" />
+					<Image Source="{Binding News.ImageUri}" HorizontalOptions="FillAndExpand" />
+					<Label Text="{Binding News.Content}" FontSize="14" />
+					<StackLayout Orientation="Horizontal">
+						<Image Source="tag_bg" WidthRequest="15" HeightRequest="15" />
+						<Label Text="{Binding News.Tag}" TextColor="#878787" FontSize="14" />
+					</StackLayout>
+					<lc:Separator Color="#D5D5D5" />
+					<!--						<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+					<ActivityIndicator IsRunning="{Binding IsBusy}" HeightRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
+					<Label Text="正在加载评论" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
+					<local:CommentListView x:Name="commentList" ItemsSource="{Binding Comments}">
+						<local:CommentListView.ItemTemplate>
+							<DataTemplate>
+								<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="20">
+										</RowDefinition>
+										<RowDefinition Height="20">
+										</RowDefinition>
+										<RowDefinition Height="*">
+										</RowDefinition>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="20">
+										</ColumnDefinition>
+										<ColumnDefinition Width="*">
+										</ColumnDefinition>
+									</Grid.ColumnDefinitions>
+									<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="3" x:Name="image" />
+									<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
+									<Label Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
+									<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
+								</Grid>
+							</DataTemplate>
+						</local:CommentListView.ItemTemplate>
+					</local:CommentListView>
 				</StackLayout>
 			</ScrollView>
-		</AbsoluteLayout>
+			<StackLayout Orientation="Horizontal" VerticalOptions="End" BackgroundColor="White" Padding="10,5,10,5">
+				<Entry Placeholder="我来说两句" HorizontalOptions="FillAndExpand" />
+				<Image HorizontalOptions="End"  WidthRequest="30" HeightRequest="30" Source="collection_pressed">
+					<Image.Triggers>
+						<DataTrigger TargetType="{x:Type Image}" Binding="{Binding IsCollection}" Value="False">
+							<Setter Property="Source" Value="collection" />
+						</DataTrigger>
+					</Image.Triggers>
+					<Image.GestureRecognizers>
+					<TapGestureRecognizer  Command="{Binding AddNewsCollectionCmd}"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Source="share"  />
+			</StackLayout>
+		</StackLayout>
 	</ContentPage.Content>
 </local:MyPage>

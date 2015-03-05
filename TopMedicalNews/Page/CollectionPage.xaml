@@ -1,5 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.CollectionPage">
+<MyPage  Title="我的收藏" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.CollectionPage">
 	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+		<ActivityIndicator  IsRunning="{Binding IsBusy}" HeightRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
+	    <Label Text="正在加载" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
+					
+		<local:ThemeNewsListView ItemsSource="{Binding NewsList}">
+			<local:ThemeNewsListView.ItemTemplate>
+				<DataTemplate>
+					<StackLayout Orientation="Vertical">
+						<StackLayout Orientation="Horizontal">
+							<Image Source="{Binding ImageUri}" x:Name="image" WidthRequest="80" HeightRequest="60">;
+										</Image>
+							<StackLayout Orientation="Vertical" Padding="0,0,10,0">
+								<Label Text="{Binding Title}" />
+								<Label Text="{Binding Thumb}" FontSize="14" TextColor="#878787" />
+							</StackLayout>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label TextColor="#878787" FontSize="14" x:Name="publishTime" Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" HorizontalOptions="Start" />
+							<Label TextColor="#878787" FontSize="14" Text="{Binding FromSource,StringFormat='来自{0}'}}" HorizontalOptions="Start" />
+							<Label BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" TextColor="#878787" FontSize="14" Text="{Binding ViewerNum,StringFormat='{0}查看'}" />
+							<Label HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" TextColor="#878787" FontSize="14" Text="{Binding PosterNum,StringFormat='{0}评论'}" />
+						</StackLayout>
+					</StackLayout>
+				</DataTemplate>
+			</local:ThemeNewsListView.ItemTemplate>
+		</local:ThemeNewsListView>
+</StackLayout>
 	</ContentPage.Content>
-</ContentPage>
+</MyPage>

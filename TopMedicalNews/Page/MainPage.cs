@@ -16,7 +16,9 @@ namespace TopMedicalNews
 		{
 			//this.Navigation.p (new SplashScreenPage ());
 			this.Master = ViewFactory.CreatePage<MasterModel,Page> () as Page;
+
 			this.Detail = new NavigationPage(ViewFactory.CreatePage<FirstModel,Page> () as Page){BarTextColor=Color.White,BarBackgroundColor=Color.FromRgb(0x36,0x88,0xdb)};
+			//
 			//
 			MessagingCenter.Subscribe<object> (this, "TakePicture", sender => {
 				//
@@ -37,7 +39,7 @@ namespace TopMedicalNews
 				//
 			});
 			//
-			MessagingCenter.Subscribe<object> (this, "LogoutSucceed", sender => {
+			MessagingCenter.Subscribe<object> (this, "IsPresented", sender => {
 				//
 				this.IsPresented=false;
 				//

@@ -21,9 +21,6 @@ namespace TopMedicalNews.Android
 			var entry = e.NewElement as MyEntry;
 			var bitmap = await handle.LoadImageAsync(entry.Source,Forms.Context);
 			Drawable drawable = new BitmapDrawable(bitmap);
-//			int h = entry.Height; 
-//			int w = entry.Width;   
-//			drawable.SetBounds( 0, 0, w, h );
 			this.Control.SetCompoundDrawablesWithIntrinsicBounds (drawable, null, null, null);
 		}
 	}
