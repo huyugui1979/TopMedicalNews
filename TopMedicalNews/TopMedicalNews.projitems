@@ -110,6 +110,7 @@
       <DependentUpon>MyReadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Business\ReadingService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\LikeColumnService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />

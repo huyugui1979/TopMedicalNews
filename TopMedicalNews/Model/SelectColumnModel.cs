@@ -22,7 +22,7 @@ namespace TopMedicalNews
 		public List<SelectColumn> SelectColumns{get;set;}
 		public SelectColumnModel ()
 		{
-			LikeColumns = new ObservableCollection<Column> (Resolver.Resolve<IColumnService> ().GetLikeColumns ());
+			LikeColumns = new ObservableCollection<Column> (Resolver.Resolve<ILikeColumnService>().GetLikeColumns ());
 
 			SelectColumns = new List<TopMedicalNews.SelectColumn> ();
 			LoadSelectColumns ();
@@ -43,29 +43,22 @@ namespace TopMedicalNews
 			Column c = LikeColumns [oldPos];
 			LikeColumns.RemoveAt (oldPos);
 			LikeColumns.Insert (newPos, c);
-			for (int i = 0; i < LikeColumns.Count; i++)
-				LikeColumns[i].LikeOrder = i;
-			Resolver.Resolve<IColumnService> ().UpdateColumns (LikeColumns.ToList());
+			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 		}
 		public void DeleteLikeColumn(int pos)
 		{
 			Column c = LikeColumns [pos];
-			c.Like = false;
+
 			LikeColumns.RemoveAt (pos);
-			for (int i = 0; i < LikeColumns.Count; i++)
-				LikeColumns[i].LikeOrder = i;
-			Resolver.Resolve<IColumnService> ().UpdateColumns (new List<Column>{ c });
+			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Add (c);
 		}
 	
 		public void InsertLikeColumn(Column c)
 		{
 			//
-			c.Like = true;
 			LikeColumns.Add (c);
-			for (int i = 0; i < LikeColumns.Count; i++)
-				LikeColumns[i].LikeOrder = i;
-			Resolver.Resolve<IColumnService> ().UpdateColumns (LikeColumns.ToList());
+			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			//
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Remove (c);
 			//

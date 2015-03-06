@@ -18,6 +18,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Collection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Theme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reading.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LikeModel.cs" />
   </ItemGroup>
 </Project>

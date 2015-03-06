@@ -10,11 +10,10 @@ namespace TopMedicalNews.Model
 	public class Column
 	{
 		public string Title{get;set;}
-		[PrimaryKey,AutoIncrement]
+		[PrimaryKey]
 		public int ID{get;set;}
 		public int  CategoryID{get;set;}
-		public bool Like{get;set;}
-		public int  LikeOrder{get;set;}
+	
 		public override bool Equals(object obj)
 		{
 			Column e = obj as Column;

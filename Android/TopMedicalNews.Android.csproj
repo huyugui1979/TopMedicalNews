@@ -155,7 +155,6 @@
     <AndroidResource Include="Resources\drawable\return_btnx.png" />
     <AndroidResource Include="Resources\drawable\portait.png" />
     <AndroidResource Include="Resources\drawable\xiala.png" />
-    <AndroidResource Include="Resources\values\instapaper_strings.xml" />
     <AndroidResource Include="Resources\drawable\setting_btn.png" />
     <AndroidResource Include="Resources\drawable\collection.png" />
     <AndroidResource Include="Resources\drawable\collection_pressed.png" />

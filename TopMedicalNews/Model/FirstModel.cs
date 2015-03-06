@@ -129,7 +129,7 @@ namespace TopMedicalNews
 			FocusNews = new ObservableCollection<News> ();
 			SelectNews = new ObservableCollection<News> ();
 
-			LikeColumns = Resolver.Resolve<IColumnService> ().GetLikeColumns ();
+			LikeColumns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
 
 			MessagingCenter.Subscribe<object> (this, "ClickLogin", sender => {
 				//

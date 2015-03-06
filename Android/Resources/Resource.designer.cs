@@ -557,11 +557,8 @@ namespace TopMedicalNews.Android
 			// aapt resource value: 0x7f06000c
 			public const int full_date_format = 2131099660;
 			
-			// aapt resource value: 0x7f06000e
-			public const int hello = 2131099662;
-			
 			// aapt resource value: 0x7f06000d
-			public const int instapager_login_html = 2131099661;
+			public const int hello = 2131099661;
 			
 			// aapt resource value: 0x7f06000a
 			public const int invalid_date = 2131099658;
