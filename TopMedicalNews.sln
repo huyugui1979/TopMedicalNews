@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMedicalNews.iOS", "iOS\T
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TopMedicalNews.Model", "TopMedicalNews.Model\TopMedicalNews.Model.shproj", "{4579FA38-A6D4-45F2-A375-4E128A61EDE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PullRefreshScrollViewLib", "PullRefreshScrollViewLib\PullRefreshScrollViewLib.csproj", "{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMedicalNews.Android", "Android\TopMedicalNews.Android.csproj", "{B978F963-8F5D-40B8-8E6B-2AB977769C85}"
 EndProject
 Global
@@ -29,30 +27,6 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|Any CPU.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhone.Build.0 = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhone.Build.0 = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhoneSimulator
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{69C8144F-A600-43B0-A203-47D633A38256}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone

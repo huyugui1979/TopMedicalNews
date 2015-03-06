@@ -65,7 +65,9 @@ namespace TopMedicalNews
 			ViewFactory.Register<MyCommentPage,MyCommentModel> ();
 			ViewFactory.Register<MyReadingPage,MyReadingModel> ();
 			ViewFactory.Register<MainPage,MainModel> ();
-
+			//
+			Resolver.Resolve<IColumnService> ().Init ();
+			//
 
 		}
 		public App()

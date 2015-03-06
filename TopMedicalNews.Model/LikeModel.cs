@@ -7,6 +7,7 @@ namespace TopMedicalNews.Model
 		public LikeModel ()
 		{
 		}
+
 	}
 }
 

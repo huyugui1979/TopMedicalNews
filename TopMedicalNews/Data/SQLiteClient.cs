@@ -280,7 +280,7 @@ namespace TopMedicalNews
 				_connection.CreateTable<TopMedicalNews.Model.MyFont> ();
                 _connection.CreateTable<Category>();
 				_connection.CreateTable<Reading> ();
-                AddTestData();
+                // AddTestData();
 				Resolver.Resolve<ISettings>().AddOrUpdateValue("MyInit", true);
                 
             }

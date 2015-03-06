@@ -113,6 +113,9 @@
     <Reference Include="XLabs.Platform.Droid">
       <HintPath>..\libs\android\XLabs.Platform.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="PullRefreshScrollViewLib">
+      <HintPath>..\libs\android\PullRefreshScrollViewLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -172,12 +175,6 @@
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Controller\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PullRefreshScrollViewLib\PullRefreshScrollViewLib.csproj">
-      <Project>{38679D60-4E0B-4ADF-A1AF-ECC1973C7305}</Project>
-      <Name>PullRefreshScrollViewLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ShareSDK.xml" />

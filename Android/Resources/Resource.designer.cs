@@ -26,48 +26,6 @@ namespace TopMedicalNews.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::XLabs.Platform.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::XLabs.Platform.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
-			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_active_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_bg = global::TopMedicalNews.Android.Resource.Color.calendar_bg;
-			global::XLabs.Forms.Resource.Color.calendar_divider = global::TopMedicalNews.Android.Resource.Color.calendar_divider;
-			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_highlighted_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_inactive_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_range_bg;
-			global::XLabs.Forms.Resource.Color.calendar_text_active = global::TopMedicalNews.Android.Resource.Color.calendar_text_active;
-			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::TopMedicalNews.Android.Resource.Color.calendar_text_inactive;
-			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::TopMedicalNews.Android.Resource.Color.calendar_text_selected;
-			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::TopMedicalNews.Android.Resource.Color.calendar_text_selector;
-			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::TopMedicalNews.Android.Resource.Color.calendar_text_unselectable;
-			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::TopMedicalNews.Android.Resource.Dimension.calendar_day_headers_paddingbottom;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_title_bottommargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_topmargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_medium;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_small;
-			global::XLabs.Forms.Resource.Drawable.ad16 = global::TopMedicalNews.Android.Resource.Drawable.ad16;
-			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::TopMedicalNews.Android.Resource.Drawable.calendar_bg_selector;
-			global::XLabs.Forms.Resource.Id.calendar_grid = global::TopMedicalNews.Android.Resource.Id.calendar_grid;
-			global::XLabs.Forms.Resource.Id.calendar_view = global::TopMedicalNews.Android.Resource.Id.calendar_view;
-			global::XLabs.Forms.Resource.Id.left_arrow = global::TopMedicalNews.Android.Resource.Id.left_arrow;
-			global::XLabs.Forms.Resource.Id.right_arrow = global::TopMedicalNews.Android.Resource.Id.right_arrow;
-			global::XLabs.Forms.Resource.Id.title = global::TopMedicalNews.Android.Resource.Id.title;
-			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::TopMedicalNews.Android.Resource.Layout.calendar_pager_layout;
-			global::XLabs.Forms.Resource.Layout.calendar_picker = global::TopMedicalNews.Android.Resource.Layout.calendar_picker;
-			global::XLabs.Forms.Resource.Layout.dialog = global::TopMedicalNews.Android.Resource.Layout.dialog;
-			global::XLabs.Forms.Resource.Layout.month = global::TopMedicalNews.Android.Resource.Layout.month;
-			global::XLabs.Forms.Resource.Layout.week = global::TopMedicalNews.Android.Resource.Layout.week;
-			global::XLabs.Forms.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::XLabs.Forms.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
-			global::XLabs.Forms.Resource.String.day_name_format = global::TopMedicalNews.Android.Resource.String.day_name_format;
-			global::XLabs.Forms.Resource.String.full_date_format = global::TopMedicalNews.Android.Resource.String.full_date_format;
-			global::XLabs.Forms.Resource.String.invalid_date = global::TopMedicalNews.Android.Resource.String.invalid_date;
-			global::XLabs.Forms.Resource.String.library_name = global::TopMedicalNews.Android.Resource.String.library_name;
-			global::XLabs.Forms.Resource.String.month_name_format = global::TopMedicalNews.Android.Resource.String.month_name_format;
-			global::XLabs.Forms.Resource.Style.CalendarCell = global::TopMedicalNews.Android.Resource.Style.CalendarCell;
-			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::TopMedicalNews.Android.Resource.Style.CalendarCell_CalendarDate;
-			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::TopMedicalNews.Android.Resource.Style.CalendarCell_DayHeader;
-			global::XLabs.Forms.Resource.Style.CalendarTitle = global::TopMedicalNews.Android.Resource.Style.CalendarTitle;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::TopMedicalNews.Android.Resource.Attribute.ahBarColor;
@@ -146,6 +104,48 @@ namespace TopMedicalNews.Android
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_active_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_bg = global::TopMedicalNews.Android.Resource.Color.calendar_bg;
+			global::XLabs.Forms.Resource.Color.calendar_divider = global::TopMedicalNews.Android.Resource.Color.calendar_divider;
+			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_highlighted_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_inactive_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_range_bg;
+			global::XLabs.Forms.Resource.Color.calendar_text_active = global::TopMedicalNews.Android.Resource.Color.calendar_text_active;
+			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::TopMedicalNews.Android.Resource.Color.calendar_text_inactive;
+			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::TopMedicalNews.Android.Resource.Color.calendar_text_selected;
+			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::TopMedicalNews.Android.Resource.Color.calendar_text_selector;
+			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::TopMedicalNews.Android.Resource.Color.calendar_text_unselectable;
+			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::TopMedicalNews.Android.Resource.Dimension.calendar_day_headers_paddingbottom;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_title_bottommargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_topmargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_medium;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_small;
+			global::XLabs.Forms.Resource.Drawable.ad16 = global::TopMedicalNews.Android.Resource.Drawable.ad16;
+			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::TopMedicalNews.Android.Resource.Drawable.calendar_bg_selector;
+			global::XLabs.Forms.Resource.Id.calendar_grid = global::TopMedicalNews.Android.Resource.Id.calendar_grid;
+			global::XLabs.Forms.Resource.Id.calendar_view = global::TopMedicalNews.Android.Resource.Id.calendar_view;
+			global::XLabs.Forms.Resource.Id.left_arrow = global::TopMedicalNews.Android.Resource.Id.left_arrow;
+			global::XLabs.Forms.Resource.Id.right_arrow = global::TopMedicalNews.Android.Resource.Id.right_arrow;
+			global::XLabs.Forms.Resource.Id.title = global::TopMedicalNews.Android.Resource.Id.title;
+			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::TopMedicalNews.Android.Resource.Layout.calendar_pager_layout;
+			global::XLabs.Forms.Resource.Layout.calendar_picker = global::TopMedicalNews.Android.Resource.Layout.calendar_picker;
+			global::XLabs.Forms.Resource.Layout.dialog = global::TopMedicalNews.Android.Resource.Layout.dialog;
+			global::XLabs.Forms.Resource.Layout.month = global::TopMedicalNews.Android.Resource.Layout.month;
+			global::XLabs.Forms.Resource.Layout.week = global::TopMedicalNews.Android.Resource.Layout.week;
+			global::XLabs.Forms.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Forms.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+			global::XLabs.Forms.Resource.String.day_name_format = global::TopMedicalNews.Android.Resource.String.day_name_format;
+			global::XLabs.Forms.Resource.String.full_date_format = global::TopMedicalNews.Android.Resource.String.full_date_format;
+			global::XLabs.Forms.Resource.String.invalid_date = global::TopMedicalNews.Android.Resource.String.invalid_date;
+			global::XLabs.Forms.Resource.String.library_name = global::TopMedicalNews.Android.Resource.String.library_name;
+			global::XLabs.Forms.Resource.String.month_name_format = global::TopMedicalNews.Android.Resource.String.month_name_format;
+			global::XLabs.Forms.Resource.Style.CalendarCell = global::TopMedicalNews.Android.Resource.Style.CalendarCell;
+			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::TopMedicalNews.Android.Resource.Style.CalendarCell_CalendarDate;
+			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::TopMedicalNews.Android.Resource.Style.CalendarCell_DayHeader;
+			global::XLabs.Forms.Resource.Style.CalendarTitle = global::TopMedicalNews.Android.Resource.Style.CalendarTitle;
+			global::XLabs.Platform.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Platform.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -542,11 +542,11 @@ namespace TopMedicalNews.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060008
-			public const int ApplicationName = 2131099656;
-			
 			// aapt resource value: 0x7f060007
-			public const int Hello = 2131099655;
+			public const int ApplicationName = 2131099655;
+			
+			// aapt resource value: 0x7f060006
+			public const int Hello = 2131099654;
 			
 			// aapt resource value: 0x7f060000
 			public const int app_name = 2131099648;
@@ -566,8 +566,8 @@ namespace TopMedicalNews.Android
 			// aapt resource value: 0x7f06000a
 			public const int invalid_date = 2131099658;
 			
-			// aapt resource value: 0x7f060006
-			public const int library_name = 2131099654;
+			// aapt resource value: 0x7f060008
+			public const int library_name = 2131099656;
 			
 			// aapt resource value: 0x7f06000b
 			public const int month_name_format = 2131099659;
