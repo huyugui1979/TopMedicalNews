@@ -1,0 +1,127 @@
+﻿using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+using Android.Webkit;
+using Android.Runtime;
+using Java.Interop;
+using Android.Content;
+using XLabs.Ioc;
+
+
+[assembly:ExportRenderer (typeof(TopMedicalNews.MyWebView), typeof(TopMedicalNews.Android.MyWebViewRenderer))]
+namespace TopMedicalNews.Android
+{
+	public class MyWebViewClient:WebViewClient
+	{
+		public override void OnPageStarted (global::Android.Webkit.WebView view, string url, global::Android.Graphics.Bitmap favicon)
+		{
+
+			base.OnPageStarted (view, url, favicon);
+			//
+			int font = Resolver.Resolve<IFontService> ().GetSelectFont ();
+			switch (font) {
+			case 0:
+				_view.Control.Settings.DefaultFontSize = 13;
+				break;
+			case 1:
+				_view.Control.Settings.DefaultFontSize = 20;
+				break;
+			case 2:
+				_view.Control.Settings.DefaultFontSize = 35;
+				break;
+			}
+			//
+			MessagingCenter.Subscribe<object> (this, "Share", (obj) => {
+				if (_view.Control != null) {
+					var pic = _view.Control.CapturePicture ();
+					var bitmap = global::Android.Graphics.Bitmap.CreateBitmap (pic.Width, pic.Height, global::Android.Graphics.Bitmap.Config.Argb8888);
+					var c = new global::Android.Graphics.Canvas (bitmap);
+					pic.Draw (c);
+					var path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+					System.IO.FileStream fos = null;
+					try {
+						fos = new System.IO.FileStream(path + "/share.png",System.IO.FileMode.Create);
+						if (fos != null) {
+							bitmap.Compress (global::Android.Graphics.Bitmap.CompressFormat.Png, 100,fos);
+							fos.Close ();
+						}
+					} catch (Exception e) {
+
+					}
+				}
+			});
+			//
+
+
+		}
+
+		public override void OnPageFinished (global::Android.Webkit.WebView view, string url)
+		{
+			base.OnPageFinished (view, url);
+			if (_view.Control != null) {
+				_view.Control.LoadUrl ("javascript:Foo.resize(document.body.offsetHeight)");
+				//
+		
+				//if (_view.Control != null) {
+				//var picture = _view.
+//				Bitmap b = Bitmap.createBitmap(
+//					picture.getWidth(), picture.getHeight(), Bitmap.Config.ARGB_8888);
+//				Canvas c = new Canvas(b);
+//				picture.draw(c);
+//
+//				FileOutputStream fos = null;
+//				try {
+//					fos = new FileOutputStream( "/sdcard/"  + "page.jpg" );
+//					if ( fos != null ) {
+//						b.compress(Bitmap.CompressFormat.JPEG, 90, fos );
+//						fos.close();
+//					}
+//				} 
+//				catch( Exception e ) {
+//					System.out.println("-----error--"+e);
+//				}
+				//}
+			}
+		}
+
+		public MyWebViewClient (MyWebViewRenderer view)
+		{
+			_view = view;
+
+		}
+
+		MyWebViewRenderer _view;
+	}
+
+	public class MyWebViewRenderer:WebViewRenderer
+	{
+		public MyWebViewRenderer ()
+		{
+		}
+
+		protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.WebView> e)
+		{
+		
+			base.OnElementChanged (e);
+			this.Control.AddJavascriptInterface (this, "Foo");
+			this.Control.SetWebViewClient (new MyWebViewClient (this));
+			this.Control.HorizontalScrollBarEnabled = false; 
+			this.Control.VerticalScrollBarEnabled = false;
+			this.Control.Settings.SetLayoutAlgorithm (WebSettings.LayoutAlgorithm.SingleColumn);
+
+			this.Control.SetBackgroundColor (global::Android.Graphics.Color.White);
+		}
+
+		[Export ("resize")]
+		// to become consistent with Java/JS interop convention, the argument cannot be System.String.
+		public void resize (string height)
+		{
+			Device.BeginInvokeOnMainThread (() => {
+			
+				double d = Java.Lang.Double.ParseDouble (height);
+				this.Element.HeightRequest = d + 20;
+			});
+		}
+	}
+}
+

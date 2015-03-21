@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyGridChildView">
 	<ContentView.Content>
-		<StackLayout Orientation="Vertical">
-			<Label Text="{Binding Title}" />
+		<StackLayout BackgroundColor="#F1F1F1" Orientation="Vertical">
+			<Label Text="{Binding Title}" BackgroundColor="#E4E4E4" />
 			<local:MyGridView ColumnSpacing="5" x:Name="grid" DragMode="false"  RowSpacing="5"  ItemsSource="{Binding Columns}">
 				<local:MyGridView.ItemTemplate>
 					<DataTemplate>

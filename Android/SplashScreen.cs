@@ -6,7 +6,7 @@ using Android.Content;
 
 namespace TopMedicalNews.Android
 {
-	[Activity(Label = "首页", MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash", 
+	[Activity(Label = "医界头条", MainLauncher = true, NoHistory = true, Theme = "@style/Theme.Splash", 
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class SplashScreen : Activity
 	{

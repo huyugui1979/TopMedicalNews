@@ -8,6 +8,11 @@ namespace TopMedicalNews
 {
 	public partial class SetttingPage : MyPage
 	{
+		protected override void OnBindingContextChanged ()
+		{
+			base.OnBindingContextChanged ();
+			radio.SetBinding (BindableRadioGroup.SelectedIndexProperty, "SelectFont");
+		}
 		public SetttingPage ()
 		{
 			InitializeComponent ();

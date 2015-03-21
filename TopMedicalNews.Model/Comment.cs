@@ -11,13 +11,13 @@ namespace TopMedicalNews.Model
 	{
 		public int  UserID{ get; set; }
 		public int  NewsID{ get; set; }
-		[PrimaryKey,AutoIncrement]
+		public string ImageUrl{get;set;}
+		[PrimaryKey]
 		public int    ID{ get; set; }
 		public DateTime PublishTime{ get; set; }
 		public string Content{ get; set; }
-		public Comment ()
-		{
-		}
+		public string UserName{ get; set; }
+
 	}
 }
 

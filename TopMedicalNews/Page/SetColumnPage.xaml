@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MyPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.SetColumnPage">
+<MyPage xmlns="http://xamarin.com/schemas/2014/forms" Title="选择栏目" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.SetColumnPage">
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" Padding="5">
-			<StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
-				<Label Text="长按排序,点击删除" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
-				<Button WidthRequest="20" FontSize="15" BackgroundColor="Transparent" Text="V" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
-			</StackLayout>
-			<local:MyGridView ColumnSpacing="5" DragMode="true"  ItemsSource="{Binding LikeColumns}" HorizontalOptions="FillAndExpand"  RowSpacing="5" >
-				
+			<Label Text="长按排序,点击删除" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+			<local:MyGridView ColumnSpacing="5" DragMode="true" ItemsSource="{Binding LikeColumns}" HorizontalOptions="FillAndExpand" RowSpacing="5">
 				<local:MyGridView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
@@ -19,11 +15,9 @@
 					</DataTemplate>
 				</local:MyGridView.ItemTemplate>
 			</local:MyGridView>
-
 			<ScrollView Orientation="Vertical">
-			<StackLayout  Orientation="Vertical" x:Name="stack" >
-
-			</StackLayout>
+				<StackLayout Orientation="Vertical" x:Name="stack">
+				</StackLayout>
 			</ScrollView>
 		</StackLayout>
 	</ContentPage.Content>

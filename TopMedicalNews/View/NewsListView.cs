@@ -30,11 +30,11 @@ namespace TopMedicalNews
 					foreach (var item in e.NewItems) {
 						View view=null;
 						var temp = item as News;
-						if(temp.Type == 1)
+						if(temp.Type == "news")
 						{
 							view = (View)NewsItemTemplate.CreateContent ();
 							view.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-								(v.ParentView.BindingContext as FirstModel).GotoNewsDetailCommand.Execute(item);
+								(v.ParentView.BindingContext as MyNewsListModel).GotoNewsDetailCommand.Execute(item);
 
 							}));
 						}
@@ -42,24 +42,25 @@ namespace TopMedicalNews
 						{
 							view =(View)ThemeItemTemplate.CreateContent();
 							view.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-								(v.ParentView.BindingContext as FirstModel).GotoThemeCommand.Execute(item);
+								(v.ParentView.BindingContext as MyNewsListModel).GotoThemeCommand.Execute(item);
 
 							}));
 						}
 						//设置图像
 						var image = view.FindByName<Image>("image");
-						if((item as News).ImageUri == null)
+						if((item as News).ImageUri == "")
 							image.IsVisible=false;
 						else
 							image.IsVisible=true;
-						//
-
 						var bindableObject = view as BindableObject;
 
 						if (bindableObject != null)
 							bindableObject.BindingContext = item;
-						_stack.Children.Add (view);
+						Device.BeginInvokeOnMainThread(()=>{
+							_stack.Children.Add (view);});
+						//
 
+						//
 					}
 					break;
 				case NotifyCollectionChangedAction.Reset:

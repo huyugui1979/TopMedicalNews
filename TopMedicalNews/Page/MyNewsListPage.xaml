@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyNewsListPage">
+	<ContentPage.Content>
+		<local:MyPullToRefreshScrollView x:Name="pull" HorizontalOptions="Fill" IsEnd="{Binding IsEnd}" RefreshCommand="{Binding RefreshCommand}" VerticalOptions="FillAndExpand" RequestMoreCommand="{Binding RequestMoreCommand}" RequestMoring="{Binding RequestMoring}" IsRefreshing="{Binding IsRefreshing}">
+			<StackLayout Orientation="Vertical">
+				<AbsoluteLayout BackgroundColor="White">
+					<local:CarouselScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" SelectCommand="{Binding SelectFocusNewsCommand}" Orientation="Horizontal" SelectedItem="{Binding SelectedFocusNews}" ItemsSource="{Binding FocusNews}">
+						<local:CarouselScrollView.ItemTemplate>
+							<DataTemplate>
+								<Image Aspect="AspectFill" Source="{Binding ImageUri}"  />
+							</DataTemplate>
+						</local:CarouselScrollView.ItemTemplate>
+					</local:CarouselScrollView>
+<!--					/*#0x8f878787*/"-->
+					<StackLayout x:Name="stackLayout" BackgroundColor ="White"  Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.1" AbsoluteLayout.LayoutFlags="All">
+				<StackLayout.Triggers>
+						<DataTrigger TargetType="{x:Type StackLayout}" Binding="{Binding HaveSelectedFocusNews}" Value="True">
+							<Setter Property="BackgroundColor" Value="#8f878787" />
+						</DataTrigger>
+					</StackLayout.Triggers>
+						<Label HorizontalOptions="StartAndExpand" TextColor="White" Text="{Binding SelectedFocusNews.Title}" />
+						<local:PipSet ItemsSource="{Binding FocusNews}" SelectedItem="{Binding SelectedFocusNews}" />
+					</StackLayout>
+				</AbsoluteLayout>
+				<local:NewsListView x:Name="newsList" ItemsSource="{Binding SelectNews}">
+					<local:NewsListView.ThemeItemTemplate>
+						<DataTemplate>
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding ImageUri}" x:Name="image" WidthRequest="80" HeightRequest="60">
+								</Image>
+								<StackLayout Orientation="Vertical" Padding="0,0,10,0">
+									<Label Text="{Binding Title}" />
+									<Label Text="{Binding Thumb}" FontSize="14" TextColor="#878787" />
+									<Label Text="专题" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Blue" FontSize="11" TextColor="White">
+									</Label>
+								</StackLayout>
+							</StackLayout>
+						</DataTemplate>
+					</local:NewsListView.ThemeItemTemplate>
+					<local:NewsListView.NewsItemTemplate>
+						<DataTemplate>
+							<StackLayout Orientation="Vertical" >
+								<Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+									<Grid.RowDefinitions>
+										<RowDefinition Height="*"  >
+										</RowDefinition>
+										<RowDefinition Height="20">
+										</RowDefinition>
+										<RowDefinition Height="1">
+										</RowDefinition>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*">
+										</ColumnDefinition>
+										<ColumnDefinition Width="100">
+										</ColumnDefinition>
+										<ColumnDefinition Width="*">
+										</ColumnDefinition>
+										<ColumnDefinition Width="*">
+										</ColumnDefinition>
+									</Grid.ColumnDefinitions>
+									<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="4">
+										<Image Source="{Binding ImageUri}" x:Name="image" WidthRequest="80" HeightRequest="60">;
+										</Image>
+										<StackLayout Orientation="Vertical" Padding="0,0,10,0">
+											<Label Text="{Binding Title}" />
+											<Label Text="{Binding Thumb}" FontSize="14" TextColor="#878787" />
+										</StackLayout>
+									</StackLayout>
+									<Label  Grid.Row="1" Grid.Column="0"  TextColor="#878787" FontSize="14" x:Name="publishTime" Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" HorizontalOptions="Start" />
+									<Label Grid.Row="1" Grid.Column="1"  TextColor="#878787" FontSize="14" Text="{Binding FromSource,StringFormat='来自-{0}'}}" HorizontalOptions="Start" />
+									<Label Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" TextColor="#878787" FontSize="14" Text="{Binding ViewerNum,StringFormat='{0}查看'}" />
+									<Label Grid.Row="1" Grid.Column="3" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" TextColor="#878787" FontSize="14" Text="{Binding PosterNum,StringFormat='{0}评论'}" />
+									<BoxView HeightRequest="0.3" Color="#d9d9d9" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="4" />
+								</Grid>
+							</StackLayout>
+						</DataTemplate>
+					</local:NewsListView.NewsItemTemplate>
+				</local:NewsListView>
+			</StackLayout>
+		</local:MyPullToRefreshScrollView>
+	</ContentPage.Content>
+</ContentPage>

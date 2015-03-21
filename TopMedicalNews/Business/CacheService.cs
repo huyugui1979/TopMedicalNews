@@ -3,28 +3,30 @@ using System.Threading.Tasks;
 using System.Threading;
 using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
+using Xamarin.Forms;
+using TopMedicalNews.Model;
 
 namespace TopMedicalNews
 {
 	public interface ICacheService
 	{
-		Task ClearCache(Action<int> action);
+		Task ClearCache();
+
 	}
 	public class CacheService:ICacheService
 	{
 		public CacheService ()
 		{
 		}
-		public Task ClearCache(Action<int> action)
+		public Task ClearCache()
 		{
 			return Task.Factory.StartNew (() => {
-
-				for(int i=0;i<100;i++)
-				{
-					Thread.Sleep(100);
-
-					action(i);
-				}
+				FileUtil.CleanCache ();
+				Resolver.Resolve<ISQLiteClient>().DeleteAllData<News>();
+				Resolver.Resolve<ISQLiteClient>().DeleteAllData<Reading>();
+				Resolver.Resolve<ISQLiteClient>().DeleteAllData<Collection>();
+				Resolver.Resolve<ISQLiteClient>().DeleteAllData<Comment>();
+			
 			});
 		}
 	}

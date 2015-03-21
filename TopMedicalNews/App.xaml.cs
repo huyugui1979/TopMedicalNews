@@ -29,7 +29,7 @@ namespace TopMedicalNews
 			var resolverContainer = new SimpleContainer();
 
 			Resolver.SetResolver(resolverContainer.GetResolver());
-			resolverContainer.RegisterSingle<ISettings,Settings>();
+			//resolverContainer.RegisterSingle<ISettings,Settings>();
 			#if __IOS__
 			resolverContainer.Register<IDevice> (t => AppleDevice.CurrentDevice);
 			#else
@@ -39,23 +39,29 @@ namespace TopMedicalNews
 			resolverContainer.Register<ISQLiteClient> (new SQLiteClient());
 			resolverContainer.RegisterSingle<ICategoryService,CategoryService> ();
 			resolverContainer.RegisterSingle<IColumnService,ColumnService> ();
+			resolverContainer.RegisterSingle<ILikeColumnService,LikeColumnService> ();
 			resolverContainer.RegisterSingle<ICollectionService,CollectionService> ();
 			resolverContainer.RegisterSingle<INewsService,NewsService> ();
-			resolverContainer.RegisterSingle<IFontService,FontService> ();
+			resolverContainer.RegisterSingle<ICacheService,CacheService> ();
 			resolverContainer.RegisterSingle<IFontService,FontService> ();
 			resolverContainer.RegisterSingle<IUserService,UserService> ();
+			resolverContainer.RegisterSingle<IDepartmentService,DepartmentService> ();
 			resolverContainer.RegisterSingle<IReadingService,ReadingService> ();
 			resolverContainer.RegisterSingle<ICommentService,CommentService> ();
 			resolverContainer.RegisterSingle<IUserDialogService,UserDialogService> ();
+			resolverContainer.RegisterSingle<IJsonService,JsonService> ();
+			resolverContainer.RegisterSingle<ISoftService,SoftService> ();
+
 			//Resolver.SetResolver(resolverContainer.GetResolver());
-			ViewFactory.Register<MyFirstPage,FirstModel> ();
+			ViewFactory.Register<FirstPage,FirstModel> ();
 			ViewFactory.Register<LoginPage,LoginModel> ();
 			ViewFactory.Register<NewsThemePage,NewsThemeModel> ();
 			ViewFactory.Register<ForgetPage,ForgetModel> ();
+			ViewFactory.Register<MyNewsListPage,MyNewsListModel> ();
 			ViewFactory.Register<ModifyPasswordPage,ModifyPasswordModel> ();
 			ViewFactory.Register<RegisterPage,RegisterModel> ();
 			ViewFactory.Register<NewsDetailPage,NewsDetailModel> ();
-
+			ViewFactory.Register<RegisterRulePage,RegisterRuleModel> ();
 			ViewFactory.Register<SetttingPage,SettingModel> ();
 			ViewFactory.Register<MyMasterPage,MasterModel> ();
 			ViewFactory.Register<FeedBackPage,FeedBackModel> ();
@@ -65,10 +71,27 @@ namespace TopMedicalNews
 			ViewFactory.Register<MyCommentPage,MyCommentModel> ();
 			ViewFactory.Register<MyReadingPage,MyReadingModel> ();
 			ViewFactory.Register<MainPage,MainModel> ();
-			//
-			Resolver.Resolve<IColumnService> ().Init ();
+			ViewFactory.Register<SelectDepartmentPage,SelectDepartmentModel> ();
+
 			//
 
+
+
+			if (CrossSettings.Current.GetValueOrDefault<bool>("MyInit",false) == false)
+			{
+				//
+				Resolver.Resolve<ISQLiteClient> ().Init ();
+				Resolver.Resolve<IFontService> ().Init ();
+				//
+				Resolver.Resolve<IColumnService> ().Init ();
+				Resolver.Resolve<IDepartmentService> ().Init ();
+				CrossSettings.Current.AddOrUpdateValue<bool>("MyInit", true);
+
+			}
+
+			//
+			//Resolver.Resolve<IDepartmentService> ().Init ();
+			//
 		}
 		public App()
 		{

@@ -123,6 +123,7 @@ namespace TopMedicalNews.Android
 				mDownX = (int)e.GetX ();
 				mDownY = (int)e.GetY ();
 				if (isDrag && mDragImageView != null)
+
 					onDragItem (mDownX, mDownY);
 
 //					if(!IsTouchInItem(mStartDragItemView, moveX, moveY)){ 
@@ -139,8 +140,9 @@ namespace TopMedicalNews.Android
 						isDrag = false;  
 					} else {
 
-						if (mDragPosition != AdapterView.InvalidPosition)
 
+						if (mDragPosition != AdapterView.InvalidPosition)
+						
 						OnClickItemEvent (mDragPosition);
 					}
 
@@ -219,7 +221,8 @@ namespace TopMedicalNews.Android
 		{  
 			//获取我们手指移动到的那个item的position  
 			var tempPosition = PointToPosition (moveX, moveY);  
-
+			if (tempPosition == 0)//如果是第一个，不进行任何交换
+				return;
 			//假如tempPosition 改变了并且tempPosition不等于-1,则进行交换  
 			if (tempPosition != mDragPosition && tempPosition != AdapterView.InvalidPosition) { 
 

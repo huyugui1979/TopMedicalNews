@@ -1,66 +1,67 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <local:MyPage Title="新闻详情" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.NewsDetailPage">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical">
+		<StackLayout Orientation="Vertical" BackgroundColor="White">
 			<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-				<StackLayout Orientation="Vertical" Padding="10,0,10,0">
-					<Label Text="{Binding News.Title}" />
+				<StackLayout Orientation="Vertical" Padding="10,10,10,10">
+					<Label Text="{Binding News.Title}" FontSize="24" />
 					<StackLayout Orientation="Horizontal">
-						<Label Text="{Binding News.FromSource,StringFormat='来自{0}'}" TextColor="#878787" FontSize="14" />
-						<Label Text="{Binding News.PublishTime,StringFormat='{0:yyyy-MM-dd}'}" TextColor="#878787" FontSize="14" />
+						<Label Text="{Binding News.FromSource,StringFormat='来自-{0}'}" TextColor="#878787" FontSize="14" />
+						<Label Text="{Binding News.PublishTime,StringFormat='{0:yyyy-MM-dd}'}" BackgroundColor="White" TextColor="#878787" FontSize="14" />
 					</StackLayout>
 					<lc:Separator Color="#D5D5D5" />
-					<Image Source="{Binding News.ImageUri}" HorizontalOptions="FillAndExpand" />
-					<Label Text="{Binding News.Content}" FontSize="14" />
-					<StackLayout Orientation="Horizontal">
-						<Image Source="tag_bg" WidthRequest="15" HeightRequest="15" />
-						<Label Text="{Binding News.Tag}" TextColor="#878787" FontSize="14" />
-					</StackLayout>
+					<local:MyWebView x:Name="webview" VerticalOptions="FillAndExpand" Source="{Binding Source}" />
 					<lc:Separator Color="#D5D5D5" />
-					<!--						<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
-					<ActivityIndicator IsRunning="{Binding IsBusy}" HeightRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
-					<Label Text="正在加载评论" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
 					<local:CommentListView x:Name="commentList" ItemsSource="{Binding Comments}">
 						<local:CommentListView.ItemTemplate>
 							<DataTemplate>
-								<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
-									<Grid.RowDefinitions>
-										<RowDefinition Height="20">
-										</RowDefinition>
-										<RowDefinition Height="20">
-										</RowDefinition>
-										<RowDefinition Height="*">
-										</RowDefinition>
-									</Grid.RowDefinitions>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="20">
-										</ColumnDefinition>
-										<ColumnDefinition Width="*">
-										</ColumnDefinition>
-									</Grid.ColumnDefinitions>
-									<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="3" x:Name="image" />
-									<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
-									<Label Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
-									<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
-								</Grid>
+								<StackLayout Orientation="Vertical">
+									<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="20">
+											</RowDefinition>
+											<RowDefinition Height="20">
+											</RowDefinition>
+											<RowDefinition Height="*">
+											</RowDefinition>
+											<RowDefinition Height="1">
+											</RowDefinition>
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="20">
+											</ColumnDefinition>
+											<ColumnDefinition Width="*">
+											</ColumnDefinition>
+										</Grid.ColumnDefinitions>
+										<Image Source="{Binding ImageUrl}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="4" x:Name="image" />
+										<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
+										<Label Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
+										<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
+									</Grid>
+									<BoxView HeightRequest="0.3" Color="#d9d9d9" HorizontalOptions="FillAndExpand" />
+								</StackLayout>
 							</DataTemplate>
 						</local:CommentListView.ItemTemplate>
 					</local:CommentListView>
 				</StackLayout>
 			</ScrollView>
 			<StackLayout Orientation="Horizontal" VerticalOptions="End" BackgroundColor="White" Padding="10,5,10,5">
-				<Entry Placeholder="我来说两句" HorizontalOptions="FillAndExpand" />
-				<Image HorizontalOptions="End"  WidthRequest="30" HeightRequest="30" Source="collection_pressed">
+				<Entry Placeholder="我来说两句" Text="{Binding MyComment}" HorizontalOptions="FillAndExpand" x:Name="InputComments" />
+				<Image HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Source="collection_pressed">
 					<Image.Triggers>
-						<DataTrigger TargetType="{x:Type Image}" Binding="{Binding IsCollection}" Value="False">
+						<DataTrigger TargetType="{x:Type Image}" Binding="{Binding News.Collect}" Value="False">
 							<Setter Property="Source" Value="collection" />
 						</DataTrigger>
 					</Image.Triggers>
 					<Image.GestureRecognizers>
-					<TapGestureRecognizer  Command="{Binding AddNewsCollectionCmd}"/>
+						<TapGestureRecognizer Command="{Binding AddNewsCollectionCmd}" />
 					</Image.GestureRecognizers>
 				</Image>
-				<Image HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Source="share"  />
+				<Image HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Source="share">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding ShareCmd}" />
+					</Image.GestureRecognizers>
+				</Image>
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>

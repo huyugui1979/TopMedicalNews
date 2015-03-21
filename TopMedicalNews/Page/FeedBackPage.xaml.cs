@@ -13,6 +13,19 @@ namespace TopMedicalNews
 			InitializeComponent ();
 
 		}
+		protected override void OnBindingContextChanged()
+		{
+			base.OnBindingContextChanged();
+
+			FeedBackModel vm = BindingContext as FeedBackModel;
+			if (vm != null) {
+
+				foreach (var type in vm.FeedBackTypeValues)
+				{
+					typePicker.Items.Add(type);
+				}
+			}
+		}
 	}
 }
 

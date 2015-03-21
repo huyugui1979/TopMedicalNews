@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using Xamarin.Forms;
+using TopMedicalNews.Model;
 
 namespace TopMedicalNews
 {
@@ -8,10 +9,14 @@ namespace TopMedicalNews
 	{
 		public ThemeNewsListView ()
 		{
+
 		}
+
+
 		public DataTemplate ItemTemplate {
 			get;
 			set;
+
 		}
 		protected override void ItemsSourceChanged ()
 		{
@@ -25,8 +30,24 @@ namespace TopMedicalNews
 						View view = null;
 
 						view = (View)ItemTemplate.CreateContent ();
+						if(item is Collection)
+						{
+							if((item as Collection).Imginfo == "")
+								view.FindByName<Image>("image").IsVisible=false;
+						}
+						if(item is Reading)
+						{
+							if((item as Reading).Imginfo == "")
+								view.FindByName<Image>("image").IsVisible=false;
+						}
+
 						view.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-							(v.ParentView.BindingContext as NewsThemeModel).GotoNewsDetailCommand.Execute(item);
+							if(v.ParentView.BindingContext is NewsThemeModel)
+								(v.ParentView.BindingContext as NewsThemeModel).GotoNewsDetailCommand.Execute(item);
+							else if(v.ParentView.BindingContext is MyCollectionModel)
+								(v.ParentView.BindingContext as MyCollectionModel).GotoNewsDetailCommand.Execute(item);
+							else if(v.ParentView.BindingContext is MyReadingModel)
+								(v.ParentView.BindingContext as MyReadingModel).GotoNewsDetailCommand.Execute(item);
 
 						}));
 						var bindableObject = view as BindableObject;

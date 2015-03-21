@@ -84,6 +84,7 @@ namespace TopMedicalNews
 					//
 					var view = (View)ItemTemplate.CreateContent ();
 					view.WidthRequest =  App.ScreenWidth;
+					view.HeightRequest = App.ScreenWidth*0.6;
 					var bindableObject = view as BindableObject;
 
 					if (bindableObject != null)

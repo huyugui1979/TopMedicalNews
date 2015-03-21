@@ -1,33 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<local:MyPage  Title="我的评论" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyCommentPage">
+<local:MyPage Title="我的评论" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyCommentPage">
 	<ContentPage.Content>
-<StackLayout Orientation="Vertical">
-			<local:CommentListView  ItemsSource="{Binding Comments}">
-			<local:CommentListView.ItemTemplate>
-				<DataTemplate>
-					<Grid VerticalOptions="FillAndExpand" RowSpacing="3" ColumnSpacing="3" HorizontalOptions="FillAndExpand">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="20">
-							</RowDefinition>
-							<RowDefinition Height="20">
-							</RowDefinition>
-							<RowDefinition Height="*">
-							</RowDefinition>
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="20">
-							</ColumnDefinition>
-							<ColumnDefinition Width="*">
-							</ColumnDefinition>
-						</Grid.ColumnDefinitions>
-						<Image Source="{Binding ImageUri}" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" Grid.RowSpan="3" x:Name="image" />
-						<Label Text="{Binding UserName}" Grid.Row="0" Grid.Column="1" FontSize="12" TextColor="Blue" HorizontalOptions="Start" />
-						<Label Text="{Binding PublishTime,StringFormat='{0:yyyy-MM-dd}'}" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="#878787" />
-						<Label Text="{Binding Content}" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1" FontSize="14" />
-					</Grid>
-				</DataTemplate>
-			</local:CommentListView.ItemTemplate>
-		</local:CommentListView>
-</StackLayout>
+		<StackLayout Orientation="Vertical">
+			<local:MyCommentListView ItemsSource="{Binding CommentsList}">
+				<local:MyCommentListView.ItemTemplate>
+					<DataTemplate>
+						<StackLayout Orientation="Vertical">
+							<StackLayout Orientation="Horizontal">
+								<Image Source="{Binding Imginfo}" x:Name="image" WidthRequest="80" HeightRequest="60">;
+										</Image>
+								<StackLayout Orientation="Vertical" Padding="0,0,10,0">
+									<Label Text="{Binding Title_Name}" />
+									<Label Text="{Binding Post_Info}" FontSize="14" TextColor="#878787" />
+								</StackLayout>
+							</StackLayout>
+							<StackLayout Orientation="Horizontal">
+								<Label TextColor="#878787" FontSize="14" x:Name="" Text="{Binding Add_Time,StringFormat='{0:yyyy-MM-dd}'}" HorizontalOptions="Start" />
+								<Label BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" TextColor="#878787" FontSize="14" Text="{Binding View,StringFormat='{0}查看'}" />
+								<Label HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" TextColor="#878787" FontSize="14" Text="{Binding Comment,StringFormat='{0}评论'}" />
+							</StackLayout>
+								<BoxView HeightRequest="0.3" Color="#d9d9d9"  HorizontalOptions="FillAndExpand"/>
+						</StackLayout>
+					</DataTemplate>
+				</local:MyCommentListView.ItemTemplate>
+			</local:MyCommentListView>
+		</StackLayout>
 	</ContentPage.Content>
 </local:MyPage>

@@ -13,6 +13,7 @@ namespace TopMedicalNews.Android
 		public NoScrollViewRenderer ()
 		{
 		}
+
 		protected override void OnElementChanged (VisualElementChangedEventArgs e)
 		{
 			base.OnElementChanged (e);
@@ -21,8 +22,11 @@ namespace TopMedicalNews.Android
 			this.LayoutChange += (object sender, LayoutChangeEventArgs ee) => {
 				var hv = this.GetChildAt(0) as HorizontalScrollView;
 				//hv.VerticalScrollBarEnabled = false;
+				if(hv !=null)
 				hv.HorizontalScrollBarEnabled= false;
 			};
+		
+
 //			var s = this.GetChildAt (0);
 //			int j = 2;
 		}

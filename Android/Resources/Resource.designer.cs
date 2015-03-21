@@ -321,94 +321,553 @@ namespace TopMedicalNews.Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ad16 = 2130837504;
+			public const int account_bg = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int calendar_bg_selector = 2130837505;
+			public const int ad16 = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int collection = 2130837506;
+			public const int auth_follow_cb_chd = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int collection_pressed = 2130837507;
+			public const int auth_follow_cb_unc = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int comment_btn = 2130837508;
+			public const int auth_title_back = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int down_arrow = 2130837509;
+			public const int blue_point = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int ic_errorstatus = 2130837510;
+			public const int btn_back_nor = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int ic_launcher = 2130837511;
+			public const int calendar_bg_selector = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int ic_successstatus = 2130837512;
+			public const int classic_platform_corners_bg = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int Icon = 2130837513;
+			public const int collection = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int IndicatorDown = 2130837514;
+			public const int collection_pressed = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int IndicatorRight = 2130837515;
+			public const int comment_btn = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int logout_btn = 2130837516;
+			public const int down_arrow = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int password = 2130837517;
+			public const int dropdown = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int person_center_btnx = 2130837518;
+			public const int edittext_back = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int pip = 2130837519;
+			public const int ic_errorstatus = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int pip_selected = 2130837520;
+			public const int ic_launcher = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int portait = 2130837521;
+			public const int ic_successstatus = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int portait_logo_bg = 2130837522;
+			public const int Icon = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int reading_btn = 2130837523;
+			public const int img_cancel = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int reading_collection_btn = 2130837524;
+			public const int IndicatorDown = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int return_btnx = 2130837525;
+			public const int IndicatorRight = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int roundedbg = 2130837526;
+			public const int light_blue_point = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int roundedbgdark = 2130837527;
+			public const int logo_bluetooth = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int setting_btn = 2130837528;
+			public const int logo_douban = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int shape = 2130837529;
+			public const int logo_dropbox = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int share = 2130837530;
+			public const int logo_email = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int splashscreen = 2130837531;
+			public const int logo_evernote = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int tag_bg = 2130837532;
+			public const int logo_facebook = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int xiala = 2130837533;
+			public const int logo_facebookmessenger = 2130837533;
+			
+			// aapt resource value: 0x7f02001e
+			public const int logo_flickr = 2130837534;
+			
+			// aapt resource value: 0x7f02001f
+			public const int logo_foursquare = 2130837535;
+			
+			// aapt resource value: 0x7f020020
+			public const int logo_googleplus = 2130837536;
+			
+			// aapt resource value: 0x7f020021
+			public const int logo_instagram = 2130837537;
+			
+			// aapt resource value: 0x7f020022
+			public const int logo_instapaper = 2130837538;
+			
+			// aapt resource value: 0x7f020023
+			public const int logo_kaixin = 2130837539;
+			
+			// aapt resource value: 0x7f020024
+			public const int logo_kakaostory = 2130837540;
+			
+			// aapt resource value: 0x7f020025
+			public const int logo_kakaotalk = 2130837541;
+			
+			// aapt resource value: 0x7f020026
+			public const int logo_line = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int logo_linkedin = 2130837543;
+			
+			// aapt resource value: 0x7f020028
+			public const int logo_mingdao = 2130837544;
+			
+			// aapt resource value: 0x7f020029
+			public const int logo_pinterest = 2130837545;
+			
+			// aapt resource value: 0x7f02002a
+			public const int logo_pocket = 2130837546;
+			
+			// aapt resource value: 0x7f02002b
+			public const int logo_qq = 2130837547;
+			
+			// aapt resource value: 0x7f02002c
+			public const int logo_qzone = 2130837548;
+			
+			// aapt resource value: 0x7f02002d
+			public const int logo_renren = 2130837549;
+			
+			// aapt resource value: 0x7f02002e
+			public const int logo_shortmessage = 2130837550;
+			
+			// aapt resource value: 0x7f02002f
+			public const int logo_sinaweibo = 2130837551;
+			
+			// aapt resource value: 0x7f020030
+			public const int logo_sohusuishenkan = 2130837552;
+			
+			// aapt resource value: 0x7f020031
+			public const int logo_tencentweibo = 2130837553;
+			
+			// aapt resource value: 0x7f020032
+			public const int logo_tumblr = 2130837554;
+			
+			// aapt resource value: 0x7f020033
+			public const int logo_twitter = 2130837555;
+			
+			// aapt resource value: 0x7f020034
+			public const int logo_vkontakte = 2130837556;
+			
+			// aapt resource value: 0x7f020035
+			public const int logo_wechat = 2130837557;
+			
+			// aapt resource value: 0x7f020036
+			public const int logo_wechatfavorite = 2130837558;
+			
+			// aapt resource value: 0x7f020037
+			public const int logo_wechatmoments = 2130837559;
+			
+			// aapt resource value: 0x7f020038
+			public const int logo_whatsapp = 2130837560;
+			
+			// aapt resource value: 0x7f020039
+			public const int logo_yixin = 2130837561;
+			
+			// aapt resource value: 0x7f02003a
+			public const int logo_yixinmoments = 2130837562;
+			
+			// aapt resource value: 0x7f02003b
+			public const int logo_youdao = 2130837563;
+			
+			// aapt resource value: 0x7f02003c
+			public const int logout_btn = 2130837564;
+			
+			// aapt resource value: 0x7f02003d
+			public const int password = 2130837565;
+			
+			// aapt resource value: 0x7f02003e
+			public const int password1 = 2130837566;
+			
+			// aapt resource value: 0x7f02003f
+			public const int person_center = 2130837567;
+			
+			// aapt resource value: 0x7f020040
+			public const int person_center_btnx = 2130837568;
+			
+			// aapt resource value: 0x7f020041
+			public const int pin = 2130837569;
+			
+			// aapt resource value: 0x7f020042
+			public const int pip = 2130837570;
+			
+			// aapt resource value: 0x7f020043
+			public const int pip_selected = 2130837571;
+			
+			// aapt resource value: 0x7f020044
+			public const int portait = 2130837572;
+			
+			// aapt resource value: 0x7f020045
+			public const int portait_logo_bg = 2130837573;
+			
+			// aapt resource value: 0x7f020046
+			public const int reading_btn = 2130837574;
+			
+			// aapt resource value: 0x7f020047
+			public const int reading_collection_btn = 2130837575;
+			
+			// aapt resource value: 0x7f020048
+			public const int return_btnx = 2130837576;
+			
+			// aapt resource value: 0x7f020049
+			public const int roundedbg = 2130837577;
+			
+			// aapt resource value: 0x7f02004a
+			public const int roundedbgdark = 2130837578;
+			
+			// aapt resource value: 0x7f02004b
+			public const int setting_btn = 2130837579;
+			
+			// aapt resource value: 0x7f02004c
+			public const int shape = 2130837580;
+			
+			// aapt resource value: 0x7f02004d
+			public const int share = 2130837581;
+			
+			// aapt resource value: 0x7f02004e
+			public const int skyblue_actionbar_back_btn = 2130837582;
+			
+			// aapt resource value: 0x7f02004f
+			public const int skyblue_actionbar_ok_btn = 2130837583;
+			
+			// aapt resource value: 0x7f020050
+			public const int skyblue_editpage_bg = 2130837584;
+			
+			// aapt resource value: 0x7f020051
+			public const int skyblue_editpage_close = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int skyblue_editpage_divider = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int skyblue_editpage_image_bg = 2130837587;
+			
+			// aapt resource value: 0x7f020054
+			public const int skyblue_editpage_image_remove = 2130837588;
+			
+			// aapt resource value: 0x7f020055
+			public const int skyblue_logo_baidutieba = 2130837589;
+			
+			// aapt resource value: 0x7f020056
+			public const int skyblue_logo_baidutieba_checked = 2130837590;
+			
+			// aapt resource value: 0x7f020057
+			public const int skyblue_logo_bluetooth = 2130837591;
+			
+			// aapt resource value: 0x7f020058
+			public const int skyblue_logo_bluetooth_checked = 2130837592;
+			
+			// aapt resource value: 0x7f020059
+			public const int skyblue_logo_douban = 2130837593;
+			
+			// aapt resource value: 0x7f02005a
+			public const int skyblue_logo_douban_checked = 2130837594;
+			
+			// aapt resource value: 0x7f02005b
+			public const int skyblue_logo_dropbox = 2130837595;
+			
+			// aapt resource value: 0x7f02005c
+			public const int skyblue_logo_dropbox_checked = 2130837596;
+			
+			// aapt resource value: 0x7f02005d
+			public const int skyblue_logo_email = 2130837597;
+			
+			// aapt resource value: 0x7f02005e
+			public const int skyblue_logo_email_checked = 2130837598;
+			
+			// aapt resource value: 0x7f02005f
+			public const int skyblue_logo_evernote = 2130837599;
+			
+			// aapt resource value: 0x7f020060
+			public const int skyblue_logo_evernote_checked = 2130837600;
+			
+			// aapt resource value: 0x7f020061
+			public const int skyblue_logo_facebook = 2130837601;
+			
+			// aapt resource value: 0x7f020062
+			public const int skyblue_logo_facebook_checked = 2130837602;
+			
+			// aapt resource value: 0x7f020063
+			public const int skyblue_logo_facebookmessenger = 2130837603;
+			
+			// aapt resource value: 0x7f020064
+			public const int skyblue_logo_facebookmessenger_checked = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int skyblue_logo_flickr = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int skyblue_logo_flickr_checked = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int skyblue_logo_foursquare = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int skyblue_logo_foursquare_checked = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int skyblue_logo_googleplus = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int skyblue_logo_googleplus_checked = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int skyblue_logo_instagram = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int skyblue_logo_instagram_checked = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int skyblue_logo_instapaper = 2130837613;
+			
+			// aapt resource value: 0x7f02006e
+			public const int skyblue_logo_instapaper_checked = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int skyblue_logo_kaixin = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int skyblue_logo_kaixin_checked = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int skyblue_logo_kakaostory = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int skyblue_logo_kakaostory_checked = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int skyblue_logo_kakaotalk = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int skyblue_logo_kakaotalk_checked = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int skyblue_logo_line = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int skyblue_logo_line_checked = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int skyblue_logo_linkedin = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int skyblue_logo_linkedin_checked = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int skyblue_logo_mingdao = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int skyblue_logo_mingdao_checked = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int skyblue_logo_neteasemicroblog = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int skyblue_logo_neteasemicroblog_checked = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int skyblue_logo_pinterest = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int skyblue_logo_pinterest_checked = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int skyblue_logo_pocket = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int skyblue_logo_pocket_checked = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int skyblue_logo_qq = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int skyblue_logo_qq_checked = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int skyblue_logo_qzone = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int skyblue_logo_qzone_checked = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int skyblue_logo_renren = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int skyblue_logo_renren_checked = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int skyblue_logo_shortmessage = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int skyblue_logo_shortmessage_checked = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int skyblue_logo_sinaweibo = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int skyblue_logo_sinaweibo_checked = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int skyblue_logo_sohumicroblog = 2130837643;
+			
+			// aapt resource value: 0x7f02008c
+			public const int skyblue_logo_sohumicroblog_checked = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int skyblue_logo_sohusuishenkan = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int skyblue_logo_sohusuishenkan_checked = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int skyblue_logo_tencentweibo = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int skyblue_logo_tencentweibo_checked = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int skyblue_logo_tumblr = 2130837649;
+			
+			// aapt resource value: 0x7f020092
+			public const int skyblue_logo_tumblr_checked = 2130837650;
+			
+			// aapt resource value: 0x7f020093
+			public const int skyblue_logo_twitter = 2130837651;
+			
+			// aapt resource value: 0x7f020094
+			public const int skyblue_logo_twitter_checked = 2130837652;
+			
+			// aapt resource value: 0x7f020095
+			public const int skyblue_logo_vkontakte = 2130837653;
+			
+			// aapt resource value: 0x7f020096
+			public const int skyblue_logo_vkontakte_checked = 2130837654;
+			
+			// aapt resource value: 0x7f020097
+			public const int skyblue_logo_wechat = 2130837655;
+			
+			// aapt resource value: 0x7f020098
+			public const int skyblue_logo_wechat_checked = 2130837656;
+			
+			// aapt resource value: 0x7f020099
+			public const int skyblue_logo_wechatfavorite = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int skyblue_logo_wechatfavorite_checked = 2130837658;
+			
+			// aapt resource value: 0x7f02009b
+			public const int skyblue_logo_wechatmoments = 2130837659;
+			
+			// aapt resource value: 0x7f02009c
+			public const int skyblue_logo_wechatmoments_checked = 2130837660;
+			
+			// aapt resource value: 0x7f02009d
+			public const int skyblue_logo_whatsapp = 2130837661;
+			
+			// aapt resource value: 0x7f02009e
+			public const int skyblue_logo_whatsapp_checked = 2130837662;
+			
+			// aapt resource value: 0x7f02009f
+			public const int skyblue_logo_yixin = 2130837663;
+			
+			// aapt resource value: 0x7f0200a0
+			public const int skyblue_logo_yixin_checked = 2130837664;
+			
+			// aapt resource value: 0x7f0200a1
+			public const int skyblue_logo_yixinmoments = 2130837665;
+			
+			// aapt resource value: 0x7f0200a2
+			public const int skyblue_logo_yixinmoments_checked = 2130837666;
+			
+			// aapt resource value: 0x7f0200a3
+			public const int skyblue_logo_youdao = 2130837667;
+			
+			// aapt resource value: 0x7f0200a4
+			public const int skyblue_logo_youdao_checked = 2130837668;
+			
+			// aapt resource value: 0x7f0200a5
+			public const int skyblue_platform_checked = 2130837669;
+			
+			// aapt resource value: 0x7f0200a6
+			public const int skyblue_platform_checked_disabled = 2130837670;
+			
+			// aapt resource value: 0x7f0200a7
+			public const int skyblue_platform_list_item = 2130837671;
+			
+			// aapt resource value: 0x7f0200a8
+			public const int skyblue_platform_list_item_selected = 2130837672;
+			
+			// aapt resource value: 0x7f0200a9
+			public const int skyblue_platform_list_selector = 2130837673;
+			
+			// aapt resource value: 0x7f0200aa
+			public const int splashscreen = 2130837674;
+			
+			// aapt resource value: 0x7f0200ab
+			public const int ssdk_auth_title_back = 2130837675;
+			
+			// aapt resource value: 0x7f0200ac
+			public const int ssdk_back_arr = 2130837676;
+			
+			// aapt resource value: 0x7f0200ad
+			public const int ssdk_logo = 2130837677;
+			
+			// aapt resource value: 0x7f0200ae
+			public const int ssdk_oks_ptr_ptr = 2130837678;
+			
+			// aapt resource value: 0x7f0200af
+			public const int ssdk_oks_shake_to_share_back = 2130837679;
+			
+			// aapt resource value: 0x7f0200b0
+			public const int ssdk_oks_yaoyiyao = 2130837680;
+			
+			// aapt resource value: 0x7f0200b1
+			public const int ssdk_title_div = 2130837681;
+			
+			// aapt resource value: 0x7f0200b2
+			public const int switch_column_bg = 2130837682;
+			
+			// aapt resource value: 0x7f0200b3
+			public const int tag_bg = 2130837683;
+			
+			// aapt resource value: 0x7f0200b4
+			public const int title_back = 2130837684;
+			
+			// aapt resource value: 0x7f0200b5
+			public const int title_shadow = 2130837685;
+			
+			// aapt resource value: 0x7f0200b6
+			public const int xiala = 2130837686;
 			
 			static Drawable()
 			{
@@ -423,62 +882,134 @@ namespace TopMedicalNews.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f09000f
-			public const int calendar_grid = 2131296271;
+			// aapt resource value: 0x7f090016
+			public const int actionbarLayout = 2131296278;
+			
+			// aapt resource value: 0x7f090022
+			public const int atDescTextView = 2131296290;
+			
+			// aapt resource value: 0x7f09001d
+			public const int atLayout = 2131296285;
+			
+			// aapt resource value: 0x7f090021
+			public const int atTextView = 2131296289;
+			
+			// aapt resource value: 0x7f090025
+			public const int backImageView = 2131296293;
+			
+			// aapt resource value: 0x7f090006
+			public const int button_more_columns = 2131296262;
+			
+			// aapt resource value: 0x7f090012
+			public const int calendar_grid = 2131296274;
 			
 			// aapt resource value: 0x7f090001
 			public const int calendar_view = 2131296257;
 			
-			// aapt resource value: 0x7f090011
-			public const int content_ly = 2131296273;
+			// aapt resource value: 0x7f09002a
+			public const int checkedImageView = 2131296298;
 			
-			// aapt resource value: 0x7f090006
-			public const int foot_layout_progress = 2131296262;
+			// aapt resource value: 0x7f09001a
+			public const int closeImageView = 2131296282;
 			
 			// aapt resource value: 0x7f090005
-			public const int foot_layout_text = 2131296261;
+			public const int content = 2131296261;
 			
-			// aapt resource value: 0x7f090012
-			public const int foot_ly = 2131296274;
+			// aapt resource value: 0x7f090014
+			public const int content_ly = 2131296276;
 			
-			// aapt resource value: 0x7f090007
-			public const int head_layout_left_arrow = 2131296263;
-			
-			// aapt resource value: 0x7f090008
-			public const int head_layout_left_progressbar = 2131296264;
+			// aapt resource value: 0x7f09001b
+			public const int divider = 2131296283;
 			
 			// aapt resource value: 0x7f090009
-			public const int head_layout_title = 2131296265;
+			public const int foot_layout_progress = 2131296265;
 			
-			// aapt resource value: 0x7f090010
-			public const int head_ly = 2131296272;
+			// aapt resource value: 0x7f090008
+			public const int foot_layout_text = 2131296264;
+			
+			// aapt resource value: 0x7f090015
+			public const int foot_ly = 2131296277;
+			
+			// aapt resource value: 0x7f090027
+			public const int gridView = 2131296295;
+			
+			// aapt resource value: 0x7f09001f
+			public const int hScrollView = 2131296287;
+			
+			// aapt resource value: 0x7f09000a
+			public const int head_layout_left_arrow = 2131296266;
+			
+			// aapt resource value: 0x7f09000b
+			public const int head_layout_left_progressbar = 2131296267;
+			
+			// aapt resource value: 0x7f09000c
+			public const int head_layout_title = 2131296268;
+			
+			// aapt resource value: 0x7f090013
+			public const int head_ly = 2131296275;
+			
+			// aapt resource value: 0x7f090024
+			public const int imageRemoveBtn = 2131296292;
+			
+			// aapt resource value: 0x7f090023
+			public const int imageView = 2131296291;
+			
+			// aapt resource value: 0x7f090020
+			public const int imagesLinearLayout = 2131296288;
 			
 			// aapt resource value: 0x7f090003
 			public const int left_arrow = 2131296259;
 			
-			// aapt resource value: 0x7f09000c
-			public const int loadingImage = 2131296268;
-			
-			// aapt resource value: 0x7f09000a
-			public const int loadingProgressBar = 2131296266;
+			// aapt resource value: 0x7f09000f
+			public const int loadingImage = 2131296271;
 			
 			// aapt resource value: 0x7f09000d
-			public const int loadingProgressWheel = 2131296269;
+			public const int loadingProgressBar = 2131296269;
 			
-			// aapt resource value: 0x7f09000e
-			public const int myButton = 2131296270;
+			// aapt resource value: 0x7f090010
+			public const int loadingProgressWheel = 2131296272;
+			
+			// aapt resource value: 0x7f090028
+			public const int logoImageView = 2131296296;
+			
+			// aapt resource value: 0x7f090004
+			public const int mColumnHorizontalScrollView = 2131296260;
+			
+			// aapt resource value: 0x7f090017
+			public const int mainRelLayout = 2131296279;
+			
+			// aapt resource value: 0x7f090011
+			public const int myButton = 2131296273;
+			
+			// aapt resource value: 0x7f090029
+			public const int nameTextView = 2131296297;
+			
+			// aapt resource value: 0x7f090026
+			public const int okImageView = 2131296294;
 			
 			// aapt resource value: 0x7f090002
 			public const int right_arrow = 2131296258;
 			
-			// aapt resource value: 0x7f09000b
-			public const int textViewStatus = 2131296267;
+			// aapt resource value: 0x7f09001e
+			public const int textCounterTextView = 2131296286;
+			
+			// aapt resource value: 0x7f09001c
+			public const int textEditText = 2131296284;
+			
+			// aapt resource value: 0x7f09000e
+			public const int textViewStatus = 2131296270;
 			
 			// aapt resource value: 0x7f090000
 			public const int title = 2131296256;
 			
-			// aapt resource value: 0x7f090004
-			public const int wall_progress_ly = 2131296260;
+			// aapt resource value: 0x7f090019
+			public const int titleEditText = 2131296281;
+			
+			// aapt resource value: 0x7f090018
+			public const int titleLayout = 2131296280;
+			
+			// aapt resource value: 0x7f090007
+			public const int wall_progress_ly = 2131296263;
 			
 			static Id()
 			{
@@ -500,34 +1031,55 @@ namespace TopMedicalNews.Android
 			public const int calendar_picker = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dialog = 2130903042;
+			public const int column = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int foot_layout = 2130903043;
+			public const int dialog = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int head_layout = 2130903044;
+			public const int foot_layout = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int loading = 2130903045;
+			public const int head_layout = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int loadingimage = 2130903046;
+			public const int loading = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int loadingprogress = 2130903047;
+			public const int loadingimage = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int Main = 2130903048;
+			public const int loadingprogress = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int month = 2130903049;
+			public const int Main = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int pull_refresh_scroll_view = 2130903050;
+			public const int month = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int week = 2130903051;
+			public const int pull_refresh_scroll_view = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int skyblue_editpage = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int skyblue_editpage_at_layout = 2130903053;
+			
+			// aapt resource value: 0x7f03000e
+			public const int skyblue_editpage_inc_image_layout = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int skyblue_share_actionbar = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int skyblue_share_platform_list = 2130903056;
+			
+			// aapt resource value: 0x7f030011
+			public const int skyblue_share_platform_list_item = 2130903057;
+			
+			// aapt resource value: 0x7f030012
+			public const int week = 2130903058;
 			
 			static Layout()
 			{
@@ -542,38 +1094,167 @@ namespace TopMedicalNews.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060007
-			public const int ApplicationName = 2131099655;
+			// aapt resource value: 0x7f060057
+			public const int ApplicationName = 2131099735;
 			
-			// aapt resource value: 0x7f060006
-			public const int Hello = 2131099654;
+			// aapt resource value: 0x7f060056
+			public const int Hello = 2131099734;
 			
 			// aapt resource value: 0x7f060000
 			public const int app_name = 2131099648;
 			
-			// aapt resource value: 0x7f060009
-			public const int day_name_format = 2131099657;
+			// aapt resource value: 0x7f06004e
+			public const int baidutieba = 2131099726;
 			
-			// aapt resource value: 0x7f06000c
-			public const int full_date_format = 2131099660;
+			// aapt resource value: 0x7f060021
+			public const int baidutieba_client_inavailable = 2131099681;
 			
-			// aapt resource value: 0x7f06000d
-			public const int hello = 2131099661;
+			// aapt resource value: 0x7f060044
+			public const int bluetooth = 2131099716;
 			
-			// aapt resource value: 0x7f06000a
-			public const int invalid_date = 2131099658;
+			// aapt resource value: 0x7f060007
+			public const int cancel = 2131099655;
+			
+			// aapt resource value: 0x7f060059
+			public const int day_name_format = 2131099737;
+			
+			// aapt resource value: 0x7f060031
+			public const int douban = 2131099697;
+			
+			// aapt resource value: 0x7f06003b
+			public const int dropbox = 2131099707;
+			
+			// aapt resource value: 0x7f06002c
+			public const int email = 2131099692;
+			
+			// aapt resource value: 0x7f060033
+			public const int evernote = 2131099699;
+			
+			// aapt resource value: 0x7f060028
+			public const int facebook = 2131099688;
+			
+			// aapt resource value: 0x7f06004d
+			public const int facebookmessenger = 2131099725;
 			
 			// aapt resource value: 0x7f060008
-			public const int library_name = 2131099656;
+			public const int finish = 2131099656;
 			
-			// aapt resource value: 0x7f06000b
-			public const int month_name_format = 2131099659;
+			// aapt resource value: 0x7f060039
+			public const int flickr = 2131099705;
+			
+			// aapt resource value: 0x7f060036
+			public const int foursquare = 2131099702;
+			
+			// aapt resource value: 0x7f06005c
+			public const int full_date_format = 2131099740;
+			
+			// aapt resource value: 0x7f060018
+			public const int google_plus_client_inavailable = 2131099672;
+			
+			// aapt resource value: 0x7f060035
+			public const int googleplus = 2131099701;
+			
+			// aapt resource value: 0x7f06005d
+			public const int hello = 2131099741;
+			
+			// aapt resource value: 0x7f06003d
+			public const int instagram = 2131099709;
+			
+			// aapt resource value: 0x7f06001b
+			public const int instagram_client_inavailable = 2131099675;
+			
+			// aapt resource value: 0x7f06004c
+			public const int instapager_email_or_password_incorrect = 2131099724;
+			
+			// aapt resource value: 0x7f060006
+			public const int instapager_login_html = 2131099654;
+			
+			// aapt resource value: 0x7f060047
+			public const int instapaper = 2131099719;
+			
+			// aapt resource value: 0x7f060048
+			public const int instapaper_email = 2131099720;
+			
+			// aapt resource value: 0x7f06004a
+			public const int instapaper_login = 2131099722;
+			
+			// aapt resource value: 0x7f06004b
+			public const int instapaper_logining = 2131099723;
+			
+			// aapt resource value: 0x7f060049
+			public const int instapaper_pwd = 2131099721;
+			
+			// aapt resource value: 0x7f06005a
+			public const int invalid_date = 2131099738;
+			
+			// aapt resource value: 0x7f06002b
+			public const int kaixin = 2131099691;
+			
+			// aapt resource value: 0x7f060042
+			public const int kakaostory = 2131099714;
+			
+			// aapt resource value: 0x7f06001f
+			public const int kakaostory_client_inavailable = 2131099679;
+			
+			// aapt resource value: 0x7f060041
+			public const int kakaotalk = 2131099713;
+			
+			// aapt resource value: 0x7f06001e
+			public const int kakaotalk_client_inavailable = 2131099678;
+			
+			// aapt resource value: 0x7f060058
+			public const int library_name = 2131099736;
+			
+			// aapt resource value: 0x7f060043
+			public const int line = 2131099715;
+			
+			// aapt resource value: 0x7f06001d
+			public const int line_client_inavailable = 2131099677;
+			
+			// aapt resource value: 0x7f060034
+			public const int linkedin = 2131099700;
+			
+			// aapt resource value: 0x7f060010
+			public const int list_friends = 2131099664;
+			
+			// aapt resource value: 0x7f060040
+			public const int mingdao = 2131099712;
+			
+			// aapt resource value: 0x7f060052
+			public const int mingdao_share_content = 2131099730;
+			
+			// aapt resource value: 0x7f06005b
+			public const int month_name_format = 2131099739;
+			
+			// aapt resource value: 0x7f06000c
+			public const int multi_share = 2131099660;
+			
+			// aapt resource value: 0x7f060030
+			public const int neteasemicroblog = 2131099696;
+			
+			// aapt resource value: 0x7f060038
+			public const int pinterest = 2131099704;
+			
+			// aapt resource value: 0x7f06001a
+			public const int pinterest_client_inavailable = 2131099674;
+			
+			// aapt resource value: 0x7f060046
+			public const int pocket = 2131099718;
 			
 			// aapt resource value: 0x7f060001
 			public const int pull_to_refresh = 2131099649;
 			
 			// aapt resource value: 0x7f060004
 			public const int pull_up_to_get_more = 2131099652;
+			
+			// aapt resource value: 0x7f060037
+			public const int qq = 2131099703;
+			
+			// aapt resource value: 0x7f060019
+			public const int qq_client_inavailable = 2131099673;
+			
+			// aapt resource value: 0x7f060024
+			public const int qzone = 2131099684;
 			
 			// aapt resource value: 0x7f060002
 			public const int refreshing = 2131099650;
@@ -583,6 +1264,117 @@ namespace TopMedicalNews.Android
 			
 			// aapt resource value: 0x7f060003
 			public const int release_to_refresh = 2131099651;
+			
+			// aapt resource value: 0x7f06002a
+			public const int renren = 2131099690;
+			
+			// aapt resource value: 0x7f060013
+			public const int select_a_friend = 2131099667;
+			
+			// aapt resource value: 0x7f06000f
+			public const int select_one_plat_at_least = 2131099663;
+			
+			// aapt resource value: 0x7f060012
+			public const int shake2share = 2131099666;
+			
+			// aapt resource value: 0x7f06000b
+			public const int share = 2131099659;
+			
+			// aapt resource value: 0x7f06000e
+			public const int share_canceled = 2131099662;
+			
+			// aapt resource value: 0x7f06000d
+			public const int share_completed = 2131099661;
+			
+			// aapt resource value: 0x7f060011
+			public const int share_failed = 2131099665;
+			
+			// aapt resource value: 0x7f06000a
+			public const int share_to = 2131099658;
+			
+			// aapt resource value: 0x7f06004f
+			public const int share_to_baidutieba = 2131099727;
+			
+			// aapt resource value: 0x7f060053
+			public const int share_to_mingdao = 2131099731;
+			
+			// aapt resource value: 0x7f060051
+			public const int share_to_qq = 2131099729;
+			
+			// aapt resource value: 0x7f060050
+			public const int share_to_qzone = 2131099728;
+			
+			// aapt resource value: 0x7f060054
+			public const int share_to_qzone_default = 2131099732;
+			
+			// aapt resource value: 0x7f060009
+			public const int sharing = 2131099657;
+			
+			// aapt resource value: 0x7f06002d
+			public const int shortmessage = 2131099693;
+			
+			// aapt resource value: 0x7f060022
+			public const int sinaweibo = 2131099682;
+			
+			// aapt resource value: 0x7f06002e
+			public const int sohumicroblog = 2131099694;
+			
+			// aapt resource value: 0x7f06002f
+			public const int sohusuishenkan = 2131099695;
+			
+			// aapt resource value: 0x7f060023
+			public const int tencentweibo = 2131099683;
+			
+			// aapt resource value: 0x7f06003a
+			public const int tumblr = 2131099706;
+			
+			// aapt resource value: 0x7f060029
+			public const int twitter = 2131099689;
+			
+			// aapt resource value: 0x7f060055
+			public const int use_login_button = 2131099733;
+			
+			// aapt resource value: 0x7f06003c
+			public const int vkontakte = 2131099708;
+			
+			// aapt resource value: 0x7f060015
+			public const int website = 2131099669;
+			
+			// aapt resource value: 0x7f060025
+			public const int wechat = 2131099685;
+			
+			// aapt resource value: 0x7f060017
+			public const int wechat_client_inavailable = 2131099671;
+			
+			// aapt resource value: 0x7f060027
+			public const int wechatfavorite = 2131099687;
+			
+			// aapt resource value: 0x7f060026
+			public const int wechatmoments = 2131099686;
+			
+			// aapt resource value: 0x7f060014
+			public const int weibo_oauth_regiseter = 2131099668;
+			
+			// aapt resource value: 0x7f060016
+			public const int weibo_upload_content = 2131099670;
+			
+			// aapt resource value: 0x7f060045
+			public const int whatsapp = 2131099717;
+			
+			// aapt resource value: 0x7f060020
+			public const int whatsapp_client_inavailable = 2131099680;
+			
+			// aapt resource value: 0x7f06003e
+			public const int yixin = 2131099710;
+			
+			// aapt resource value: 0x7f06001c
+			public const int yixin_client_inavailable = 2131099676;
+			
+			// aapt resource value: 0x7f06003f
+			public const int yixinmoments = 2131099711;
+			
+			// aapt resource value: 0x7f060032
+			public const int youdao = 2131099698;
 			
 			static String()
 			{

@@ -33,30 +33,7 @@ namespace TopMedicalNews.Android
 
 
 			};
-
-
-
-
 		}
-
-//		public override bool DispatchTouchEvent (MotionEvent e)
-//		{
-//			var r=  base.DispatchTouchEvent (e);
-//			System.Diagnostics.Debug.WriteLine ("scroll is " + r);
-//			return r;
-//		}
-//		public override bool OnTouchEvent (MotionEvent e)
-//		{
-//			var r =  base.OnTouchEvent (e);
-//
-//			return r;
-//		}
-//		public override bool OnInterceptTouchEvent (MotionEvent ev)
-//		{
-//			//var r=  base.OnInterceptTouchEvent (ev);
-//			//System.Diagnostics.Debug.WriteLine ("intercerpt is " + r);
-//			return false;
-//		}
 		void SnapScroll ()
 		{
 			var roughIndex = (float)_scrollView.ScrollX / _scrollView.Width;
@@ -91,17 +68,13 @@ namespace TopMedicalNews.Android
 				_motionDown = true;
 				break;
 			case MotionEventActions.Up:
-				if (_scrolling == true) {
+				if (_scrolling == true && _motionDown==true) {
 					SnapScroll ();
-				} else {
-					//
+				} else  if(_scrolling==false && _motionDown==true){
 					(this.Element as CarouselScrollView).SelectCommand.Execute (null);
-					//
 				}
 				_scrolling = false;
 				_motionDown = false;
-
-
 				break;
 
 			}

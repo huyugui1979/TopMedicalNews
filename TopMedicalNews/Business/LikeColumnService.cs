@@ -2,14 +2,17 @@
 using XLabs.Ioc;
 using TopMedicalNews.Model;
 using System.Collections.Generic;
-using Refractored.Xam.Settings.Abstractions;
+using Refractored.Xam.Settings;
+using System.Linq;
+using Newtonsoft.Json;
+
 
 namespace TopMedicalNews
 {
 	public interface ILikeColumnService
 	{
 		void  SetLikeColumn (List<Column> columns);
-		 List<Column>  GetLikeColumns();
+		List<Column>  GetLikeColumns();
 	}
 	public class LikeColumnService:ILikeColumnService
 	{
@@ -18,14 +21,24 @@ namespace TopMedicalNews
 		}
 		public List<Column>  GetLikeColumns()
 		{
-			return Resolver.Resolve<ISettings> ().GetValueOrDefault<List<Column>> ("LikeColumns", null);
+			string ids =  CrossSettings.Current.GetValueOrDefault<string> ("LikeColumns", null);
+			if (ids != "") {
+				var ob = RestSharp.SimpleJson.DeserializeObject<List<Column>> (ids);
+		
+				return ob;
+			} else
+				return  null;
+			//return CrossSettings..GetValueOrDefault<List<Column>> ("LikeColumns", null);
 		}
 
+		//
 		public void SetLikeColumn(List<Column> columns)
 		{
-			Resolver.Resolve<ISettings> ().AddOrUpdateValue<List<Column>> ("LikeColumns",columns);
-		
+			string s = RestSharp.SimpleJson.SerializeObject (columns);
+			CrossSettings.Current.AddOrUpdateValue<string> ("LikeColumns",s);
+		    
 		}
+		//
 	}
 }
 

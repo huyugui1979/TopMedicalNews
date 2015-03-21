@@ -9,6 +9,7 @@ namespace TopMedicalNews
 		{
 
 		}
+	
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();

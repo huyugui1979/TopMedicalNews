@@ -22,27 +22,40 @@ namespace TopMedicalNews
 		public List<SelectColumn> SelectColumns{get;set;}
 		public SelectColumnModel ()
 		{
-			LikeColumns = new ObservableCollection<Column> (Resolver.Resolve<ILikeColumnService>().GetLikeColumns ());
+			List<Column> columns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
+			//
+
+			//
+			LikeColumns = new ObservableCollection<Column> (columns);
+
 
 			SelectColumns = new List<TopMedicalNews.SelectColumn> ();
 			LoadSelectColumns ();
 			//
 		}
+
 		void LoadSelectColumns()
 		{
 			List<Category> categorys = Resolver.Resolve<ICategoryService> ().GetAllCategory ();
 			//
 			SelectColumns.Clear ();
 			foreach (var c in categorys) {
-				var s=Resolver.Resolve<IColumnService> ().GetColumnByCategoryNotLike (c.ID);
+				var s=Resolver.Resolve<IColumnService> ().GetColumnByCategory (c.ID);
+				var cs = LikeColumns.Intersect (s, Equality<Column>.CreateComparer (r => r.ID)).ToList();
+				for (int i = 0; i < cs.Count; i++) {
+					s.RemoveAll(cc=>cc.ID == cs[i].ID);
+				}
 				SelectColumns.Add (new SelectColumn{ Title = c.Title,Parent=this,CateId=c.ID, Columns =new ObservableCollection<Column>(s) });
 			}
+
 		}
 		public void ChangeLikeColumnsOrder(int oldPos,int newPos)
 		{
 			Column c = LikeColumns [oldPos];
 			LikeColumns.RemoveAt (oldPos);
 			LikeColumns.Insert (newPos, c);
+			//
+			//
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 		}
 		public void DeleteLikeColumn(int pos)
@@ -50,6 +63,7 @@ namespace TopMedicalNews
 			Column c = LikeColumns [pos];
 
 			LikeColumns.RemoveAt (pos);
+
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Add (c);
 		}
@@ -58,6 +72,7 @@ namespace TopMedicalNews
 		{
 			//
 			LikeColumns.Add (c);
+
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			//
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Remove (c);

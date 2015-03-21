@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using UIKit;
+using Refractored.Xam.Settings;
 
 
 [assembly:ExportRenderer (typeof(TopMedicalNews.MyPage), typeof(TopMedicalNews.iOS.MyPageRenderer))]
@@ -52,7 +53,7 @@ namespace TopMedicalNews.iOS
 					loginButton = this.ParentViewController.NavigationItem.LeftBarButtonItem;
 					loginButton.Image = new UIImage ("个人中心_btn");
 					loginButton.Title = "";
-					if (Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("LoginUserId", -1) == -1) {
+					if ( CrossSettings.Current.GetValueOrDefault<int> ("LoginUserId", -1) == -1) {
 						//
 						this.ParentViewController.NavigationItem.LeftBarButtonItem = logoutButton;		
 					} 

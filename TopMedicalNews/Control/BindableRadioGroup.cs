@@ -20,6 +20,7 @@ namespace TopMedicalNews
         {
 
             rads = new List<CustomRadioButton>();
+			SelectedIndex = -1;
         }
 
 
@@ -81,7 +82,9 @@ namespace TopMedicalNews
            if (e.Value == false) return;
 
             var selectedRad = sender as CustomRadioButton;
-
+			//
+			SelectedIndex = selectedRad.Id;
+			//
             foreach (var rad in rads)
             {
                 if(!selectedRad.Id.Equals(rad.Id))
@@ -90,8 +93,9 @@ namespace TopMedicalNews
                 }
                 else
                 {
-					if(CheckedChanged != null)
-                    	CheckedChanged.Invoke(sender, rad.Id); 
+					if (CheckedChanged != null) {
+						CheckedChanged.Invoke (sender, rad.Id); 
+					}
                    
                 }
                 

@@ -1,14 +1,19 @@
 using System;
+using System.Collections.Generic;
+
+
+
 #if __ANDROID__ || __IOS__
 using SQLite.Net.Attributes;
 using SQLite.Net;
+using XLabs.Data;
 #else
 using ServiceStack.DataAnnotations;
 #endif
 namespace TopMedicalNews.Model
 {
 
-	public class News
+	public class News:ObservableObject
 	{
 		[PrimaryKey]
 		public int   ID{ get; set; }
@@ -24,8 +29,12 @@ namespace TopMedicalNews.Model
 		public int PosterNum{get;set;}//跟
 		public int ColumnId{get;set;}//所属栏目
 		public bool Focus{get;set;} //是否是重点
-		public int Type{ get; set; }//新闻类型
+		public string Type{ get; set; }//新闻类型
 		public string Tag{ get; set; }//标签
+		public int RankTime{ get; set; }
+		public bool Download{get;set;}
+		bool collect;
+		public bool Collect{ get { return collect; } set { SetProperty (ref collect, value); } }
 		public override string ToString ()
 		{
 			return Title;

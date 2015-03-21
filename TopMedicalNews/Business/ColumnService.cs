@@ -22,7 +22,7 @@ namespace TopMedicalNews
 
 		void UpdateColumns (List<Column> columns);
 
-		List<Column> GetColumnByCategoryNotLike (int categoryId);
+		Column GetColumnById (int columnId);
 	}
 
 	public static class JsonHelper
@@ -64,69 +64,71 @@ namespace TopMedicalNews
 		public void Init ()
 		{
 			//
-			Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Category> ();
-			Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Column> ();
+			try {
+				Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Category> ();
+				Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Column> ();
 
-			//
-			var client = new RestClient ();
-			client.BaseUrl = new Uri ("http://iapp.iiyi.com/");
-			//client.Authenticator = new HttpBasicAuthenticator("username", "password");
-			var request = new RestRequest ();
-			request.Resource = "yjtt/v1/news/tags/";
-			IRestResponse response = client.Execute (request);
-
-			//var obj = respon.DeserializeObject (response.Content);
-			var obj = JsonHelper.Deserialize (response.Content) as IDictionary;
-			var dataList = obj ["data"] as IDictionary;
+				//
 		
-			foreach (var key in dataList.Keys) {
-				var dict = dataList [key] as IDictionary;
-				Category c = new Category{ ID = int.Parse (dict ["id"] as string), Title = dict ["name"] as string };
-				Resolver.Resolve<ISQLiteClient> ().InsertData<Category> (c);
-				var child = dict ["subs"] as IList;
-				foreach (var val in child) {
-					var dict1 = val as IDictionary;
-					Column co = new Column{ ID = int.Parse (dict1 ["id"] as string), Title = dict1 ["name"] as string, CategoryID = c.ID };
-					Resolver.Resolve<ISQLiteClient> ().InsertData<Column> (co);
+				var ss = Resolver.Resolve<IJsonService> ().ExecteQuery ("http://iapp.iiyi.com/", "yjtt/v1/news/tags/", new Dictionary<string, string> ());
 
-				}
-			}
-			if (Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ().Count == 0) {
-				List<Column> columns = new List<Column> ();
-				foreach (var c in likeTitle) {
-					columns.Add (Resolver.Resolve<ISQLiteClient> ().GetData<Column> (r => r.Title == c));
-				}
-				Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (columns);
-			} else {
-				List<Column> columns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
-				foreach (var c in columns) {
-					if (Resolver.Resolve<ISQLiteClient> ().Exist<Column> (r => r.ID == c.ID) == false) {
-						columns.Remove (c);
+
+				//var obj = respon.DeserializeObject (response.Content);
+				var dataList = JsonHelper.Deserialize (ss) as IDictionary;
+		
+		
+				foreach (var key in dataList.Keys) {
+					var dict = dataList [key] as IDictionary;
+					Category c = new Category{ ID = int.Parse (dict ["id"] as string), Title = dict ["name"] as string };
+					Resolver.Resolve<ISQLiteClient> ().InsertData<Category> (c);
+			
+					var child = dict ["subs"] as IList;
+					foreach (var val in child) {
+						var dict1 = val as IDictionary;
+						Column co = new Column {
+							ID = int.Parse (dict1 ["id"] as string),
+							Title = dict1 ["name"] as string,
+							CategoryID = c.ID
+						};
+						Resolver.Resolve<ISQLiteClient> ().InsertData<Column> (co);
+						//
+				
 					}
 				}
-				Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (columns);
+				//
+				Column temp = new Column{ ID = 1, Title = "头条", CategoryID = 1 };
+				Resolver.Resolve<ISQLiteClient> ().InsertData<Column> (temp);
+//			//
+				if (Resolver.Resolve<ILikeColumnService> ().GetLikeColumns () == null) {
+					List<Column> columns = new List<Column> ();
+
+					foreach (var c in likeTitle) {
+						var co = Resolver.Resolve<ISQLiteClient> ().GetData<Column> (r => r.Title == c);
+						columns.Add (co);
+					}
+					Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (columns);
+				} 
+					
+			} catch (Exception e) {
+				//
+
+				//
 			}
+					
 
 		}
-
-		public List<Column> GetColumnByCategoryNotLike (int categoryId)
+		public Column GetColumnById (int columnId) 
 		{
-			List<Column> columns =  Resolver.Resolve<ISQLiteClient> ().GetAllData<Column> (r => r.CategoryID == categoryId);
-			List<Column> likeColumns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
-			columns.RemoveAll (r => likeColumns.Exists (c => c.ID == r.ID));
-			return columns;
+			return Resolver.Resolve<ISQLiteClient> ().GetData<Column> (r => r.ID == columnId);
 		}
-
 		public List<Column> GetColumnByCategory (int categoryId)
 		{
 			return Resolver.Resolve<ISQLiteClient> ().GetAllData<Column> (r => r.CategoryID == categoryId);
 		}
-
-
-
 		public void UpdateColumns (List<Column> columns)
 		{
 			Resolver.Resolve<ISQLiteClient> ().UpdateAllData<Column> (columns);
+
 		}
 	}
 }

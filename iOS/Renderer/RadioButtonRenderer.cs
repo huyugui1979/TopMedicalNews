@@ -96,7 +96,7 @@ namespace  TopMedicalNews.iOS
                 case "Element":
                     break;
                 default:
-                    System.Diagnostics.Debug.WriteLine("Property change for {0} has not been implemented.", e.PropertyName);
+                   
                     return;
             }
         }

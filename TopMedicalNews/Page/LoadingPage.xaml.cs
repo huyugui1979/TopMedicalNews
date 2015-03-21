@@ -10,6 +10,7 @@ namespace TopMedicalNews
 		public LoadingPage ()
 		{
 			InitializeComponent ();
+
 		}
 
 	}

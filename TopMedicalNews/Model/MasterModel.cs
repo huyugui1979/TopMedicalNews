@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Refractored.Xam.Settings.Abstractions;
 using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
+using Refractored.Xam.Settings;
 
 namespace TopMedicalNews
 {
@@ -65,7 +66,7 @@ namespace TopMedicalNews
 		public ICommand LogoutCommand {
 			get { 
 				return new Command (() => {
-					Resolver.Resolve<ISettings>().AddOrUpdateValue <int> ("LoginUserId", -1);
+					Resolver.Resolve<IUserService>().LogOut();
 					MessagingCenter.Send<object> (this, "IsPresented");
 
 				});

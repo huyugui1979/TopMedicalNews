@@ -10,8 +10,8 @@ namespace TopMedicalNews.Model
 	public class User
 	{
 		[PrimaryKey]
-		public int    ID { get; set; }
-		public string ImageUri{ get; set; }
+		public int    UID { get; set; }
+		public string Email{ get; set; }
 		public string UserName{ get; set; }
 		public string Password { get; set; }
 		public User ()

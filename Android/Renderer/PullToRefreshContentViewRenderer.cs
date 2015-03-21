@@ -111,6 +111,8 @@ namespace TopMedicalNews.Android
 				packager.Load ();
 				bLoading = false;
 				var sz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
+				if (sz.Request.Height < App.ScreenHeight)
+					sz.Request = new Size(sz.Request.Width,App.ScreenHeight);
 				this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)sz.Request.Width),
 					(int)this.Context.ToPixels((int)sz.Request.Height));
 				this.Element.PropertyChanged += (object sender, PropertyChangedEventArgs e) => {
@@ -122,6 +124,8 @@ namespace TopMedicalNews.Android
 							this.RefreshOver();
 
 							var szz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
+							if (szz.Request.Height < App.ScreenHeight)
+								szz.Request = new Size(sz.Request.Width,App.ScreenHeight);
 							this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)szz.Request.Width),
 								(int)this.Context.ToPixels((int)szz.Request.Height));
 						}else
@@ -137,7 +141,8 @@ namespace TopMedicalNews.Android
 
 							this.GetMoreOver();
 							var szz = this.Element.GetSizeRequest (double.PositiveInfinity, double.PositiveInfinity);
-
+							if (szz.Request.Height < App.ScreenHeight)
+								szz.Request = new Size(sz.Request.Width,App.ScreenHeight);
 							this.MContentLy.LayoutParameters = new LinearLayout.LayoutParams ((int)this.Context.ToPixels((int)szz.Request.Width),
 								(int)this.Context.ToPixels((int)szz.Request.Height));
 						}

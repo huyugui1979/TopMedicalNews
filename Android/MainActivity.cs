@@ -14,9 +14,16 @@ using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using Xamarin.Forms;
 using Android.Graphics.Drawables;
+using Refractored.Xam.Settings;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace TopMedicalNews.Android
 {
+
+
 	[Activity (Label = "",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : XFormsApplicationDroid
 	{
@@ -32,10 +39,13 @@ namespace TopMedicalNews.Android
 //			var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
 //			foreach (var res in assembly.GetManifestResourceNames()) 
 //				System.Diagnostics.Debug.WriteLine("found resource: " + res);
-
+	
 			LoadApplication (new App ());
 			//showShare ();
 		}
+		//
+
+		//
 
 //		public override bool OnCreateOptionsMenu (IMenu menu)
 //		{
@@ -53,7 +63,7 @@ namespace TopMedicalNews.Android
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
 			if (item.TitleFormatted != null && item.TitleFormatted.ToString() == "医界头条") {
-				if (Resolver.Resolve<ISettings> ().GetValueOrDefault<int> ("LoginUserId", -1) == -1) {
+				if (Resolver.Resolve<IUserService>().GetLoginUser() == null) {
 					MessagingCenter.Send<object>(this, "ClickLogin");
 					return true;
 				}

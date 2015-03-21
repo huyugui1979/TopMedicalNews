@@ -8,10 +8,16 @@ namespace TopMedicalNews.Model
 		public Reading ()
 		{
 		}
-		[PrimaryKey,AutoIncrement]
-		public int ID{ get; set; }
-		public int UserID{get;set;}
-		public int NewsID{get;set;}
+		public string Title_Name{get;set;}
+		public int Wz_Time{ get; set; }
+		public int View{ get; set; }
+		public string Imginfo{get;set;}
+		public int Comment{get;set;}
+		public int Wz_Id{get;set;}
+		public  DateTime Add_Time{get;set;}
+		public string Post_Info{get;set;}
+
+
 	}
 }
 

@@ -26,9 +26,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\FeedBackModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\AboutUsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MyCollectionModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml.cs">
-      <DependentUpon>MyFirstPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyPullToRefreshScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml.cs">
       <DependentUpon>SetColumnPage.xaml</DependentUpon>
@@ -111,17 +108,42 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Business\ReadingService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\LikeColumnService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\DepartmentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectDepartmentPage.xaml.cs">
+      <DependentUpon>SelectDepartmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SelectDepartmentModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\JsonService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Error\MyException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyNewsListPage.xaml.cs">
+      <DependentUpon>MyNewsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MyNewsListModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyCarouselPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\FirstPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Business\SoftService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\ReadingListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\CollectionListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\FileUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RegisterRuleModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\RegisterRulePage.xaml.cs">
+      <DependentUpon>RegisterRulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\MyCommentListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Control\MyButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
     <Folder Include="$(MSBuildThisFileDirectory)Data\" />
     <Folder Include="$(MSBuildThisFileDirectory)Control\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Net\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Error\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Util\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SetColumnPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -177,6 +199,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyReadingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SelectDepartmentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyNewsListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\RegisterRulePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

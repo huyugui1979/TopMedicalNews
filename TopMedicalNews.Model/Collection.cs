@@ -9,14 +9,19 @@ namespace TopMedicalNews.Model
 {
 	public class Collection
 	{
-		[PrimaryKey,AutoIncrement]
+		[PrimaryKey]
 		public int ID{ get; set; }
-		public int UserID{ get; set; }
-		public int NewsID{get;set;}
-		public Collection ()
-		{
+		public int UID{ get; set; }
+		public string UserName{ get; set; }
+		public int WZ_ID{ get; set; }
+		public int View{ get; set; }
+		public int Comment{ get; set; }
+		public string Title_Name{ get; set; }
+		public DateTime Add_Time{ get; set; }
+		public string Post_Info{ get; set; }
+		public string Imginfo{ get; set; }
+		public string Stem_From{ get; set; }
 
-		}
 	}
 }
 

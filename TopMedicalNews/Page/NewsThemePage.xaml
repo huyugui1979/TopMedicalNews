@@ -2,9 +2,7 @@
 <ContentPage Title="新闻主题" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.NewsThemePage">
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical">
-		<ActivityIndicator  IsRunning="{Binding IsBusy}" HeightRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
-	    <Label Text="正在加载" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" />
-					
+
 		<local:ThemeNewsListView ItemsSource="{Binding NewsList}">
 			<local:ThemeNewsListView.ItemTemplate>
 				<DataTemplate>

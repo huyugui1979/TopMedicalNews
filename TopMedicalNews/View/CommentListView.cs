@@ -14,7 +14,7 @@ namespace TopMedicalNews
 			get;
 			set;
 		}
-
+	
 		protected override void ItemsSourceChanged ()
 		{
 			base.ItemsSourceChanged ();
@@ -30,8 +30,9 @@ namespace TopMedicalNews
 						var bindableObject = view as BindableObject;
 						if (bindableObject != null)
 							bindableObject.BindingContext = item;
-						_stack.Children.Add (view);
 
+						_stack.Children.Insert(0,view);
+						_Button.IsVisible=true;
 					}
 					break;
 				case NotifyCollectionChangedAction.Reset:

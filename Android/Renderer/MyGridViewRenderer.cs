@@ -67,6 +67,7 @@ namespace TopMedicalNews.Android
 			view.CollectionView.OnClickItemEvent += (int pos) => {
 				if(_MyGridView.Element.DragMode)
 				{
+					if(pos !=0)
 					_MyGridView.Element.DeleteLikeItem(pos);
 
 				}else
@@ -78,9 +79,8 @@ namespace TopMedicalNews.Android
 			//通知栏目已经改变
 			view.Element.ItemsSource.CollectionChanged+= (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e) => {
 				//
-
 				NotifyDataSetChanged();
-
+				//
 				_MyGridView.CollectionView.Post(()=>{
 					_MyGridView.Element.HeightRequest = _MyGridView.CollectionView.LayoutParameters.Height/Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density;
 				});
@@ -110,13 +110,18 @@ namespace TopMedicalNews.Android
 
 
 			var item = _MyGridView.Element.ItemsSource [position];
-			System.Diagnostics.Debug.WriteLine ("item:" + item.Title);
 			if (convertView == null) {
-		
 				var viewCellBinded = (_MyGridView.Element.ItemTemplate.CreateContent () as ViewCell);
+
 				viewCellBinded.BindingContext = item;
-				var view = RendererFactory.GetRenderer (viewCellBinded.View);
+				viewCellBinded.View.BackgroundColor = Color.Transparent;
+				var view = RendererFactory.GetRenderer (viewCellBinded.View) as ButtonRenderer;// as global::Android.Views.ViewGroup;//.Button;
+
+				//var drawable = _MyGridView.Context.GetDrawable (Resource.Drawable.switch_column_bg);
+				var drawable = _MyGridView.Resources.GetDrawable (Resource.Drawable.switch_column_bg);
+				view.SetBackgroundDrawable(drawable);
 				// Platform.SetRenderer (viewCellBinded.View, view);
+
 				view.ViewGroup.LayoutParameters = new  global::Android.Widget.GridView.LayoutParams (Convert.ToInt32 (_MyGridView.Element.ItemWidth * Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density),
 					Convert.ToInt32 (_MyGridView.Element.ItemHeight * Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.Density));
 				//

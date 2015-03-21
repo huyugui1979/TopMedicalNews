@@ -157,6 +157,7 @@ namespace  TopMedicalNews.iOS
 		void HandleClick (int pos)
 		{
 			if (Element.DragMode) {
+				if(pos !=0)
 				Element.DeleteLikeItem (pos);
 
 			} else {

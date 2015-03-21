@@ -1,26 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="注册" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.RegisterPage">
+<ContentPage Title="注册" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.RegisterPage">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
 			<StackLayout Orientation="Vertical" Padding="10,30,10,30">
-				<Frame HasShadow="false" BackgroundColor="Yellow">
-					<Label Text="用户名不能以数字开头,不能包含系统关键字4-15个字母,数字(2-7个汉字),不支持特殊符号(除下划线)用来接收激活码,密码限制6〜20位，支持数字,字母及特殊字符" />
-				</Frame>
-				<Frame HasShadow="false" OutlineColor="Gray">
-					<StackLayout Orientation="Vertical">
-						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="用户名:" />
-						<BoxView HeightRequest="1" Color="#c8c7cc" />
-						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="手机/邮箱:" />
-						<BoxView HeightRequest="1" Color="#c8c7cc" />
-						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="密码:" />
-						<BoxView HeightRequest="1" Color="#c8c7cc" />
-						<lc:ExtendedEntry HasBorder="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="科室:" />
+				
+				<Frame HasShadow="false" OutlineColor="Gray" Padding="0,0,0,0"  >
+					<StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0">
+						<local:MyEntry  Text="{Binding UserName}"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Placeholder="用户名:" />
+
+						<BoxView   HeightRequest="0.35" HorizontalOptions="FillAndExpand"  Color="#c8c7cc" />
+						<local:MyEntry  Text="{Binding Phone}"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="手机:" />
+						<BoxView HeightRequest="0.35" HorizontalOptions="FillAndExpand"   Color="#c8c7cc" />
+						<local:MyEntry  Text="{Binding Password}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="密码:" />
+						<BoxView HeightRequest="0.35" HorizontalOptions="FillAndExpand"  Color="#c8c7cc" />
+						<StackLayout Orientation="Horizontal" Padding="12,5,0,5" x:Name="stack">
+						<Label     HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="20" TextColor="Gray" Text="{Binding Department}"  />
+	
+						<Image Source="IndicatorRight" HorizontalOptions="EndAndExpand" HeightRequest="30"/>
+						<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer  Command="{Binding SelectDepartmentCommand}" />
+						</StackLayout.GestureRecognizers>
+						</StackLayout>
 					</StackLayout>
+
 				</Frame>
 				<StackLayout Orientation="Horizontal">
-				<lc:CheckBox DefaultText="我已阅读并同意"  HorizontalOptions="Start" FontSize="18"/>
-				<Button TextColor="Blue" BackgroundColor="Transparent" HorizontalOptions="Start" Text="爱爱医服务条款"/>
+					<lc:CheckBox  Checked="{Binding AgreeRule,Mode=TwoWay}" x:Name="box" DefaultText="我已阅读并同意" HorizontalOptions="Start" FontSize="14" />
+					<Button TextColor="Blue" BackgroundColor="Transparent" Command="{Binding ClickRuleCommand}" HorizontalOptions="Start" Text="爱爱医服务条款" />
 				</StackLayout>
+				<Button Command="{Binding RegisterCommand}" BackgroundColor="Blue" Text="注册" TextColor="White" />
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>
