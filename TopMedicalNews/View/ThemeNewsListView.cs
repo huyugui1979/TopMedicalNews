@@ -9,10 +9,19 @@ namespace TopMedicalNews
 	{
 		public ThemeNewsListView ()
 		{
-
+			
 		}
+		protected override void OnBindingContextChanged ()
+		{
+			base.OnBindingContextChanged ();
+			_stack.Children.Add (HeadImage);
+			HeadImage.WidthRequest = App.ScreenWidth;
 
-
+			HeadImage.HeightRequest = App.ScreenWidth*0.6;
+		}
+		public Image        HeadImage{ get; set;
+			
+		}
 		public DataTemplate ItemTemplate {
 			get;
 			set;
@@ -30,24 +39,13 @@ namespace TopMedicalNews
 						View view = null;
 
 						view = (View)ItemTemplate.CreateContent ();
-						if(item is Collection)
-						{
-							if((item as Collection).Imginfo == "")
+
+						if((item as News).ImageUri == "")
 								view.FindByName<Image>("image").IsVisible=false;
-						}
-						if(item is Reading)
-						{
-							if((item as Reading).Imginfo == "")
-								view.FindByName<Image>("image").IsVisible=false;
-						}
+						
 
 						view.GestureRecognizers.Add(new TapGestureRecognizer(v=>{
-							if(v.ParentView.BindingContext is NewsThemeModel)
-								(v.ParentView.BindingContext as NewsThemeModel).GotoNewsDetailCommand.Execute(item);
-							else if(v.ParentView.BindingContext is MyCollectionModel)
-								(v.ParentView.BindingContext as MyCollectionModel).GotoNewsDetailCommand.Execute(item);
-							else if(v.ParentView.BindingContext is MyReadingModel)
-								(v.ParentView.BindingContext as MyReadingModel).GotoNewsDetailCommand.Execute(item);
+							(v.ParentView.BindingContext as NewsThemeModel).GotoNewsDetailCommand.Execute(item);
 
 						}));
 						var bindableObject = view as BindableObject;

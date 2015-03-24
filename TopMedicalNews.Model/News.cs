@@ -33,6 +33,7 @@ namespace TopMedicalNews.Model
 		public string Tag{ get; set; }//标签
 		public int RankTime{ get; set; }
 		public bool Download{get;set;}
+
 		bool collect;
 		public bool Collect{ get { return collect; } set { SetProperty (ref collect, value); } }
 		public override string ToString ()

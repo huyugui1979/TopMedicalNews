@@ -9,6 +9,7 @@ using RestSharp.Deserializers;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using Refractored.Xam.Settings.Abstractions;
+using System.Threading.Tasks;
 
 
 namespace TopMedicalNews
@@ -18,7 +19,7 @@ namespace TopMedicalNews
 		List<Column> GetColumnByCategory (int categoryId);
 
 
-		void Init ();
+		Task Init ();
 
 		void UpdateColumns (List<Column> columns);
 
@@ -61,15 +62,14 @@ namespace TopMedicalNews
 
 		List<String> likeTitle = new List<string> (){ "头条", "医药资讯", "医改", "政策解读", "生物制药" };
 
-		public void Init ()
+		public Task Init ()
 		{
 			//
-			try {
-				Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Category> ();
-				Resolver.Resolve<ISQLiteClient> ().DeleteAllData<Column> ();
+
+			return Task.Factory.StartNew (() => {
 
 				//
-		
+			
 				var ss = Resolver.Resolve<IJsonService> ().ExecteQuery ("http://iapp.iiyi.com/", "yjtt/v1/news/tags/", new Dictionary<string, string> ());
 
 
@@ -90,14 +90,14 @@ namespace TopMedicalNews
 							Title = dict1 ["name"] as string,
 							CategoryID = c.ID
 						};
-						Resolver.Resolve<ISQLiteClient> ().InsertData<Column> (co);
+						Resolver.Resolve<ISQLiteClient> ().InsertOrReplaceData<Column> (co);
 						//
 				
 					}
 				}
 				//
-				Column temp = new Column{ ID = 1, Title = "头条", CategoryID = 1 };
-				Resolver.Resolve<ISQLiteClient> ().InsertData<Column> (temp);
+				Column temp = new Column{ ID = 47, Title = "头条", CategoryID = 1 };
+				Resolver.Resolve<ISQLiteClient> ().InsertOrReplaceData<Column> (temp);
 //			//
 				if (Resolver.Resolve<ILikeColumnService> ().GetLikeColumns () == null) {
 					List<Column> columns = new List<Column> ();
@@ -108,23 +108,20 @@ namespace TopMedicalNews
 					}
 					Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (columns);
 				} 
-					
-			} catch (Exception e) {
-				//
-
-				//
-			}
-					
+			});
 
 		}
-		public Column GetColumnById (int columnId) 
+
+		public Column GetColumnById (int columnId)
 		{
 			return Resolver.Resolve<ISQLiteClient> ().GetData<Column> (r => r.ID == columnId);
 		}
+
 		public List<Column> GetColumnByCategory (int categoryId)
 		{
 			return Resolver.Resolve<ISQLiteClient> ().GetAllData<Column> (r => r.CategoryID == categoryId);
 		}
+
 		public void UpdateColumns (List<Column> columns)
 		{
 			Resolver.Resolve<ISQLiteClient> ().UpdateAllData<Column> (columns);

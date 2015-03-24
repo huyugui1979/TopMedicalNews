@@ -22,7 +22,9 @@ namespace TopMedicalNews
 		//		News  GetNewById (int Id);
 		//
 		List<News> GetNews (int columnId);
-	    List<News> GetFocusNews (int columnId);
+
+		List<News> GetFocusNews (int columnId);
+
 		Task<List<News>> DownloadTopicNews (int id);
 
 		Task<List<News>> DownloadNews (int columnId, int time);
@@ -56,8 +58,9 @@ namespace TopMedicalNews
 			
 				var list = dataList ["multi"] as List<object>;
 
-				string head = "<head><style>div {text-indent:2em;line-height:1.5}</style></head>";
+				string head = "<head><style>div {text-indent:2em;line-height:1.5;margin:5px}</style></head>";
 				string content = head + "<body >";
+
 				News news = new News ();
 				list.ForEach (n => {
 					var m = n as IDictionary;
@@ -68,10 +71,10 @@ namespace TopMedicalNews
 					}
 					if (m ["type"].ToString () == "image") {
 						//
-						int imgWidth =  (int)App.ScreenWidth;//Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.WidthPixels-30;
-						int imgHeight = int.Parse(m["height"].ToString())*imgWidth/int.Parse(m["width"].ToString());
+						int imgWidth = (int)App.ScreenWidth;//Xamarin.Forms.Forms.Context.Resources.DisplayMetrics.WidthPixels-30;
+						int imgHeight = int.Parse (m ["height"].ToString ()) * imgWidth / int.Parse (m ["width"].ToString ());
 
-						content += "<img src=\"" + m ["content"].ToString () + "\" width=\"" +imgWidth.ToString () + "\" height=\"" + imgHeight.ToString () + "\"/>";
+						content += "<img src=\"" + m ["content"].ToString () + "\" width=\"" + imgWidth.ToString () + "\" height=\"" + imgHeight.ToString () + "\"/>";
 						//
 					}
 
@@ -97,7 +100,7 @@ namespace TopMedicalNews
 
 				Dictionary<string,string> param = new Dictionary<string,string> ();
 
-//				param.Add ("id", id);
+				param.Add ("id", id.ToString ());
 //				
 
 				var ss = Resolver.Resolve<IJsonService> ().ExecteQuery ("http://iapp.iiyi.com/", "yjtt/v1/news/topic/", param);
@@ -111,18 +114,18 @@ namespace TopMedicalNews
 					foreach (var o in newsContent) {
 						var r = o as IDictionary;
 						var n = new News {
-							ID = int.Parse (r ["id"].ToString ()),
+							ID = int.Parse (r ["wz_id"].ToString ()),
 							//ColumnId = columnId,
 							Focus = false,
-							Title = r ["title"].ToString (),
-							Thumb = r ["description"].ToString (),
-							ImageUri = r ["image"].ToString (),
-							FromSource = r ["source"].ToString (),
-							Type = r ["type"].ToString (),
+							Title = r ["title_name"].ToString (),
+							Thumb = (r ["post_info"].ToString ().Length > 50) ? r ["post_info"].ToString ().Substring (0, 50) + "..." : "",
+							ImageUri = r ["imginfo"].ToString (),
+							FromSource = r ["stem_from"].ToString (),
+
 							PosterNum = int.Parse (r ["comment"].ToString ()),
 							ViewerNum = int.Parse (r ["view"].ToString ()),
-							RankTime = int.Parse (r ["rank_time"].ToString ()),
-							PublishTime = DateTime.Parse (r ["pubdate"].ToString ())
+							RankTime = int.Parse (r ["wz_time"].ToString ()),
+							PublishTime = DateTime.Parse (r ["add_time"].ToString ())
 						};
 						news.Add (n);
 					}
@@ -141,10 +144,9 @@ namespace TopMedicalNews
 
 				Dictionary<string,string> param = new Dictionary<string,string> ();
 
-				if (columnId != 1)//如果是头条
+
 				param.Add ("tag", columnId.ToString ());
-				else
-					param.Add ("tag", "47");
+
 				param.Add ("since", time.ToString ());
 				param.Add ("limit", "20");
 
@@ -177,26 +179,23 @@ namespace TopMedicalNews
 					}
 					foreach (var o in hotsContent) {
 						var r = o as IDictionary;
-						var n = news.Find (e => e.ID == int.Parse (r ["id"].ToString ()));
-						if (n == null) {
-							n = new News {
-								ID = int.Parse (r ["id"].ToString ()),
-								ColumnId =columnId ,
-								RankTime = int.Parse (r ["rank_time"].ToString ()),
-								Focus = true,
-								Title = r ["title"].ToString (),
-								Thumb = r ["description"].ToString (),
-								ImageUri = r ["image"].ToString (),
-								FromSource = r ["source"].ToString (),
-								Type = r ["type"].ToString (),
-								PosterNum = int.Parse (r ["comment"].ToString ()),
-								ViewerNum = int.Parse (r ["view"].ToString ()),
-								PublishTime = DateTime.Parse (r ["pubdate"].ToString ())
-							};
-							news.Add (n);
-						}
-//						} else
-//							n.Focus = true;
+			
+						var	n = new News {
+							ID = int.Parse (r ["id"].ToString ()),
+							ColumnId = columnId,
+							RankTime = int.Parse (r ["rank_time"].ToString ()),
+							Focus = true,
+							Title = r ["title"].ToString (),
+							Thumb = r ["description"].ToString (),
+							ImageUri = r ["image"].ToString (),
+							FromSource = r ["source"].ToString (),
+							Type = r ["type"].ToString (),
+							PosterNum = int.Parse (r ["comment"].ToString ()),
+							ViewerNum = int.Parse (r ["view"].ToString ()),
+							PublishTime = DateTime.Parse (r ["pubdate"].ToString ())
+						};
+						news.Add (n);
+						
 
 					}
 					//Resolver.Resolve<ISQLiteClient> ().InsertOrReplaceAll (news, typeof(News));
@@ -244,7 +243,7 @@ namespace TopMedicalNews
 			//int res1 = (int)(DateTime.Now.AddDays (0 - days) - startTime1).TotalSeconds;
 			//
 			var list1 = Resolver.Resolve<ISQLiteClient> ().
-				GetAllData<News> (r => r.ColumnId == columnId && r.Focus == false).OrderByDescending (r => r.RankTime).Take(20).ToList();
+				GetAllData<News> (r => r.ColumnId == columnId && r.Focus == false).OrderByDescending (r => r.RankTime).Take (20).ToList ();
 			//
 		
 

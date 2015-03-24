@@ -49,7 +49,10 @@ namespace TopMedicalNews
 						//设置图像
 						var image = view.FindByName<Image>("image");
 						if((item as News).ImageUri == "")
+						{
+							image.Source= ImageSource.FromResource("Icon.png");
 							image.IsVisible=false;
+						}
 						else
 							image.IsVisible=true;
 						var bindableObject = view as BindableObject;

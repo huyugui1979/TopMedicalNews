@@ -46,12 +46,12 @@ namespace TopMedicalNews.Android
 							fos.Close ();
 						}
 					} catch (Exception e) {
+						//
 
+						//
 					}
 				}
 			});
-			//
-
 
 		}
 
@@ -59,28 +59,8 @@ namespace TopMedicalNews.Android
 		{
 			base.OnPageFinished (view, url);
 			if (_view.Control != null) {
-				_view.Control.LoadUrl ("javascript:Foo.resize(document.body.offsetHeight)");
-				//
-		
-				//if (_view.Control != null) {
-				//var picture = _view.
-//				Bitmap b = Bitmap.createBitmap(
-//					picture.getWidth(), picture.getHeight(), Bitmap.Config.ARGB_8888);
-//				Canvas c = new Canvas(b);
-//				picture.draw(c);
-//
-//				FileOutputStream fos = null;
-//				try {
-//					fos = new FileOutputStream( "/sdcard/"  + "page.jpg" );
-//					if ( fos != null ) {
-//						b.compress(Bitmap.CompressFormat.JPEG, 90, fos );
-//						fos.close();
-//					}
-//				} 
-//				catch( Exception e ) {
-//					System.out.println("-----error--"+e);
-//				}
-				//}
+				_view.Control.LoadUrl ("javascript:Foo.setHeight(document.body.offsetHeight)");
+
 			}
 		}
 
@@ -103,6 +83,7 @@ namespace TopMedicalNews.Android
 		{
 		
 			base.OnElementChanged (e);
+			this.Control.Settings.JavaScriptEnabled = true;//(true);  
 			this.Control.AddJavascriptInterface (this, "Foo");
 			this.Control.SetWebViewClient (new MyWebViewClient (this));
 			this.Control.HorizontalScrollBarEnabled = false; 
@@ -112,14 +93,14 @@ namespace TopMedicalNews.Android
 			this.Control.SetBackgroundColor (global::Android.Graphics.Color.White);
 		}
 
-		[Export ("resize")]
+		[Export ("setHeight")]
+		[JavascriptInterface]
 		// to become consistent with Java/JS interop convention, the argument cannot be System.String.
-		public void resize (string height)
+		public void setHeight (double height)
 		{
 			Device.BeginInvokeOnMainThread (() => {
-			
-				double d = Java.Lang.Double.ParseDouble (height);
-				this.Element.HeightRequest = d + 20;
+
+				this.Element.HeightRequest = height + 20;
 			});
 		}
 	}

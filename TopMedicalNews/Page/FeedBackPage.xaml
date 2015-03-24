@@ -10,7 +10,7 @@
 
 	</Frame>
 <!--	<Frame OutlineColor="#d9d9d9"  HasShadow="false" Padding="0,0,0,0">-->
-	<lc:ExtendedEntry  Text="{Binding Epg}" HorizontalOptions="FillAndExpand" Font="18" BackgroundColor="White" x:Name="address"  Placeholder ="邮箱/QQ/手机号码:选填"/>
+	<lc:ExtendedEntry   Text="{Binding Epg}" HorizontalOptions="FillAndExpand" Font="18" BackgroundColor="White" x:Name="address"  Placeholder ="邮箱/QQ/手机号码:选填"/>
 <!--	</Frame>-->
 	<Picker x:Name="typePicker" Title="意见类型"  SelectedIndex="{Binding FeedType}" />
 	<Button  HorizontalOptions="FillAndExpand" Command="{Binding SendCommand}" BackgroundColor="#2b82d9"  TextColor="White" Text="发送"/>

@@ -22,18 +22,11 @@ namespace TopMedicalNews
 			MessagingCenter.Subscribe<Column> (this, "ColumnSelect", async (column) => {
 				if (_column.ID == column.ID) {
 
-//					dialog.Show ();
 					List<News> newsList1 = null, newsList2 = null;
-//					await Task.Factory.StartNew (() => {
-//					
-//						 
-//					});
-//					dialog.Hide ();
-					//
+
 					if (SelectNews.Count == 0) {
 							newsList1 = Resolver.Resolve<INewsService> ().GetNews (column.ID);
 
-						//dialog.Show();
 						var dialog = Resolver.Resolve<IUserDialogService> ().Loading ("正在加载新闻...");
 						dialog.Show();
 						await Task.Factory.StartNew(()=>{
@@ -94,13 +87,12 @@ namespace TopMedicalNews
 		public  bool HaveSelectedFocusNews{ get { return _HaveSelectedFocusNews; } set { SetProperty (ref _HaveSelectedFocusNews, value); } }
 		async void UpdateNews ()
 		{
-			var dialog = Resolver.Resolve<IUserDialogService> ().Loading ("正在加载新闻...");
-			try {
+				try {
 			
-				dialog.Show ();
+			
 				IsRefreshing = true;
 
-				System.Diagnostics.Debug.WriteLine ("updateing...");
+			
 				System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime (new System.DateTime (1970, 1, 1));
 				int time = (int)(DateTime.Now - startTime).TotalSeconds;
 				List<News> news = await Resolver.Resolve<INewsService> ().DownloadNews (_column.ID, time);
@@ -120,17 +112,12 @@ namespace TopMedicalNews
 					SelectedFocusNews = FocusNews [0];
 					HaveSelectedFocusNews=true;
 				}
-
-				//IsRefreshing = false;
-				//IsRefreshing = false;
-
-				//
+					
 			} catch (Exception e) {
-				//IsRefreshing = false;
 				Resolver.Resolve<IUserDialogService> ().AlertAsync ("连接网络失败");
 			} finally {
 				IsRefreshing = false;
-				dialog.Hide ();
+			
 			}
 		}
 

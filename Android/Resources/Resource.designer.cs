@@ -28,6 +28,48 @@ namespace TopMedicalNews.Android
 		{
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_active_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_bg = global::TopMedicalNews.Android.Resource.Color.calendar_bg;
+			global::XLabs.Forms.Resource.Color.calendar_divider = global::TopMedicalNews.Android.Resource.Color.calendar_divider;
+			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_highlighted_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_inactive_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_range_bg;
+			global::XLabs.Forms.Resource.Color.calendar_text_active = global::TopMedicalNews.Android.Resource.Color.calendar_text_active;
+			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::TopMedicalNews.Android.Resource.Color.calendar_text_inactive;
+			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::TopMedicalNews.Android.Resource.Color.calendar_text_selected;
+			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::TopMedicalNews.Android.Resource.Color.calendar_text_selector;
+			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::TopMedicalNews.Android.Resource.Color.calendar_text_unselectable;
+			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::TopMedicalNews.Android.Resource.Dimension.calendar_day_headers_paddingbottom;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_title_bottommargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_topmargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_medium;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_small;
+			global::XLabs.Forms.Resource.Drawable.ad16 = global::TopMedicalNews.Android.Resource.Drawable.ad16;
+			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::TopMedicalNews.Android.Resource.Drawable.calendar_bg_selector;
+			global::XLabs.Forms.Resource.Id.calendar_grid = global::TopMedicalNews.Android.Resource.Id.calendar_grid;
+			global::XLabs.Forms.Resource.Id.calendar_view = global::TopMedicalNews.Android.Resource.Id.calendar_view;
+			global::XLabs.Forms.Resource.Id.left_arrow = global::TopMedicalNews.Android.Resource.Id.left_arrow;
+			global::XLabs.Forms.Resource.Id.right_arrow = global::TopMedicalNews.Android.Resource.Id.right_arrow;
+			global::XLabs.Forms.Resource.Id.title = global::TopMedicalNews.Android.Resource.Id.title;
+			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::TopMedicalNews.Android.Resource.Layout.calendar_pager_layout;
+			global::XLabs.Forms.Resource.Layout.calendar_picker = global::TopMedicalNews.Android.Resource.Layout.calendar_picker;
+			global::XLabs.Forms.Resource.Layout.dialog = global::TopMedicalNews.Android.Resource.Layout.dialog;
+			global::XLabs.Forms.Resource.Layout.month = global::TopMedicalNews.Android.Resource.Layout.month;
+			global::XLabs.Forms.Resource.Layout.week = global::TopMedicalNews.Android.Resource.Layout.week;
+			global::XLabs.Forms.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Forms.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
+			global::XLabs.Forms.Resource.String.day_name_format = global::TopMedicalNews.Android.Resource.String.day_name_format;
+			global::XLabs.Forms.Resource.String.full_date_format = global::TopMedicalNews.Android.Resource.String.full_date_format;
+			global::XLabs.Forms.Resource.String.invalid_date = global::TopMedicalNews.Android.Resource.String.invalid_date;
+			global::XLabs.Forms.Resource.String.library_name = global::TopMedicalNews.Android.Resource.String.library_name;
+			global::XLabs.Forms.Resource.String.month_name_format = global::TopMedicalNews.Android.Resource.String.month_name_format;
+			global::XLabs.Forms.Resource.Style.CalendarCell = global::TopMedicalNews.Android.Resource.Style.CalendarCell;
+			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::TopMedicalNews.Android.Resource.Style.CalendarCell_CalendarDate;
+			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::TopMedicalNews.Android.Resource.Style.CalendarCell_DayHeader;
+			global::XLabs.Forms.Resource.Style.CalendarTitle = global::TopMedicalNews.Android.Resource.Style.CalendarTitle;
+			global::XLabs.Platform.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
+			global::XLabs.Platform.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::TopMedicalNews.Android.Resource.Attribute.ahBarColor;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::TopMedicalNews.Android.Resource.Attribute.ahBarLength;
 			global::Acr.XamForms.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::TopMedicalNews.Android.Resource.Attribute.ahBarWidth;
@@ -104,48 +146,6 @@ namespace TopMedicalNews.Android
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::TopMedicalNews.Android.Resource.Styleable.ProgressWheel_ahTextSize;
-			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_active_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_bg = global::TopMedicalNews.Android.Resource.Color.calendar_bg;
-			global::XLabs.Forms.Resource.Color.calendar_divider = global::TopMedicalNews.Android.Resource.Color.calendar_divider;
-			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_highlighted_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::TopMedicalNews.Android.Resource.Color.calendar_inactive_month_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_day_bg;
-			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::TopMedicalNews.Android.Resource.Color.calendar_selected_range_bg;
-			global::XLabs.Forms.Resource.Color.calendar_text_active = global::TopMedicalNews.Android.Resource.Color.calendar_text_active;
-			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::TopMedicalNews.Android.Resource.Color.calendar_text_inactive;
-			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::TopMedicalNews.Android.Resource.Color.calendar_text_selected;
-			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::TopMedicalNews.Android.Resource.Color.calendar_text_selector;
-			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::TopMedicalNews.Android.Resource.Color.calendar_text_unselectable;
-			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::TopMedicalNews.Android.Resource.Dimension.calendar_day_headers_paddingbottom;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_title_bottommargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::TopMedicalNews.Android.Resource.Dimension.calendar_month_topmargin;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_medium;
-			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::TopMedicalNews.Android.Resource.Dimension.calendar_text_small;
-			global::XLabs.Forms.Resource.Drawable.ad16 = global::TopMedicalNews.Android.Resource.Drawable.ad16;
-			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::TopMedicalNews.Android.Resource.Drawable.calendar_bg_selector;
-			global::XLabs.Forms.Resource.Id.calendar_grid = global::TopMedicalNews.Android.Resource.Id.calendar_grid;
-			global::XLabs.Forms.Resource.Id.calendar_view = global::TopMedicalNews.Android.Resource.Id.calendar_view;
-			global::XLabs.Forms.Resource.Id.left_arrow = global::TopMedicalNews.Android.Resource.Id.left_arrow;
-			global::XLabs.Forms.Resource.Id.right_arrow = global::TopMedicalNews.Android.Resource.Id.right_arrow;
-			global::XLabs.Forms.Resource.Id.title = global::TopMedicalNews.Android.Resource.Id.title;
-			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::TopMedicalNews.Android.Resource.Layout.calendar_pager_layout;
-			global::XLabs.Forms.Resource.Layout.calendar_picker = global::TopMedicalNews.Android.Resource.Layout.calendar_picker;
-			global::XLabs.Forms.Resource.Layout.dialog = global::TopMedicalNews.Android.Resource.Layout.dialog;
-			global::XLabs.Forms.Resource.Layout.month = global::TopMedicalNews.Android.Resource.Layout.month;
-			global::XLabs.Forms.Resource.Layout.week = global::TopMedicalNews.Android.Resource.Layout.week;
-			global::XLabs.Forms.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::XLabs.Forms.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
-			global::XLabs.Forms.Resource.String.day_name_format = global::TopMedicalNews.Android.Resource.String.day_name_format;
-			global::XLabs.Forms.Resource.String.full_date_format = global::TopMedicalNews.Android.Resource.String.full_date_format;
-			global::XLabs.Forms.Resource.String.invalid_date = global::TopMedicalNews.Android.Resource.String.invalid_date;
-			global::XLabs.Forms.Resource.String.library_name = global::TopMedicalNews.Android.Resource.String.library_name;
-			global::XLabs.Forms.Resource.String.month_name_format = global::TopMedicalNews.Android.Resource.String.month_name_format;
-			global::XLabs.Forms.Resource.Style.CalendarCell = global::TopMedicalNews.Android.Resource.Style.CalendarCell;
-			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::TopMedicalNews.Android.Resource.Style.CalendarCell_CalendarDate;
-			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::TopMedicalNews.Android.Resource.Style.CalendarCell_DayHeader;
-			global::XLabs.Forms.Resource.Style.CalendarTitle = global::TopMedicalNews.Android.Resource.Style.CalendarTitle;
-			global::XLabs.Platform.Resource.String.ApplicationName = global::TopMedicalNews.Android.Resource.String.ApplicationName;
-			global::XLabs.Platform.Resource.String.Hello = global::TopMedicalNews.Android.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -286,26 +286,26 @@ namespace TopMedicalNews.Android
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f050002
-			public const int calendar_day_headers_paddingbottom = 2131034114;
+			// aapt resource value: 0x7f070002
+			public const int calendar_day_headers_paddingbottom = 2131165186;
 			
-			// aapt resource value: 0x7f050004
-			public const int calendar_month_title_bottommargin = 2131034116;
+			// aapt resource value: 0x7f070004
+			public const int calendar_month_title_bottommargin = 2131165188;
 			
-			// aapt resource value: 0x7f050003
-			public const int calendar_month_topmargin = 2131034115;
+			// aapt resource value: 0x7f070003
+			public const int calendar_month_topmargin = 2131165187;
 			
-			// aapt resource value: 0x7f050005
-			public const int calendar_text_medium = 2131034117;
+			// aapt resource value: 0x7f070005
+			public const int calendar_text_medium = 2131165189;
 			
-			// aapt resource value: 0x7f050006
-			public const int calendar_text_small = 2131034118;
+			// aapt resource value: 0x7f070006
+			public const int calendar_text_small = 2131165190;
 			
-			// aapt resource value: 0x7f050001
-			public const int head_view_height = 2131034113;
+			// aapt resource value: 0x7f070001
+			public const int head_view_height = 2131165185;
 			
-			// aapt resource value: 0x7f050000
-			public const int need_refresh_delta = 2131034112;
+			// aapt resource value: 0x7f070000
+			public const int need_refresh_delta = 2131165184;
 			
 			static Dimension()
 			{
@@ -1094,287 +1094,287 @@ namespace TopMedicalNews.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060057
-			public const int ApplicationName = 2131099735;
+			// aapt resource value: 0x7f050058
+			public const int ApplicationName = 2131034200;
 			
-			// aapt resource value: 0x7f060056
-			public const int Hello = 2131099734;
+			// aapt resource value: 0x7f050057
+			public const int Hello = 2131034199;
 			
-			// aapt resource value: 0x7f060000
-			public const int app_name = 2131099648;
+			// aapt resource value: 0x7f050053
+			public const int app_name = 2131034195;
 			
-			// aapt resource value: 0x7f06004e
-			public const int baidutieba = 2131099726;
+			// aapt resource value: 0x7f05004b
+			public const int baidutieba = 2131034187;
 			
-			// aapt resource value: 0x7f060021
-			public const int baidutieba_client_inavailable = 2131099681;
+			// aapt resource value: 0x7f05001e
+			public const int baidutieba_client_inavailable = 2131034142;
 			
-			// aapt resource value: 0x7f060044
-			public const int bluetooth = 2131099716;
+			// aapt resource value: 0x7f050041
+			public const int bluetooth = 2131034177;
 			
-			// aapt resource value: 0x7f060007
-			public const int cancel = 2131099655;
+			// aapt resource value: 0x7f050001
+			public const int cancel = 2131034113;
 			
-			// aapt resource value: 0x7f060059
-			public const int day_name_format = 2131099737;
+			// aapt resource value: 0x7f050059
+			public const int day_name_format = 2131034201;
 			
-			// aapt resource value: 0x7f060031
-			public const int douban = 2131099697;
+			// aapt resource value: 0x7f05002e
+			public const int douban = 2131034158;
 			
-			// aapt resource value: 0x7f06003b
-			public const int dropbox = 2131099707;
+			// aapt resource value: 0x7f050038
+			public const int dropbox = 2131034168;
 			
-			// aapt resource value: 0x7f06002c
-			public const int email = 2131099692;
+			// aapt resource value: 0x7f050029
+			public const int email = 2131034153;
 			
-			// aapt resource value: 0x7f060033
-			public const int evernote = 2131099699;
+			// aapt resource value: 0x7f050030
+			public const int evernote = 2131034160;
 			
-			// aapt resource value: 0x7f060028
-			public const int facebook = 2131099688;
+			// aapt resource value: 0x7f050025
+			public const int facebook = 2131034149;
 			
-			// aapt resource value: 0x7f06004d
-			public const int facebookmessenger = 2131099725;
+			// aapt resource value: 0x7f05004a
+			public const int facebookmessenger = 2131034186;
 			
-			// aapt resource value: 0x7f060008
-			public const int finish = 2131099656;
+			// aapt resource value: 0x7f050002
+			public const int finish = 2131034114;
 			
-			// aapt resource value: 0x7f060039
-			public const int flickr = 2131099705;
+			// aapt resource value: 0x7f050036
+			public const int flickr = 2131034166;
 			
-			// aapt resource value: 0x7f060036
-			public const int foursquare = 2131099702;
+			// aapt resource value: 0x7f050033
+			public const int foursquare = 2131034163;
 			
-			// aapt resource value: 0x7f06005c
-			public const int full_date_format = 2131099740;
+			// aapt resource value: 0x7f05005c
+			public const int full_date_format = 2131034204;
 			
-			// aapt resource value: 0x7f060018
-			public const int google_plus_client_inavailable = 2131099672;
+			// aapt resource value: 0x7f050015
+			public const int google_plus_client_inavailable = 2131034133;
 			
-			// aapt resource value: 0x7f060035
-			public const int googleplus = 2131099701;
+			// aapt resource value: 0x7f050032
+			public const int googleplus = 2131034162;
 			
-			// aapt resource value: 0x7f06005d
-			public const int hello = 2131099741;
+			// aapt resource value: 0x7f05005d
+			public const int hello = 2131034205;
 			
-			// aapt resource value: 0x7f06003d
-			public const int instagram = 2131099709;
+			// aapt resource value: 0x7f05003a
+			public const int instagram = 2131034170;
 			
-			// aapt resource value: 0x7f06001b
-			public const int instagram_client_inavailable = 2131099675;
+			// aapt resource value: 0x7f050018
+			public const int instagram_client_inavailable = 2131034136;
 			
-			// aapt resource value: 0x7f06004c
-			public const int instapager_email_or_password_incorrect = 2131099724;
+			// aapt resource value: 0x7f050049
+			public const int instapager_email_or_password_incorrect = 2131034185;
 			
-			// aapt resource value: 0x7f060006
-			public const int instapager_login_html = 2131099654;
+			// aapt resource value: 0x7f050000
+			public const int instapager_login_html = 2131034112;
 			
-			// aapt resource value: 0x7f060047
-			public const int instapaper = 2131099719;
+			// aapt resource value: 0x7f050044
+			public const int instapaper = 2131034180;
 			
-			// aapt resource value: 0x7f060048
-			public const int instapaper_email = 2131099720;
+			// aapt resource value: 0x7f050045
+			public const int instapaper_email = 2131034181;
 			
-			// aapt resource value: 0x7f06004a
-			public const int instapaper_login = 2131099722;
+			// aapt resource value: 0x7f050047
+			public const int instapaper_login = 2131034183;
 			
-			// aapt resource value: 0x7f06004b
-			public const int instapaper_logining = 2131099723;
+			// aapt resource value: 0x7f050048
+			public const int instapaper_logining = 2131034184;
 			
-			// aapt resource value: 0x7f060049
-			public const int instapaper_pwd = 2131099721;
+			// aapt resource value: 0x7f050046
+			public const int instapaper_pwd = 2131034182;
 			
-			// aapt resource value: 0x7f06005a
-			public const int invalid_date = 2131099738;
+			// aapt resource value: 0x7f05005a
+			public const int invalid_date = 2131034202;
 			
-			// aapt resource value: 0x7f06002b
-			public const int kaixin = 2131099691;
+			// aapt resource value: 0x7f050028
+			public const int kaixin = 2131034152;
 			
-			// aapt resource value: 0x7f060042
-			public const int kakaostory = 2131099714;
+			// aapt resource value: 0x7f05003f
+			public const int kakaostory = 2131034175;
 			
-			// aapt resource value: 0x7f06001f
-			public const int kakaostory_client_inavailable = 2131099679;
+			// aapt resource value: 0x7f05001c
+			public const int kakaostory_client_inavailable = 2131034140;
 			
-			// aapt resource value: 0x7f060041
-			public const int kakaotalk = 2131099713;
+			// aapt resource value: 0x7f05003e
+			public const int kakaotalk = 2131034174;
 			
-			// aapt resource value: 0x7f06001e
-			public const int kakaotalk_client_inavailable = 2131099678;
+			// aapt resource value: 0x7f05001b
+			public const int kakaotalk_client_inavailable = 2131034139;
 			
-			// aapt resource value: 0x7f060058
-			public const int library_name = 2131099736;
+			// aapt resource value: 0x7f050056
+			public const int library_name = 2131034198;
 			
-			// aapt resource value: 0x7f060043
-			public const int line = 2131099715;
+			// aapt resource value: 0x7f050040
+			public const int line = 2131034176;
 			
-			// aapt resource value: 0x7f06001d
-			public const int line_client_inavailable = 2131099677;
+			// aapt resource value: 0x7f05001a
+			public const int line_client_inavailable = 2131034138;
 			
-			// aapt resource value: 0x7f060034
-			public const int linkedin = 2131099700;
+			// aapt resource value: 0x7f050031
+			public const int linkedin = 2131034161;
 			
-			// aapt resource value: 0x7f060010
-			public const int list_friends = 2131099664;
+			// aapt resource value: 0x7f05000a
+			public const int list_friends = 2131034122;
 			
-			// aapt resource value: 0x7f060040
-			public const int mingdao = 2131099712;
+			// aapt resource value: 0x7f05003d
+			public const int mingdao = 2131034173;
 			
-			// aapt resource value: 0x7f060052
-			public const int mingdao_share_content = 2131099730;
+			// aapt resource value: 0x7f05004f
+			public const int mingdao_share_content = 2131034191;
 			
-			// aapt resource value: 0x7f06005b
-			public const int month_name_format = 2131099739;
+			// aapt resource value: 0x7f05005b
+			public const int month_name_format = 2131034203;
 			
-			// aapt resource value: 0x7f06000c
-			public const int multi_share = 2131099660;
+			// aapt resource value: 0x7f050006
+			public const int multi_share = 2131034118;
 			
-			// aapt resource value: 0x7f060030
-			public const int neteasemicroblog = 2131099696;
+			// aapt resource value: 0x7f05002d
+			public const int neteasemicroblog = 2131034157;
 			
-			// aapt resource value: 0x7f060038
-			public const int pinterest = 2131099704;
+			// aapt resource value: 0x7f050035
+			public const int pinterest = 2131034165;
 			
-			// aapt resource value: 0x7f06001a
-			public const int pinterest_client_inavailable = 2131099674;
+			// aapt resource value: 0x7f050017
+			public const int pinterest_client_inavailable = 2131034135;
 			
-			// aapt resource value: 0x7f060046
-			public const int pocket = 2131099718;
+			// aapt resource value: 0x7f050043
+			public const int pocket = 2131034179;
 			
-			// aapt resource value: 0x7f060001
-			public const int pull_to_refresh = 2131099649;
+			// aapt resource value: 0x7f05000c
+			public const int pull_to_refresh = 2131034124;
 			
-			// aapt resource value: 0x7f060004
-			public const int pull_up_to_get_more = 2131099652;
+			// aapt resource value: 0x7f050054
+			public const int pull_up_to_get_more = 2131034196;
 			
-			// aapt resource value: 0x7f060037
-			public const int qq = 2131099703;
+			// aapt resource value: 0x7f050034
+			public const int qq = 2131034164;
 			
-			// aapt resource value: 0x7f060019
-			public const int qq_client_inavailable = 2131099673;
+			// aapt resource value: 0x7f050016
+			public const int qq_client_inavailable = 2131034134;
 			
-			// aapt resource value: 0x7f060024
-			public const int qzone = 2131099684;
+			// aapt resource value: 0x7f050021
+			public const int qzone = 2131034145;
 			
-			// aapt resource value: 0x7f060002
-			public const int refreshing = 2131099650;
+			// aapt resource value: 0x7f05000e
+			public const int refreshing = 2131034126;
 			
-			// aapt resource value: 0x7f060005
-			public const int release_to_get_more = 2131099653;
+			// aapt resource value: 0x7f050055
+			public const int release_to_get_more = 2131034197;
 			
-			// aapt resource value: 0x7f060003
-			public const int release_to_refresh = 2131099651;
+			// aapt resource value: 0x7f05000d
+			public const int release_to_refresh = 2131034125;
 			
-			// aapt resource value: 0x7f06002a
-			public const int renren = 2131099690;
+			// aapt resource value: 0x7f050027
+			public const int renren = 2131034151;
 			
-			// aapt resource value: 0x7f060013
-			public const int select_a_friend = 2131099667;
+			// aapt resource value: 0x7f050010
+			public const int select_a_friend = 2131034128;
 			
-			// aapt resource value: 0x7f06000f
-			public const int select_one_plat_at_least = 2131099663;
+			// aapt resource value: 0x7f050009
+			public const int select_one_plat_at_least = 2131034121;
 			
-			// aapt resource value: 0x7f060012
-			public const int shake2share = 2131099666;
+			// aapt resource value: 0x7f05000f
+			public const int shake2share = 2131034127;
 			
-			// aapt resource value: 0x7f06000b
-			public const int share = 2131099659;
+			// aapt resource value: 0x7f050005
+			public const int share = 2131034117;
 			
-			// aapt resource value: 0x7f06000e
-			public const int share_canceled = 2131099662;
+			// aapt resource value: 0x7f050008
+			public const int share_canceled = 2131034120;
 			
-			// aapt resource value: 0x7f06000d
-			public const int share_completed = 2131099661;
+			// aapt resource value: 0x7f050007
+			public const int share_completed = 2131034119;
 			
-			// aapt resource value: 0x7f060011
-			public const int share_failed = 2131099665;
+			// aapt resource value: 0x7f05000b
+			public const int share_failed = 2131034123;
 			
-			// aapt resource value: 0x7f06000a
-			public const int share_to = 2131099658;
+			// aapt resource value: 0x7f050004
+			public const int share_to = 2131034116;
 			
-			// aapt resource value: 0x7f06004f
-			public const int share_to_baidutieba = 2131099727;
+			// aapt resource value: 0x7f05004c
+			public const int share_to_baidutieba = 2131034188;
 			
-			// aapt resource value: 0x7f060053
-			public const int share_to_mingdao = 2131099731;
+			// aapt resource value: 0x7f050050
+			public const int share_to_mingdao = 2131034192;
 			
-			// aapt resource value: 0x7f060051
-			public const int share_to_qq = 2131099729;
+			// aapt resource value: 0x7f05004e
+			public const int share_to_qq = 2131034190;
 			
-			// aapt resource value: 0x7f060050
-			public const int share_to_qzone = 2131099728;
+			// aapt resource value: 0x7f05004d
+			public const int share_to_qzone = 2131034189;
 			
-			// aapt resource value: 0x7f060054
-			public const int share_to_qzone_default = 2131099732;
+			// aapt resource value: 0x7f050051
+			public const int share_to_qzone_default = 2131034193;
 			
-			// aapt resource value: 0x7f060009
-			public const int sharing = 2131099657;
+			// aapt resource value: 0x7f050003
+			public const int sharing = 2131034115;
 			
-			// aapt resource value: 0x7f06002d
-			public const int shortmessage = 2131099693;
+			// aapt resource value: 0x7f05002a
+			public const int shortmessage = 2131034154;
 			
-			// aapt resource value: 0x7f060022
-			public const int sinaweibo = 2131099682;
+			// aapt resource value: 0x7f05001f
+			public const int sinaweibo = 2131034143;
 			
-			// aapt resource value: 0x7f06002e
-			public const int sohumicroblog = 2131099694;
+			// aapt resource value: 0x7f05002b
+			public const int sohumicroblog = 2131034155;
 			
-			// aapt resource value: 0x7f06002f
-			public const int sohusuishenkan = 2131099695;
+			// aapt resource value: 0x7f05002c
+			public const int sohusuishenkan = 2131034156;
 			
-			// aapt resource value: 0x7f060023
-			public const int tencentweibo = 2131099683;
+			// aapt resource value: 0x7f050020
+			public const int tencentweibo = 2131034144;
 			
-			// aapt resource value: 0x7f06003a
-			public const int tumblr = 2131099706;
+			// aapt resource value: 0x7f050037
+			public const int tumblr = 2131034167;
 			
-			// aapt resource value: 0x7f060029
-			public const int twitter = 2131099689;
+			// aapt resource value: 0x7f050026
+			public const int twitter = 2131034150;
 			
-			// aapt resource value: 0x7f060055
-			public const int use_login_button = 2131099733;
+			// aapt resource value: 0x7f050052
+			public const int use_login_button = 2131034194;
 			
-			// aapt resource value: 0x7f06003c
-			public const int vkontakte = 2131099708;
+			// aapt resource value: 0x7f050039
+			public const int vkontakte = 2131034169;
 			
-			// aapt resource value: 0x7f060015
-			public const int website = 2131099669;
+			// aapt resource value: 0x7f050012
+			public const int website = 2131034130;
 			
-			// aapt resource value: 0x7f060025
-			public const int wechat = 2131099685;
+			// aapt resource value: 0x7f050022
+			public const int wechat = 2131034146;
 			
-			// aapt resource value: 0x7f060017
-			public const int wechat_client_inavailable = 2131099671;
+			// aapt resource value: 0x7f050014
+			public const int wechat_client_inavailable = 2131034132;
 			
-			// aapt resource value: 0x7f060027
-			public const int wechatfavorite = 2131099687;
+			// aapt resource value: 0x7f050024
+			public const int wechatfavorite = 2131034148;
 			
-			// aapt resource value: 0x7f060026
-			public const int wechatmoments = 2131099686;
+			// aapt resource value: 0x7f050023
+			public const int wechatmoments = 2131034147;
 			
-			// aapt resource value: 0x7f060014
-			public const int weibo_oauth_regiseter = 2131099668;
+			// aapt resource value: 0x7f050011
+			public const int weibo_oauth_regiseter = 2131034129;
 			
-			// aapt resource value: 0x7f060016
-			public const int weibo_upload_content = 2131099670;
+			// aapt resource value: 0x7f050013
+			public const int weibo_upload_content = 2131034131;
 			
-			// aapt resource value: 0x7f060045
-			public const int whatsapp = 2131099717;
+			// aapt resource value: 0x7f050042
+			public const int whatsapp = 2131034178;
 			
-			// aapt resource value: 0x7f060020
-			public const int whatsapp_client_inavailable = 2131099680;
+			// aapt resource value: 0x7f05001d
+			public const int whatsapp_client_inavailable = 2131034141;
 			
-			// aapt resource value: 0x7f06003e
-			public const int yixin = 2131099710;
+			// aapt resource value: 0x7f05003b
+			public const int yixin = 2131034171;
 			
-			// aapt resource value: 0x7f06001c
-			public const int yixin_client_inavailable = 2131099676;
+			// aapt resource value: 0x7f050019
+			public const int yixin_client_inavailable = 2131034137;
 			
-			// aapt resource value: 0x7f06003f
-			public const int yixinmoments = 2131099711;
+			// aapt resource value: 0x7f05003c
+			public const int yixinmoments = 2131034172;
 			
-			// aapt resource value: 0x7f060032
-			public const int youdao = 2131099698;
+			// aapt resource value: 0x7f05002f
+			public const int youdao = 2131034159;
 			
 			static String()
 			{
@@ -1389,35 +1389,35 @@ namespace TopMedicalNews.Android
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int AppBaseTheme = 2131165184;
+			// aapt resource value: 0x7f060000
+			public const int AppBaseTheme = 2131099648;
 			
-			// aapt resource value: 0x7f070001
-			public const int AppTheme = 2131165185;
+			// aapt resource value: 0x7f060001
+			public const int AppTheme = 2131099649;
 			
-			// aapt resource value: 0x7f070003
-			public const int CalendarCell = 2131165187;
+			// aapt resource value: 0x7f060003
+			public const int CalendarCell = 2131099651;
 			
-			// aapt resource value: 0x7f070005
-			public const int CalendarCell_CalendarDate = 2131165189;
+			// aapt resource value: 0x7f060005
+			public const int CalendarCell_CalendarDate = 2131099653;
 			
-			// aapt resource value: 0x7f070004
-			public const int CalendarCell_DayHeader = 2131165188;
+			// aapt resource value: 0x7f060004
+			public const int CalendarCell_DayHeader = 2131099652;
 			
-			// aapt resource value: 0x7f070002
-			public const int CalendarTitle = 2131165186;
+			// aapt resource value: 0x7f060002
+			public const int CalendarTitle = 2131099650;
 			
-			// aapt resource value: 0x7f070009
-			public const int MyActionBarStyle = 2131165193;
+			// aapt resource value: 0x7f060009
+			public const int MyActionBarStyle = 2131099657;
 			
-			// aapt resource value: 0x7f070007
-			public const int MyTheme = 2131165191;
+			// aapt resource value: 0x7f060007
+			public const int MyTheme = 2131099655;
 			
-			// aapt resource value: 0x7f070008
-			public const int MyTheme_WithActionBar = 2131165192;
+			// aapt resource value: 0x7f060008
+			public const int MyTheme_WithActionBar = 2131099656;
 			
-			// aapt resource value: 0x7f070006
-			public const int Theme_Splash = 2131165190;
+			// aapt resource value: 0x7f060006
+			public const int Theme_Splash = 2131099654;
 			
 			static Style()
 			{

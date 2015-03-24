@@ -6,7 +6,7 @@
 				<StackLayout Orientation="Vertical" Padding="10,10,10,10">
 					<Label Text="{Binding News.Title}" FontSize="24" />
 					<StackLayout Orientation="Horizontal">
-						<Label Text="{Binding News.FromSource,StringFormat='来自-{0}'}" TextColor="#878787" FontSize="14" />
+						<Label Text="{Binding News.FromSource,StringFormat='{0}'}" TextColor="#878787" FontSize="14" />
 						<Label Text="{Binding News.PublishTime,StringFormat='{0:yyyy-MM-dd}'}" BackgroundColor="White" TextColor="#878787" FontSize="14" />
 					</StackLayout>
 					<lc:Separator Color="#D5D5D5" />

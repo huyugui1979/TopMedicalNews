@@ -14,6 +14,7 @@ namespace TopMedicalNews
 			this.ToolbarItems.Add (tool);
 			Title = "医界头条";
 		}
+
 		public void OrderColumn()
 		{
 			(this.BindingContext as FirstModel).OrderColumnCommand.Execute (null);

@@ -2,35 +2,35 @@
 <MyPage Title="配置" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.SetttingPage">
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" Padding="10,10,10,10" BackgroundColor="#f7f7f7">
-			<Frame HasShadow="false" OutlineColor="#d9d9d9" BackgroundColor="White">
-				<StackLayout Orientation="Vertical" x:Name="choseFont"  Padding="0,0,0,0" >
+			<Frame HasShadow="false" OutlineColor="#d9d9d9" BackgroundColor="White"  Padding="10,0,10,0">
+				<StackLayout Orientation="Vertical" x:Name="choseFont"    Spacing="0" >
 					<StackLayout Orientation="Horizontal">
-						<Label Text="选择字体" VerticalOptions="Center" />
-						<local:BindableRadioGroup x:Name="radio" Orientation="Horizontal" VerticalOptions="Center" ItemsSource="{Binding Fonts}"   HorizontalOptions="CenterAndExpand" />
+						<Label Text="选择字体" FontSize="18" VerticalOptions="Center"  HorizontalOptions="Start"/>
+						<local:BindableRadioGroup  x:Name="radio" Orientation="Horizontal" VerticalOptions="Center" ItemsSource="{Binding Fonts}"   HorizontalOptions="CenterAndExpand" />
 					</StackLayout>
 					<BoxView HeightRequest="1" Color="#d9d9d9" />
-					<StackLayout Orientation="Horizontal" x:Name="verInfo">
-						<Label Text="检查更新" VerticalOptions="Center" />
-						<Label Text="{Binding VerInfo}" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+					<StackLayout Orientation="Horizontal" x:Name="verInfo" HeightRequest="40">
+						<Label Text="检查更新"  FontSize="18" VerticalOptions="Center" />
+						<Label Text="{Binding VerInfo}"  FontSize="18" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
 						<Image Source="IndicatorRight.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
 					</StackLayout>
 					<BoxView HeightRequest="1" Color="#d9d9d9" />
-					<StackLayout Orientation="Horizontal" x:Name="cacheNum">
-						<Label Text="清除缓存" VerticalOptions="Center" />
-						<Label Text="{Binding CacheNum}" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+					<StackLayout Orientation="Horizontal" x:Name="cacheNum" HeightRequest="40">
+						<Label Text="清除缓存"   FontSize="18" VerticalOptions="Center" />
+						<Label Text="{Binding CacheNum}"  FontSize="18" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
 						<Image Source="IndicatorRight.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
 					</StackLayout>
 				</StackLayout>
 			</Frame>
-			<Frame HasShadow="false" OutlineColor="#d9d9d9" BackgroundColor="White">
-				<StackLayout Orientation="Vertical" x:Name="feedBack">
-					<StackLayout Orientation="Horizontal">
-						<Label Text="意见反馈" VerticalOptions="Center" />
+			<Frame HasShadow="false" OutlineColor="#d9d9d9" BackgroundColor="White"  Padding="10,0,10,0">
+				<StackLayout Orientation="Vertical" x:Name="feedBack" Spacing="0">
+					<StackLayout Orientation="Horizontal" HeightRequest="40" >
+						<Label Text="意见反馈"  FontSize="18" VerticalOptions="Center" />
 						<Image Source="IndicatorRight" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
 					</StackLayout>
 					<BoxView HeightRequest="1" Color="#d9d9d9" />
-					<StackLayout Orientation="Horizontal" x:Name="aboutUs">
-						<Label Text="关于我们" VerticalOptions="Center" />
+					<StackLayout Orientation="Horizontal" x:Name="aboutUs" HeightRequest="40">
+						<Label Text="关于我们"   FontSize="18" VerticalOptions="Center" />
 						<Image Source="IndicatorRight.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
 					</StackLayout>
 

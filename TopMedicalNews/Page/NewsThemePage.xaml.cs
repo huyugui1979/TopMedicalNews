@@ -5,13 +5,15 @@ using Xamarin.Forms;
 
 namespace TopMedicalNews
 {
-	public partial class NewsThemePage : ContentPage
+	public partial class NewsThemePage : MyPage
 	{
 		public NewsThemePage ()
 		{
 
 			InitializeComponent ();
+
 		}
+
 	}
 }
 

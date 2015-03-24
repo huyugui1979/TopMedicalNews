@@ -26,7 +26,7 @@ namespace TopMedicalNews
 		public void Init()
 		{
 			//
-			SetSelectFont (0);
+			SetSelectFont (1);
 			//
 		}
 		public List<MyFont> GetAllFont()

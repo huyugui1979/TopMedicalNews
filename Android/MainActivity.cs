@@ -24,7 +24,7 @@ namespace TopMedicalNews.Android
 {
 
 
-	[Activity (Label = "",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "医界头条",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : XFormsApplicationDroid
 	{
         

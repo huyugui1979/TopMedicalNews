@@ -72,22 +72,22 @@ namespace TopMedicalNews
 			ViewFactory.Register<MyReadingPage,MyReadingModel> ();
 			ViewFactory.Register<MainPage,MainModel> ();
 			ViewFactory.Register<SelectDepartmentPage,SelectDepartmentModel> ();
-
+			ViewFactory.Register<WelcomePage,WelcomeModel> ();
 			//
 
 
 
-			if (CrossSettings.Current.GetValueOrDefault<bool>("MyInit",false) == false)
-			{
-				//
-				Resolver.Resolve<ISQLiteClient> ().Init ();
-				Resolver.Resolve<IFontService> ().Init ();
-				//
-				Resolver.Resolve<IColumnService> ().Init ();
-				Resolver.Resolve<IDepartmentService> ().Init ();
-				CrossSettings.Current.AddOrUpdateValue<bool>("MyInit", true);
-
-			}
+//			if (CrossSettings.Current.GetValueOrDefault<bool>("MyInit",false) == false)
+//			{
+//				//
+//				Resolver.Resolve<ISQLiteClient> ().Init ();
+//				Resolver.Resolve<IFontService> ().Init ();
+//				//
+//				 Resolver.Resolve<IColumnService> ().Init ();
+//				 Resolver.Resolve<IDepartmentService> ().Init ();
+//				CrossSettings.Current.AddOrUpdateValue<bool>("MyInit", true);
+//
+//			}
 
 			//
 			//Resolver.Resolve<IDepartmentService> ().Init ();
@@ -97,7 +97,7 @@ namespace TopMedicalNews
 		{
 			Init ();
 			MainPage = ViewFactory.CreatePage<
-				MainModel,Page>() as Page;
+				WelcomeModel,Page>(  (m,p)=> m.Init()) as Page;
 		}
 	
 	}

@@ -69,7 +69,7 @@ namespace TopMedicalNews.Android
 		
 			_Columns = view.Columns;
 			_Columns.ForEach(c=>{var text = new global::Android.Widget.TextView (this.Context){ Text = c.Title };
-				text.TextAlignment = global::Android.Views.TextAlignment.Center;
+				//text.TextAlignment = global::Android.Views.TextAlignment.Center;
 				text.SoundEffectsEnabled = false;
 				text.Gravity= global::Android.Views.GravityFlags.FillVertical;
 				text.TextSize=18;

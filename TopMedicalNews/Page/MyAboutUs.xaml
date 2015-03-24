@@ -6,17 +6,17 @@
 				<StackLayout Orientation="Horizontal">
 					<Image Source="Icon" HeightRequest="50" WidthRequest="50" />
 					<StackLayout Orientation="Vertical">
-						<Label Text="医界头条" FontSize="18" TextColor="Blue" />
-						<Label Text="当前版本:1.0" FontSize="15" />
-						<Label Text="软件授权:爱爱医医学网站" FontSize="15" />
+						<Label Text="医界头条" FontSize="20" TextColor="Blue" />
+						<Label Text="当前版本:1.0" FontSize="18" />
+						<Label Text="软件授权:爱爱医医学网站" FontSize="18" />
 					</StackLayout>
 				</StackLayout>
 			</Frame>
 			<Frame OutlineColor="#d9d9d9" HasShadow="false" BackgroundColor="White">
 				<StackLayout Orientation="Vertical" Padding="10,10,10,10">
 					<StackLayout Orientation="Horizontal">
-						<Label Text="进入官网:"  />
-						<Label Text="www.iiyi.com" TextColor="Blue">
+						<Label FontSize="18" Text="进入官网:"  />
+						<Label FontSize="18" Text="www.iiyi.com" TextColor="Blue">
 							<Label.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding GoHomeCommand}" />
 							</Label.GestureRecognizers>
@@ -24,8 +24,8 @@
 					</StackLayout>
 					<BoxView HeightRequest="1" Color="#d9d9d9" />
 					<StackLayout Orientation="Horizontal">
-						<Label Text="客服电话:"  />
-						<Label Text="0756-7770983" TextColor="Blue">
+						<Label FontSize="18" Text="客服电话:"  />
+						<Label FontSize="18" Text="0756-7770983" TextColor="Blue">
 							<Label.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding CallPhoneCommand}" />
 							</Label.GestureRecognizers>
@@ -33,8 +33,8 @@
 					</StackLayout>
 					<BoxView HeightRequest="1" Color="#d9d9d9" />
 					<StackLayout Orientation="Horizontal">
-						<Label Text="关注微信:" />
-						<Label Text="iiyicom" />
+						<Label FontSize="18" Text="关注微信:" />
+						<Label FontSize="18" Text="iiyicom" />
 					</StackLayout>
 				</StackLayout>
 			</Frame>

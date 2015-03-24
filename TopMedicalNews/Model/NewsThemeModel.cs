@@ -21,7 +21,7 @@ namespace TopMedicalNews
 		public ObservableCollection<News> NewsList{ get { return _NewsList; } set { SetProperty (ref _NewsList, value); } }
 
 		public News MyNews{ get; set; }
-
+	
 		public async void Init (News news)
 		{
 			//

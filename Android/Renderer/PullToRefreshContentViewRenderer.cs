@@ -160,7 +160,6 @@ namespace TopMedicalNews.Android
 
 			}
 		}
-
 		public event EventHandler<VisualElementChangedEventArgs> ElementChanged;
 	}
 
