@@ -35,9 +35,6 @@ namespace TopMedicalNews
 						MainModel,Page> () as Page;
 			} catch (MyException e) {
 				await Resolver.Resolve<IUserDialogService> ().AlertAsync (e.Message);
-			} catch (Exception e) {
-				await Resolver.Resolve<IUserDialogService> ().AlertAsync ("网络连接错误");
-
 			} finally {
 				dialog.Hide ();
 			}

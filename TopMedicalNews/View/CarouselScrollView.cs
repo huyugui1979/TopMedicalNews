@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using System.Collections;
 using System.Linq;
 using System.Collections.Specialized;
+using System.Timers;
 
 
 namespace TopMedicalNews
@@ -10,11 +11,12 @@ namespace TopMedicalNews
 	public class CarouselScrollView:ScrollView
 	{
 		readonly StackLayout _stack;
-
+		Timer _timer;
 		public CarouselScrollView ()
 		{
 			Orientation = ScrollOrientation.Horizontal;
 
+			//
 			_stack = new StackLayout {
 				Orientation = StackOrientation.Horizontal,
 				Spacing = 0,
@@ -38,6 +40,7 @@ namespace TopMedicalNews
 				}
 			);
 		//
+
 		public static readonly BindableProperty SelectCommandProperty = 
 			BindableProperty.Create<CarouselScrollView,Command> (
 				p => p.SelectCommand, null);
@@ -144,7 +147,7 @@ namespace TopMedicalNews
 		}
 		void UpdateSelectedItem ()
 		{
-
+			if(SelectedIndex<ItemsSource.Count)
 			SelectedItem = ItemsSource [SelectedIndex];
 		}
 		void UpdateSelectedIndex ()

@@ -118,15 +118,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinIOS.2.5.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs.iOS">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
-    </Reference>
     <Reference Include="XLabs.Core">
       <HintPath>..\libs\ios\XLabs.Core.dll</HintPath>
     </Reference>
@@ -159,6 +150,18 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.4\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs.iOS">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.4\lib\Xamarin.iOS10\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.3.0.4\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Serialization, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\libs\ios\XLabs.Serialization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

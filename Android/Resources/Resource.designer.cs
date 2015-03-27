@@ -882,134 +882,125 @@ namespace TopMedicalNews.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090016
-			public const int actionbarLayout = 2131296278;
+			// aapt resource value: 0x7f090013
+			public const int actionbarLayout = 2131296275;
+			
+			// aapt resource value: 0x7f09001f
+			public const int atDescTextView = 2131296287;
+			
+			// aapt resource value: 0x7f09001a
+			public const int atLayout = 2131296282;
+			
+			// aapt resource value: 0x7f09001e
+			public const int atTextView = 2131296286;
 			
 			// aapt resource value: 0x7f090022
-			public const int atDescTextView = 2131296290;
+			public const int backImageView = 2131296290;
 			
-			// aapt resource value: 0x7f09001d
-			public const int atLayout = 2131296285;
-			
-			// aapt resource value: 0x7f090021
-			public const int atTextView = 2131296289;
-			
-			// aapt resource value: 0x7f090025
-			public const int backImageView = 2131296293;
-			
-			// aapt resource value: 0x7f090006
-			public const int button_more_columns = 2131296262;
-			
-			// aapt resource value: 0x7f090012
-			public const int calendar_grid = 2131296274;
+			// aapt resource value: 0x7f09000f
+			public const int calendar_grid = 2131296271;
 			
 			// aapt resource value: 0x7f090001
 			public const int calendar_view = 2131296257;
 			
-			// aapt resource value: 0x7f09002a
-			public const int checkedImageView = 2131296298;
+			// aapt resource value: 0x7f090027
+			public const int checkedImageView = 2131296295;
 			
-			// aapt resource value: 0x7f09001a
-			public const int closeImageView = 2131296282;
+			// aapt resource value: 0x7f090017
+			public const int closeImageView = 2131296279;
+			
+			// aapt resource value: 0x7f090011
+			public const int content_ly = 2131296273;
+			
+			// aapt resource value: 0x7f090018
+			public const int divider = 2131296280;
+			
+			// aapt resource value: 0x7f090006
+			public const int foot_layout_progress = 2131296262;
 			
 			// aapt resource value: 0x7f090005
-			public const int content = 2131296261;
+			public const int foot_layout_text = 2131296261;
 			
-			// aapt resource value: 0x7f090014
-			public const int content_ly = 2131296276;
-			
-			// aapt resource value: 0x7f09001b
-			public const int divider = 2131296283;
-			
-			// aapt resource value: 0x7f090009
-			public const int foot_layout_progress = 2131296265;
-			
-			// aapt resource value: 0x7f090008
-			public const int foot_layout_text = 2131296264;
-			
-			// aapt resource value: 0x7f090015
-			public const int foot_ly = 2131296277;
-			
-			// aapt resource value: 0x7f090027
-			public const int gridView = 2131296295;
-			
-			// aapt resource value: 0x7f09001f
-			public const int hScrollView = 2131296287;
-			
-			// aapt resource value: 0x7f09000a
-			public const int head_layout_left_arrow = 2131296266;
-			
-			// aapt resource value: 0x7f09000b
-			public const int head_layout_left_progressbar = 2131296267;
-			
-			// aapt resource value: 0x7f09000c
-			public const int head_layout_title = 2131296268;
-			
-			// aapt resource value: 0x7f090013
-			public const int head_ly = 2131296275;
+			// aapt resource value: 0x7f090012
+			public const int foot_ly = 2131296274;
 			
 			// aapt resource value: 0x7f090024
-			public const int imageRemoveBtn = 2131296292;
+			public const int gridView = 2131296292;
 			
-			// aapt resource value: 0x7f090023
-			public const int imageView = 2131296291;
+			// aapt resource value: 0x7f09001c
+			public const int hScrollView = 2131296284;
+			
+			// aapt resource value: 0x7f090007
+			public const int head_layout_left_arrow = 2131296263;
+			
+			// aapt resource value: 0x7f090008
+			public const int head_layout_left_progressbar = 2131296264;
+			
+			// aapt resource value: 0x7f090009
+			public const int head_layout_title = 2131296265;
+			
+			// aapt resource value: 0x7f090010
+			public const int head_ly = 2131296272;
+			
+			// aapt resource value: 0x7f090021
+			public const int imageRemoveBtn = 2131296289;
 			
 			// aapt resource value: 0x7f090020
-			public const int imagesLinearLayout = 2131296288;
+			public const int imageView = 2131296288;
+			
+			// aapt resource value: 0x7f09001d
+			public const int imagesLinearLayout = 2131296285;
 			
 			// aapt resource value: 0x7f090003
 			public const int left_arrow = 2131296259;
 			
-			// aapt resource value: 0x7f09000f
-			public const int loadingImage = 2131296271;
+			// aapt resource value: 0x7f09000c
+			public const int loadingImage = 2131296268;
+			
+			// aapt resource value: 0x7f09000a
+			public const int loadingProgressBar = 2131296266;
 			
 			// aapt resource value: 0x7f09000d
-			public const int loadingProgressBar = 2131296269;
+			public const int loadingProgressWheel = 2131296269;
 			
-			// aapt resource value: 0x7f090010
-			public const int loadingProgressWheel = 2131296272;
+			// aapt resource value: 0x7f090025
+			public const int logoImageView = 2131296293;
 			
-			// aapt resource value: 0x7f090028
-			public const int logoImageView = 2131296296;
+			// aapt resource value: 0x7f090014
+			public const int mainRelLayout = 2131296276;
 			
-			// aapt resource value: 0x7f090004
-			public const int mColumnHorizontalScrollView = 2131296260;
-			
-			// aapt resource value: 0x7f090017
-			public const int mainRelLayout = 2131296279;
-			
-			// aapt resource value: 0x7f090011
-			public const int myButton = 2131296273;
-			
-			// aapt resource value: 0x7f090029
-			public const int nameTextView = 2131296297;
+			// aapt resource value: 0x7f09000e
+			public const int myButton = 2131296270;
 			
 			// aapt resource value: 0x7f090026
-			public const int okImageView = 2131296294;
+			public const int nameTextView = 2131296294;
+			
+			// aapt resource value: 0x7f090023
+			public const int okImageView = 2131296291;
 			
 			// aapt resource value: 0x7f090002
 			public const int right_arrow = 2131296258;
 			
-			// aapt resource value: 0x7f09001e
-			public const int textCounterTextView = 2131296286;
+			// aapt resource value: 0x7f09001b
+			public const int textCounterTextView = 2131296283;
 			
-			// aapt resource value: 0x7f09001c
-			public const int textEditText = 2131296284;
+			// aapt resource value: 0x7f090019
+			public const int textEditText = 2131296281;
 			
-			// aapt resource value: 0x7f09000e
-			public const int textViewStatus = 2131296270;
+			// aapt resource value: 0x7f09000b
+			public const int textViewStatus = 2131296267;
 			
 			// aapt resource value: 0x7f090000
 			public const int title = 2131296256;
 			
-			// aapt resource value: 0x7f090019
-			public const int titleEditText = 2131296281;
+			// aapt resource value: 0x7f090016
+			public const int titleEditText = 2131296278;
 			
-			// aapt resource value: 0x7f090018
-			public const int titleLayout = 2131296280;
+			// aapt resource value: 0x7f090015
+			public const int titleLayout = 2131296277;
 			
-			// aapt resource value: 0x7f090007
-			public const int wall_progress_ly = 2131296263;
+			// aapt resource value: 0x7f090004
+			public const int wall_progress_ly = 2131296260;
 			
 			static Id()
 			{
@@ -1031,55 +1022,52 @@ namespace TopMedicalNews.Android
 			public const int calendar_picker = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int column = 2130903042;
+			public const int dialog = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int dialog = 2130903043;
+			public const int foot_layout = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int foot_layout = 2130903044;
+			public const int head_layout = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int head_layout = 2130903045;
+			public const int loading = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int loading = 2130903046;
+			public const int loadingimage = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int loadingimage = 2130903047;
+			public const int loadingprogress = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int loadingprogress = 2130903048;
+			public const int Main = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Main = 2130903049;
+			public const int month = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int month = 2130903050;
+			public const int pull_refresh_scroll_view = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int pull_refresh_scroll_view = 2130903051;
+			public const int skyblue_editpage = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int skyblue_editpage = 2130903052;
+			public const int skyblue_editpage_at_layout = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int skyblue_editpage_at_layout = 2130903053;
+			public const int skyblue_editpage_inc_image_layout = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int skyblue_editpage_inc_image_layout = 2130903054;
+			public const int skyblue_share_actionbar = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int skyblue_share_actionbar = 2130903055;
+			public const int skyblue_share_platform_list = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int skyblue_share_platform_list = 2130903056;
+			public const int skyblue_share_platform_list_item = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int skyblue_share_platform_list_item = 2130903057;
-			
-			// aapt resource value: 0x7f030012
-			public const int week = 2130903058;
+			public const int week = 2130903057;
 			
 			static Layout()
 			{

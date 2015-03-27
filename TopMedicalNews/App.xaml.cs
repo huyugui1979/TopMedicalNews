@@ -53,7 +53,7 @@ namespace TopMedicalNews
 			resolverContainer.RegisterSingle<ISoftService,SoftService> ();
 
 			//Resolver.SetResolver(resolverContainer.GetResolver());
-			ViewFactory.Register<FirstPage,FirstModel> ();
+			ViewFactory.Register<MyFirstPage,FirstModel> ();
 			ViewFactory.Register<LoginPage,LoginModel> ();
 			ViewFactory.Register<NewsThemePage,NewsThemeModel> ();
 			ViewFactory.Register<ForgetPage,ForgetModel> ();

@@ -68,36 +68,80 @@ namespace TopMedicalNews
 
 	public class FirstModel:BaseViewModel
 	{
-		List<Column> _LikeColumns;
+		ObservableCollection<Column> _LikeColumns;
 
-		public  List<Column>  	LikeColumns { get { return _LikeColumns; } set { SetProperty (ref _LikeColumns, value); } }
+		public  ObservableCollection<Column>  	LikeColumns { get { return _LikeColumns; } set { SetProperty (ref _LikeColumns, value); } }
 
 
 
 		public ICommand SettingCommand { get { return new Command (r => {
-			Navigation.NavigateTo<SettingModel> ();	
-		}); } }
+				Navigation.NavigateTo<SettingModel> ();	
+			}); } }
 
 		public ICommand OrderColumnCommand { get { return new Command (r => {
-			Navigation.NavigateTo<SelectColumnModel> ();
-		}); } }
+				Navigation.NavigateTo<SelectColumnModel> ();
+			}); } }
 		//
+	
+		int _SelectIndex=0;
 
 
+	public int SelectIndex{get{ return _SelectIndex; }set{ SetProperty (ref _SelectIndex, value); }}
+		//
+		public ICommand SelectColumnCommand {
+			get {
+				return new Command<int> (n => {
+					//
+					SelectIndex=n;
+					//
+				});
+			}
+			
+		}
 		//
 		public FirstModel ()
 		{
 
 			//
-			LikeColumns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
+			LikeColumns = new ObservableCollection<Column> ();
+			//
+			Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ().ForEach (
+				c => LikeColumns.Add (c)
+			);
+			//
+
 			MessagingCenter.Subscribe<object> (this, "ClickLogin", sender => {
 				//
 				Navigation.NavigateTo<LoginModel> ();	
 				//
 			});
-			MessagingCenter.Subscribe<object> (this, "GetLikeColumns", sender => {
-				LikeColumns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
+			MessagingCenter.Subscribe<object,Tuple<int,int>> (this, "ChangeLikeColumnsOrder", (obj, t) => {
+				//
+				LikeColumns.Move(t.Item1,t.Item2);
+
+				//
+
 			});
+			MessagingCenter.Subscribe<object,int> (this, "DeleteLikeColumn",(obj,pos) => {
+				//
+				LikeColumns.RemoveAt(pos);
+
+				//
+
+			});
+			MessagingCenter.Subscribe<object,Column> (this, "InsertLikeColumn", (obj,c) => {
+				//
+				LikeColumns.Add(c);
+
+				//
+
+			});
+			MessagingCenter.Subscribe<object> (this, "setcolumn", obj => {
+				SelectIndex=0;
+			});
+//			MessagingCenter.Subscribe<object> (this, "GetLikeColumns", sender => {
+//				LikeColumns = Resolver.Resolve<ILikeColumnService> ().GetLikeColumns ();
+//			});
 
 		}
 

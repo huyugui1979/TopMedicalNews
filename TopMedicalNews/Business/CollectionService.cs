@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using XLabs.Ioc;
 using System.Threading.Tasks;
 using System.Collections;
-using RestSharp;
 
 namespace TopMedicalNews
 {

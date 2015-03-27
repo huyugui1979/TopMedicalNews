@@ -64,10 +64,6 @@ namespace TopMedicalNews
 		public  void Init (Column column)
 		{
 			_column = column;
-
-				
-		
-
 		}
 		//
 		ObservableCollection<News> _FocusNews;
@@ -88,11 +84,9 @@ namespace TopMedicalNews
 		async void UpdateNews ()
 		{
 				try {
-			
-			
+
 				IsRefreshing = true;
 
-			
 				System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime (new System.DateTime (1970, 1, 1));
 				int time = (int)(DateTime.Now - startTime).TotalSeconds;
 				List<News> news = await Resolver.Resolve<INewsService> ().DownloadNews (_column.ID, time);

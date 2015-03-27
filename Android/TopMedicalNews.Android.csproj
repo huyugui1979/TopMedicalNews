@@ -58,9 +58,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinAndroid">
       <HintPath>..\packages\SQLite.Net.Platform.XamarinAndroid.2.5.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp.MonoDroid">
-      <HintPath>..\libs\android\RestSharp.MonoDroid.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -117,6 +114,9 @@
     </Reference>
     <Reference Include="ShardSdk">
       <HintPath>..\libs\android\ShardSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.MonoDroid">
+      <HintPath>..\libs\android\RestSharp.MonoDroid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +175,6 @@
     <AndroidResource Include="Resources\drawable\password1.png" />
     <AndroidResource Include="Resources\drawable\account_bg.png" />
     <AndroidResource Include="Resources\drawable\dropdown.png" />
-    <AndroidResource Include="Resources\layout\column.axml" />
     <AndroidResource Include="Resources\drawable\switch_column_bg.png" />
     <AndroidResource Include="Resources\layout\skyblue_editpage_at_layout.xml" />
     <AndroidResource Include="Resources\layout\skyblue_editpage_inc_image_layout.xml" />

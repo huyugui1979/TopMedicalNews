@@ -120,7 +120,6 @@
       <DependentUpon>MyNewsListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\MyNewsListModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\MyCarouselPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\FirstPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\SoftService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyEditor.cs" />
@@ -137,6 +136,12 @@
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\WelcomeModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml.cs">
+      <DependentUpon>MyFirstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MyColumnView.xaml.cs">
+      <DependentUpon>MyColumnView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Business\" />
@@ -215,6 +220,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\WelcomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyFirstPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MyColumnView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

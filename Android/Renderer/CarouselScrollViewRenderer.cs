@@ -14,7 +14,16 @@ namespace TopMedicalNews.Android
 	{
 		public CarouselScrollViewRenderer ()
 		{
+			//
+			Device.StartTimer(TimeSpan.FromSeconds(5),()=>{
 
+				var carouselLayout = (CarouselScrollView)this.Element;
+
+				carouselLayout.SelectedIndex
+				= carouselLayout.SelectedIndex+1>4?0:carouselLayout.SelectedIndex+1;
+				ScrollToIndex(carouselLayout.SelectedIndex);
+				return true;
+			});
 		}
 		int _prevScrollX;
 		int _deltaX;
@@ -44,10 +53,12 @@ namespace TopMedicalNews.Android
 				: Java.Lang.Math.Round (roughIndex);
 			ScrollToIndex ((int)targetIndex);
 			var carouselLayout = (CarouselScrollView)this.Element;
+
 			carouselLayout.SelectedIndex = (int)targetIndex;
 		}
 		void ScrollToIndex (int targetIndex)
 		{
+			
 			var targetX = targetIndex * _scrollView.Width;
 			_scrollView.Post (new Java.Lang.Runnable (() => {
 				_scrollView.SmoothScrollTo (targetX, 0);

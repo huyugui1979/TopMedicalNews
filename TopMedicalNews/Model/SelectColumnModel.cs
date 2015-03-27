@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using XLabs.Forms.Mvvm;
 using XLabs.Ioc;
+using Xamarin.Forms;
 
 
 namespace TopMedicalNews
@@ -55,6 +56,7 @@ namespace TopMedicalNews
 			LikeColumns.RemoveAt (oldPos);
 			LikeColumns.Insert (newPos, c);
 			//
+			MessagingCenter.Send<object,Tuple<int,int>>(this,"ChangeLikeColumnsOrder",Tuple.Create<int,int>(oldPos,newPos));
 			//
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 		}
@@ -63,7 +65,7 @@ namespace TopMedicalNews
 			Column c = LikeColumns [pos];
 
 			LikeColumns.RemoveAt (pos);
-
+			MessagingCenter.Send<object,int>(this,"DeleteLikeColumn",pos);
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Add (c);
 		}
@@ -72,7 +74,9 @@ namespace TopMedicalNews
 		{
 			//
 			LikeColumns.Add (c);
-
+			//
+			MessagingCenter.Send<object,Column>(this,"InsertLikeColumn",c);
+			//
 			Resolver.Resolve<ILikeColumnService> ().SetLikeColumn (LikeColumns.ToList());
 			//
 			SelectColumns.Find (r => r.CateId == c.CategoryID).Columns.Remove (c);

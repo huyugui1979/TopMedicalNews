@@ -43,6 +43,7 @@ namespace TopMedicalNews
 		}
 		public void DeleteLikeItem(int pos)
 		{
+			
 			(this.BindingContext as SelectColumnModel).DeleteLikeColumn (pos);
 		}
 		public void InsertLikeItem(Column c)

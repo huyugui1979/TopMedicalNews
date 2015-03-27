@@ -12,6 +12,11 @@ namespace TopMedicalNews
 			InitializeComponent ();
 		
 		}
+		protected override void OnDisappearing ()
+		{
+			MessagingCenter.Send<object> (this, "setcolumn");
+			base.OnDisappearing ();
+		}
 		protected override void OnBindingContextChanged ()
 		{
 			base.OnBindingContextChanged ();
@@ -23,11 +28,7 @@ namespace TopMedicalNews
 				layout.Children.Add (view);
 			}
 		}
-		protected override void OnDisappearing ()
-		{
-			MessagingCenter.Send<object> (this, "GetLikeColumns");
-			base.OnDisappearing ();
-		}
+	
 	}
 }
 

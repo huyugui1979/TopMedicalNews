@@ -13,6 +13,7 @@ namespace TopMedicalNews
 			base.OnBindingContextChanged ();
 			radio.SetBinding (BindableRadioGroup.SelectedIndexProperty, "SelectFont");
 		}
+
 		public SetttingPage ()
 		{
 			InitializeComponent ();

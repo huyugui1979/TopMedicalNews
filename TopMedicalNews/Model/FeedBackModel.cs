@@ -13,6 +13,7 @@ namespace TopMedicalNews
 		{
 			FeedBackTypeValues = new List<string>{ "其他", "投拆举报", "错误汇报", "广告查询", "站务合作", "热点问题", "移动版", "医界头条" };
 			FeedBackType = 0;
+
 		}
 
 		public int FeedBackType{ get; set; }
@@ -31,9 +32,9 @@ namespace TopMedicalNews
 						dialog.Show ();
 						var user = Resolver.Resolve<IUserService> ().GetLoginUser ();
 						if (user == null)
-							await Resolver.Resolve<ISoftService> ().FeedBack (Question, Epg, FeedBackType);
+							Resolver.Resolve<ISoftService> ().FeedBack (Question, Epg, FeedBackType);
 						else
-							await Resolver.Resolve<ISoftService> ().FeedBack (Question, Epg, FeedBackType, user.UserName, user.UID);
+							Resolver.Resolve<ISoftService> ().FeedBack (Question, Epg, FeedBackType, user.UserName, user.UID);
 						Resolver.Resolve<IUserDialogService> ().AlertAsync ("谢谢你的提交");
 						Navigation.PopToRoot ();
 					} catch (Exception e) {

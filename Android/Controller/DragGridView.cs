@@ -81,7 +81,7 @@ namespace TopMedicalNews.Android
 		Action mLongClickRunnable = null;
 
 		public bool DragMode{ get; set; }
-
+		 
 		public override bool DispatchTouchEvent (MotionEvent e)
 		{
 		
@@ -97,6 +97,9 @@ namespace TopMedicalNews.Android
 					//
 				mHandler.PostDelayed (mLongClickRunnable = () => {
 					if (DragMode == true) {
+						//
+						this.Parent.Parent.Parent.Parent.RequestDisallowInterceptTouchEvent(true);
+						//
 						isDrag = true; //设置可以拖拽  
 						mStartDragItemView.Visibility = ViewStates.Invisible;//(View.INVISIBLE);//隐藏该item  
 						//根据我们按下的点显示item镜像  
@@ -150,7 +153,8 @@ namespace TopMedicalNews.Android
 				}
 			} 
 
-			return  true;  
+			return  true;
+			
 		
 		}
 

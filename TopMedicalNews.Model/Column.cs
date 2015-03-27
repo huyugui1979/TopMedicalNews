@@ -14,11 +14,6 @@ namespace TopMedicalNews.Model
 		public int ID{get;set;}
 		public int  CategoryID{get;set;}
 	
-		public override bool Equals(object obj)
-		{
-			Column e = obj as Column;
-			return e.ID == ID;
-		}
 	}
 }
 
