@@ -1,5 +1,7 @@
 ﻿using System;
-using XLabs.Forms.Mvvm;
+using MyFormsLibCore.Mvvm;
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace TopMedicalNews
 {
@@ -7,6 +9,17 @@ namespace TopMedicalNews
 	{
 		public BaseViewModel ()
 		{
+		}
+		protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+		{
+			if (EqualityComparer<T>.Default.Equals(storage, value))
+			{
+				return false;
+			}
+
+			storage = value;
+			this.NotifyPropertyChanged(propertyName);
+			return true;
 		}
 		public virtual void OnAppearing()
 		{

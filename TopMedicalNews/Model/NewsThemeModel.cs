@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
+
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -46,7 +47,7 @@ namespace TopMedicalNews
 
 		public ICommand GotoNewsDetailCommand { get { return new Command<News> (async (r) => {
 
-				await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+			await Navigation.NavigateTo<NewsDetailModel> ( initialiser:(m, p) => {
 				(m as NewsDetailModel).Init (r.ID);
 
 				});

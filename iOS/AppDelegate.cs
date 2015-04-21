@@ -5,13 +5,14 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
-using XLabs.Forms;
 using CoreGraphics;
+using Xamarin.Forms.Platform.iOS;
+
 
 namespace TopMedicalNews.iOS
 {
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : XFormsApplicationDelegate
+	public partial class AppDelegate :FormsApplicationDelegate
 	{
 	
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)

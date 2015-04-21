@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading;
-using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
 using Xamarin.Forms;
 using TopMedicalNews.Model;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {

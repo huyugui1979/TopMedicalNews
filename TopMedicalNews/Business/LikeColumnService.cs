@@ -1,5 +1,4 @@
 ﻿using System;
-using XLabs.Ioc;
 using TopMedicalNews.Model;
 using System.Collections.Generic;
 using Refractored.Xam.Settings;
@@ -21,8 +20,8 @@ namespace TopMedicalNews
 		}
 		public List<Column>  GetLikeColumns()
 		{
-			string ids =  CrossSettings.Current.GetValueOrDefault<string> ("LikeColumns", null);
-			if (ids != "") {
+			string ids =  CrossSettings.Current.GetValueOrDefault<string> ("LikeColumns", "");
+			if (ids != ""  ) {
 				var ob = RestSharp.SimpleJson.DeserializeObject<List<Column>> (ids);
 		
 				return ob;

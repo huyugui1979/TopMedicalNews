@@ -1,7 +1,9 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
-using XLabs.Ioc;
-using XLabs.Platform.Device;
+using MyFormsLibCore.Ioc;
+using MyFormsLibCore;
+using Acr.XamForms.Mobile;
+
 
 namespace TopMedicalNews
 {
@@ -38,8 +40,8 @@ namespace TopMedicalNews
 		public ICommand CallPhoneCommand {
 			get { 
 				return new Command ( () => {
-					var device = Resolver.Resolve<IDevice>();
-					device.PhoneService.DialNumber("0756-7770983");
+					var device = Resolver.Resolve<IPhoneService>();
+					device.Call("医界头条","0756-7770983");
 				});
 			}
 		}

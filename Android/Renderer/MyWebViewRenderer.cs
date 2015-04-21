@@ -5,7 +5,8 @@ using Android.Webkit;
 using Android.Runtime;
 using Java.Interop;
 using Android.Content;
-using XLabs.Ioc;
+using System.Threading;
+using MyFormsLibCore.Ioc;
 
 
 [assembly:ExportRenderer (typeof(TopMedicalNews.MyWebView), typeof(TopMedicalNews.Android.MyWebViewRenderer))]
@@ -31,24 +32,37 @@ namespace TopMedicalNews.Android
 				break;
 			}
 			//
-			MessagingCenter.Subscribe<object> (this, "Share", (obj) => {
+			SemaphoreSlim semaPhoneSlim = new SemaphoreSlim (0, 1);
+			MessagingCenter.Subscribe<object> (this, "Share", async (obj) => {
 				if (_view.Control != null) {
-					var pic = _view.Control.CapturePicture ();
+					global::Android.Graphics.Picture pic=null;
+					Device.BeginInvokeOnMainThread (() => {
+						pic = _view.Control.CapturePicture ();
+						semaPhoneSlim.Release ();
+					}
+					);
+					await semaPhoneSlim.WaitAsync();
+				
 					var bitmap = global::Android.Graphics.Bitmap.CreateBitmap (pic.Width, pic.Height, global::Android.Graphics.Bitmap.Config.Argb8888);
 					var c = new global::Android.Graphics.Canvas (bitmap);
 					pic.Draw (c);
 					var path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 					System.IO.FileStream fos = null;
 					try {
-						fos = new System.IO.FileStream(path + "/share.png",System.IO.FileMode.Create);
+						fos = new System.IO.FileStream (path + "/share.png", System.IO.FileMode.Create);
 						if (fos != null) {
-							bitmap.Compress (global::Android.Graphics.Bitmap.CompressFormat.Png, 100,fos);
+							bitmap.Compress (global::Android.Graphics.Bitmap.CompressFormat.Png, 100, fos);
 							fos.Close ();
 						}
+					
 					} catch (Exception e) {
 						//
 
 						//
+					}
+					finally{
+						pic.Dispose();
+						bitmap.Dispose();
 					}
 				}
 			});

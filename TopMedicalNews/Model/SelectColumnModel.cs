@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TopMedicalNews.Model;
 using System.Linq;
 using System.Collections.ObjectModel;
-using XLabs.Forms.Mvvm;
-using XLabs.Ioc;
 using Xamarin.Forms;
+using MyFormsLibCore.Mvvm;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews

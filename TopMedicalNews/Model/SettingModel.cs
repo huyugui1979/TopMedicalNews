@@ -1,12 +1,11 @@
 ﻿using System;
-using XLabs.Forms.Mvvm;
 using Xamarin.Forms;
-using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using Acr.XamForms.UserDialogs;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using TopMedicalNews.Model;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -94,7 +93,7 @@ namespace TopMedicalNews
 		public Command FeedBackCmd {
 			get {
 				return _feedBackCmd ?? (_feedBackCmd = new Command (
-					() => Navigation.NavigateTo<FeedBackModel> (null, true),
+					() => Navigation.NavigateTo<FeedBackModel>(),
 					() => true));
 			}
 		}
@@ -104,7 +103,7 @@ namespace TopMedicalNews
 		public Command AboutUsCmd {
 			get {
 				return _AboutUsCmd ?? (_AboutUsCmd = new Command (
-					() => Navigation.NavigateTo<AboutUsModel> (null, true),
+					() => Navigation.NavigateTo<AboutUsModel> (),
 					() => true));
 			}
 		}

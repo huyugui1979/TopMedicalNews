@@ -7,19 +7,24 @@
 				<Frame OutlineColor="Gray" HasShadow="false" Padding="0,0,0,0">
 					<StackLayout Orientation="Vertical">
 						<StackLayout Orientation="Horizontal" Padding="10,0,0,0">
-							<Image  Source="account_bg" HeightRequest="25"/>
-							<local:MyEntry  Text="{Binding UserName}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="账号:" />
+							<Image Source="account_bg">
+								<Image.HeightRequest>
+									<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="25" />
+								</Image.HeightRequest>
+							</Image>
+							<local:MyEntry Text="{Binding UserName}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="账号:" />
 						</StackLayout>
 						<BoxView HeightRequest="0.35" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="#c8c7cc" />
 						<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Padding="10,0,0,0">
-							<Image Source="password1" HeightRequest="25"/>
-					
-
-							<local:MyEntry  IsPassword="true"   Text="{Binding Password}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="密码:" />
+							<Image Source="password1" HeightRequest="25" >
+								<Image.HeightRequest>
+									<OnPlatform x:TypeArguments="x:Double" iOS="40" Android="25" />
+								</Image.HeightRequest>
+								</Image>
+							<local:MyEntry IsPassword="true" Text="{Binding Password}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="密码:" />
 						</StackLayout>
 					</StackLayout>
 				</Frame>
-
 				<Button Command="{Binding LoginCommand}" BackgroundColor="Blue" Text="登录" TextColor="White" />
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
 					<Button BackgroundColor="Transparent" Text="注册" HorizontalOptions="Start" Command="{Binding RegisterCommand}" />

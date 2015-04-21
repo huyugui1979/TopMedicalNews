@@ -1,9 +1,9 @@
 ﻿using System;
-using XLabs.Ioc;
 using TopMedicalNews.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Collections;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {

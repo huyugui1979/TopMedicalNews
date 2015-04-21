@@ -1,6 +1,5 @@
 ﻿using System;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using Refractored.Xam.Settings;
 using System.Threading.Tasks;
@@ -9,6 +8,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -33,8 +33,10 @@ namespace TopMedicalNews
 
 		public User GetLoginUser ()
 		{
-			string ui = CrossSettings.Current.GetValueOrDefault<string> ("UserInfo",null);
+			string ui = CrossSettings.Current.GetValueOrDefault<string> ("UserInfo","");
+
 			if (ui != "") {
+		
 				var ob = RestSharp.SimpleJson.DeserializeObject<User> (ui);
 
 				return ob;
@@ -130,7 +132,7 @@ namespace TopMedicalNews
 					User user = new User{ UserName = ui ["username"].ToString(), UID = int.Parse(ui ["uid"].ToString()), Email = ui ["email"].ToString(), Password = ui ["password"].ToString() };
 					string s = RestSharp.SimpleJson.SerializeObject(user);
 					CrossSettings.Current.AddOrUpdateValue<string> ("UserInfo",s);
-
+					//
 				} else
 				{
 					throw new MyException(obj["str"].ToString());

@@ -1,11 +1,12 @@
 ﻿using System;
-using XLabs.Forms.Mvvm;
 using TopMedicalNews.Model;
 using System.Windows.Input;
 using Xamarin.Forms;
-using XLabs.Ioc;
+
 using Acr.XamForms.UserDialogs;
 using System.Threading.Tasks;
+using MyFormsLibCore.Mvvm;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -13,7 +14,7 @@ namespace TopMedicalNews
 	{
 		public LoginModel ()
 		{
-
+			int j = 2;
 		}
 
 		public string UserName{ get; set; }

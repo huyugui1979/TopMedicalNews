@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace TopMedicalNews
 {
-	public partial class ForgetPage : ContentPage
+	public partial class ForgetPage : MyPage
 	{
 		public ForgetPage ()
 		{

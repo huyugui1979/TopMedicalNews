@@ -5,12 +5,12 @@ using Xamarin.Forms;
 
 namespace TopMedicalNews
 {
-	public partial class RegisterPage : ContentPage
+	public partial class RegisterPage : MyPage
 	{
 		public RegisterPage ()
 		{
 			InitializeComponent ();
-		
+
 		}
 	}
 }

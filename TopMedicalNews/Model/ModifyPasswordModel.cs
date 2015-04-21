@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
-using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {

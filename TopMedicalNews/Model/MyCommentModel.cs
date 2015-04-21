@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -9,6 +8,7 @@ using TopMedicalNews.Model;
 using Refractored.Xam.Settings;
 using System.Linq;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -71,7 +71,7 @@ namespace TopMedicalNews
 
 		public ICommand GotoNewsDetailCommand { get { return new Command<Reading> (async (r) => {
 
-				await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+			await Navigation.NavigateTo<NewsDetailModel> ( initialiser:(m, p) => {
 					//var news = Resolver.Resolve<INewsService> ().GetNewById (r.NewsID);
 				(m as NewsDetailModel).Init (r.Wz_Id);
 

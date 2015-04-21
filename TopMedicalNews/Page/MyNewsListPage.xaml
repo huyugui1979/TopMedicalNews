@@ -18,7 +18,11 @@
 								<Setter Property="BackgroundColor" Value="#8f878787" />
 							</DataTrigger>
 						</StackLayout.Triggers>
-						<Label HorizontalOptions="StartAndExpand" TextColor="White" Text="{Binding SelectedFocusNews.Title}" />
+						<Label HorizontalOptions="StartAndExpand"   TextColor="White" Text="{Binding SelectedFocusNews.Title}" >
+							<Label.FontSize>
+									<OnPlatform x:TypeArguments="x:Double" iOS="12"  />
+							</Label.FontSize>
+						</Label>
 						<local:PipSet ItemsSource="{Binding FocusNews}" SelectedItem="{Binding SelectedFocusNews}" />
 					</StackLayout>
 				</AbsoluteLayout>

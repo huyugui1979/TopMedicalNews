@@ -3,16 +3,21 @@ using Xamarin.Forms;
 using Refractored.Xam.Settings.Abstractions;
 using Refractored.Xam.Settings;
 using System.Reflection;
-using XLabs.Ioc;
-using XLabs.Forms.Mvvm;
 using Acr.XamForms.UserDialogs;
-using XLabs.Platform.Device;
+using MyFormsLibCore.Mvvm;
+using MyFormsLibCore.Ioc;
+using MyFormsLibCore;
+using Acr.XamForms.Mobile;
+
+
 
 
 #if __ANDROID__
 using Acr.XamForms.UserDialogs.Droid;
+using Acr.XamForms.Mobile.Droid;
 #else
 using Acr.XamForms.UserDialogs.iOS;
+using Acr.XamForms.Mobile.iOS;
 #endif
 
 namespace TopMedicalNews
@@ -29,28 +34,25 @@ namespace TopMedicalNews
 			var resolverContainer = new SimpleContainer();
 
 			Resolver.SetResolver(resolverContainer.GetResolver());
-			//resolverContainer.RegisterSingle<ISettings,Settings>();
-			#if __IOS__
-			resolverContainer.Register<IDevice> (t => AppleDevice.CurrentDevice);
-			#else
-			resolverContainer.Register<IDevice> (t => AndroidDevice.CurrentDevice);
-			#endif
+		
+
 			resolverContainer.Register<IDependencyContainer> (t => resolverContainer);
 			resolverContainer.Register<ISQLiteClient> (new SQLiteClient());
-			resolverContainer.RegisterSingle<ICategoryService,CategoryService> ();
-			resolverContainer.RegisterSingle<IColumnService,ColumnService> ();
-			resolverContainer.RegisterSingle<ILikeColumnService,LikeColumnService> ();
-			resolverContainer.RegisterSingle<ICollectionService,CollectionService> ();
-			resolverContainer.RegisterSingle<INewsService,NewsService> ();
-			resolverContainer.RegisterSingle<ICacheService,CacheService> ();
-			resolverContainer.RegisterSingle<IFontService,FontService> ();
-			resolverContainer.RegisterSingle<IUserService,UserService> ();
-			resolverContainer.RegisterSingle<IDepartmentService,DepartmentService> ();
-			resolverContainer.RegisterSingle<IReadingService,ReadingService> ();
-			resolverContainer.RegisterSingle<ICommentService,CommentService> ();
-			resolverContainer.RegisterSingle<IUserDialogService,UserDialogService> ();
-			resolverContainer.RegisterSingle<IJsonService,JsonService> ();
-			resolverContainer.RegisterSingle<ISoftService,SoftService> ();
+			resolverContainer.Register<ICategoryService,CategoryService> ();
+			resolverContainer.Register<IColumnService,ColumnService> ();
+			resolverContainer.Register<ILikeColumnService,LikeColumnService> ();
+			resolverContainer.Register<ICollectionService,CollectionService> ();
+			resolverContainer.Register<INewsService,NewsService> ();
+			resolverContainer.Register<ICacheService,CacheService> ();
+			resolverContainer.Register<IFontService,FontService> ();
+			resolverContainer.Register<IUserService,UserService> ();
+			resolverContainer.RegisterSingle<IPhoneService,PhoneService> ();
+			resolverContainer.Register<IDepartmentService,DepartmentService> ();
+			resolverContainer.Register<IReadingService,ReadingService> ();
+			resolverContainer.Register<ICommentService,CommentService> ();
+			resolverContainer.Register<IUserDialogService,UserDialogService> ();
+			resolverContainer.Register<IJsonService,JsonService> ();
+			resolverContainer.Register<ISoftService,SoftService> ();
 
 			//Resolver.SetResolver(resolverContainer.GetResolver());
 			ViewFactory.Register<MyFirstPage,FirstModel> ();
@@ -97,7 +99,7 @@ namespace TopMedicalNews
 		{
 			Init ();
 			MainPage = ViewFactory.CreatePage<
-				WelcomeModel,Page>(  (m,p)=> m.Init()) as Page;
+				WelcomeModel,Page>() as Page;
 		}
 	
 	}

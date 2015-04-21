@@ -1,8 +1,6 @@
 ﻿using System;
 using TopMedicalNews.Model;
 using System.Collections.Generic;
-using XLabs.Forms.Mvvm;
-using XLabs.Ioc;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Refractored.Xam.Settings.Abstractions;
@@ -13,6 +11,7 @@ using System.Collections.ObjectModel;
 using Refractored.Xam.Settings;
 using System.Threading;
 using System.Linq;
+using MyFormsLibCore.Ioc;
 
 #if __ANDROID__
 using CN.Sharesdk.Framework;
@@ -33,6 +32,9 @@ namespace TopMedicalNews
 			});
 		}
 		//
+
+		//
+
 		public ICommand GetMoreCommand { get { return new Command (async () => {
 
 			var dialog = Resolver.Resolve<IUserDialogService> ().Loading ("加载更多评论");
@@ -89,13 +91,15 @@ namespace TopMedicalNews
 		public ICommand ShareCmd {
 			get { 
 				return new Command (async () => {
-					var dialog = Resolver.Resolve<IUserDialogService> ().Loading ("准备分享...");
-					dialog.Show();
-					await Task.Factory.StartNew(()=>{
-					MessagingCenter.Send<object>(this,"Share");
-					});
-					dialog.Hide();
+//					var dialog = Resolver.Resolve<IUserDialogService> ().Loading ("准备分享...");
+//					dialog.Show();
+//					await Task.Factory.StartNew(()=>{
+//					MessagingCenter.Send<object>(this,"Share");
+//					});
+//					dialog.Hide();
+					#if __ANDROID__
 					showShare ();
+					#endif
 				});
 			}
 		}
@@ -114,7 +118,9 @@ namespace TopMedicalNews
 			var path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 //
 //
-			oks.SetImagePath(path+"/share.png");//确保SDcard下面存在此张图片
+			Image image;
+
+			oks.SetImagePath(path+"/Share.png");//确保SDcard下面存在此张图片
 		
 			// url仅在微信（包括好友和朋友圈）中使用
 			oks.SetUrl("http://app.iiyi.com/yijietoutiao.html");

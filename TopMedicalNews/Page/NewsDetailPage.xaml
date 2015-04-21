@@ -9,9 +9,9 @@
 						<Label Text="{Binding News.FromSource,StringFormat='{0}'}" TextColor="#878787" FontSize="14" />
 						<Label Text="{Binding News.PublishTime,StringFormat='{0:yyyy-MM-dd}'}" BackgroundColor="White" TextColor="#878787" FontSize="14" />
 					</StackLayout>
-					<lc:Separator Color="#D5D5D5" />
+					<BoxView Color="#D5D5D5" HeightRequest="1" />
 					<local:MyWebView x:Name="webview" VerticalOptions="FillAndExpand" Source="{Binding Source}" />
-					<lc:Separator Color="#D5D5D5" />
+					<BoxView Color="#D5D5D5" HeightRequest="1"/>
 					<local:CommentListView x:Name="commentList" ItemsSource="{Binding Comments}">
 						<local:CommentListView.ItemTemplate>
 							<DataTemplate>

@@ -2,13 +2,13 @@
 using System.Collections.ObjectModel;
 using TopMedicalNews.Model;
 using System.Threading.Tasks;
-using XLabs.Ioc;
 using Xamarin.Forms;
 using System.Windows.Input;
 using Refractored.Xam.Settings.Abstractions;
 using Refractored.Xam.Settings;
 using System.Linq;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews
@@ -71,7 +71,7 @@ namespace TopMedicalNews
 
 		public ICommand GotoNewsDetailCommand { get { return new Command<Collection> (async (r) => {
 
-				await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+			await Navigation.NavigateTo<NewsDetailModel> ( initialiser:(m, p) => {
 			
 					//News news = new News{ ID = r.ID, FromSource = r.Stem_From, PublishTime = r.Add_Time, Title = r.Title_Name };
 					//Resolver.Resolve<ISQLiteClient> ().InsertOrReplaceData<News> (news);

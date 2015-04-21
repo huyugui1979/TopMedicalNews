@@ -3,13 +3,13 @@ using TopMedicalNews.Model;
 using System.Collections.Generic;
 using TopMedicalNews;
 using System.Linq;
-using XLabs.Ioc;
 using RestSharp;
 using RestSharp.Deserializers;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using Refractored.Xam.Settings.Abstractions;
 using System.Threading.Tasks;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews

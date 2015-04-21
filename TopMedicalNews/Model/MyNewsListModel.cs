@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Acr.XamForms.UserDialogs;
 using System.Threading.Tasks;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews
@@ -186,12 +186,12 @@ namespace TopMedicalNews
 
 				return new Command (async () => {
 					if (SelectedFocusNews.Type == "topic")
-						Navigation.NavigateTo<NewsThemeModel> (null, true, (m, p) => {
+						Navigation.NavigateTo<NewsThemeModel>(initialiser:(m, p) => {
 							(m as NewsThemeModel).Init (SelectedFocusNews);
 
 						});
 					else
-						Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+						Navigation.NavigateTo<NewsDetailModel> (initialiser:(m, p) => {
 							(m as NewsDetailModel).Init (SelectedFocusNews.ID);
 
 						});
@@ -205,7 +205,7 @@ namespace TopMedicalNews
 			get {
 				return new Command<News> (async (r) => {
 
-					await Navigation.NavigateTo<NewsThemeModel> (null, true, (m, p) => {
+					await Navigation.NavigateTo<NewsThemeModel> ( initialiser:(m, p) => {
 						(m as NewsThemeModel).Init (r);
 
 					});
@@ -217,7 +217,7 @@ namespace TopMedicalNews
 
 		public ICommand GotoNewsDetailCommand { get { return new Command<News> (async (r) => {
 
-				await Navigation.NavigateTo<NewsDetailModel> (null, true, (m, p) => {
+			await Navigation.NavigateTo<NewsDetailModel> ( initialiser:(m, p) => {
 					(m as NewsDetailModel).Init (r.ID);
 
 				});

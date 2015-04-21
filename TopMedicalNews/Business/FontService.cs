@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using Refractored.Xam.Settings;
 
 namespace TopMedicalNews
@@ -31,7 +30,8 @@ namespace TopMedicalNews
 		}
 		public List<MyFont> GetAllFont()
 		{
-			string ids =  CrossSettings.Current.GetValueOrDefault<string> ("Fonts", null);
+			string ids =  CrossSettings.Current.GetValueOrDefault<string> ("Fonts", "");
+		
 			if (ids != "") {
 				var ob = RestSharp.SimpleJson.DeserializeObject<List<MyFont>> (ids);
 				return ob;

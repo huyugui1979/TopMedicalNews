@@ -16,7 +16,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Business\ColumnService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyGridView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SelectColumnModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\FirstModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FirstModel.cs">
+      <DependentUpon>MainModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\MasterModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MainModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SettingModel.cs" />
@@ -70,16 +72,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Business\UserService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Control\MyEntry.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\BindableRadioGroup.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Control\CustomRadioButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\MyGridChildView.xaml.cs">
       <DependentUpon>MyGridChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml.cs">
-      <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\CarouselScrollView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml.cs">
@@ -190,9 +187,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\LoadingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ColumnView.xaml">

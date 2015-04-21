@@ -8,6 +8,7 @@ namespace TopMedicalNews
 		public NoScrollView ()
 		{
 		}
+		public double Scroll_X{get;set;}
 	}
 }
 

@@ -4,8 +4,8 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using System.Threading.Tasks;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {

@@ -1,11 +1,11 @@
 ﻿using System;
-using XLabs.Forms.Mvvm;
 using Xamarin.Forms;
 using System.Windows.Input;
 using Refractored.Xam.Settings.Abstractions;
-using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
 using Refractored.Xam.Settings;
+using MyFormsLibCore.Mvvm;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -28,7 +28,7 @@ namespace TopMedicalNews
 			get { 
 				return new Command (() => {
 					MessagingCenter.Send<object> (this, "IsPresented");
-					Navigation.NavigateTo<MyReadingModel> (initialiser: (m, v) => {
+					Navigation.NavigateTo<MyReadingModel>(initialiser: (m, v) => {
 						(m as MyReadingModel).Init();
 					});
 				});
@@ -38,7 +38,7 @@ namespace TopMedicalNews
 			get { 
 				return new Command (() => {
 					MessagingCenter.Send<object> (this, "IsPresented");
-					Navigation.NavigateTo<MyCommentModel> (initialiser: (m, v) => {
+					Navigation.NavigateTo<MyCommentModel> (initialiser:(m, v) => {
 						(m as MyCommentModel).Init();
 					});
 				});
@@ -48,7 +48,7 @@ namespace TopMedicalNews
 			get { 
 				return new Command (() => {
 					MessagingCenter.Send<object> (this, "IsPresented");
-					Navigation.NavigateTo<MyCollectionModel> (initialiser: (m, v) => {
+					Navigation.NavigateTo<MyCollectionModel> ( initialiser:(m, v) => {
 						(m as MyCollectionModel).Init();
 					});
 				});
@@ -67,6 +67,7 @@ namespace TopMedicalNews
 			get { 
 				return new Command (() => {
 					Resolver.Resolve<IUserService>().LogOut();
+					MessagingCenter.Send<object> (this, "LogoutSucceed");
 					MessagingCenter.Send<object> (this, "IsPresented");
 
 				});

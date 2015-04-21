@@ -2,12 +2,12 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.MyColumnView">
 	<ContentView.Content>
 		<StackLayout Orientation="Horizontal">
-		 <local:NoScrollView Orientation="Horizontal"  HorizontalOptions="FillAndExpand" x:Name="scroll" VerticalOptions="Center" >
+		 <local:NoScrollView Orientation="Horizontal"   HorizontalOptions="FillAndExpand" x:Name="scroll" VerticalOptions="Center" >
 			<StackLayout Orientation="Horizontal" x:Name="columnStatck"   HorizontalOptions="FillAndExpand" VerticalOptions="Center">
 				
 			</StackLayout>
 		</local:NoScrollView>
-		<Image Source="xiala" WidthRequest="40" HeightRequest="40">
+		<Image Source="dropdown" WidthRequest="40" HeightRequest="40">
 		<Image.GestureRecognizers>
 		<TapGestureRecognizer Command="{Binding OrderColumnCommand}"/>
 		</Image.GestureRecognizers>

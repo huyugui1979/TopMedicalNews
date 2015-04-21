@@ -2,11 +2,11 @@
 using System.Collections.ObjectModel;
 using TopMedicalNews.Model;
 using System.Collections.Generic;
-using XLabs.Ioc;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Refractored.Xam.Settings;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews

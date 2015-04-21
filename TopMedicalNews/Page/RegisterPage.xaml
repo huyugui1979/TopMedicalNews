@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="注册" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.RegisterPage">
+<MyPage Title="注册" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:TopMedicalNews;assembly=TopMedicalNews" xmlns:lc="clr-namespace:MyFormsLibCore.Control;assembly=MyFormsLib" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TopMedicalNews.RegisterPage">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
 			<StackLayout Orientation="Vertical" Padding="10,30,10,30">
@@ -32,4 +32,4 @@
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>
-</ContentPage>
+</MyPage>

@@ -8,9 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
-using XLabs.Forms;
 using System.Reflection;
-using XLabs.Ioc;
 using Refractored.Xam.Settings.Abstractions;
 using Xamarin.Forms;
 using Android.Graphics.Drawables;
@@ -18,6 +16,7 @@ using Refractored.Xam.Settings;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using MyFormsLibCore.Ioc;
 
 
 namespace TopMedicalNews.Android
@@ -25,7 +24,7 @@ namespace TopMedicalNews.Android
 
 
 	[Activity (Label = "医界头条",  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : XFormsApplicationDroid
+	public class MainActivity : FormsApplicationActivity
 	{
         
 		protected override void OnCreate (Bundle bundle)
@@ -39,7 +38,8 @@ namespace TopMedicalNews.Android
 //			var assembly = typeof(MainActivity).GetTypeInfo().Assembly;
 //			foreach (var res in assembly.GetManifestResourceNames()) 
 //				System.Diagnostics.Debug.WriteLine("found resource: " + res);
-	
+			var path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)+"/Share.png";
+			Assets.Open("Icon.png").CopyTo(File.Create(path));
 			LoadApplication (new App ());
 			//showShare ();
 		}

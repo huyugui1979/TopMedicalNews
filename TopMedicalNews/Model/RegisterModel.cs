@@ -1,14 +1,14 @@
 ﻿using System;
-using XLabs.Forms.Mvvm;
 using System.Windows.Input;
 using Xamarin.Forms;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Mvvm;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
-	public class RegisterModel:ViewModel
+	public class RegisterModel:BaseViewModel
 	{
 		public RegisterModel ()
 		{
@@ -80,12 +80,12 @@ namespace TopMedicalNews
 		}
 		public ICommand ClickRuleCommand{ get { return new Command (() => {
 			//
-				Navigation.NavigateTo<RegisterRuleModel>(); 
+			Navigation.NavigateTo<RegisterRuleModel>(); 
 			//
 			}); } }
 		public ICommand SelectDepartmentCommand{ get { return new Command (() => {
 
-				Navigation.NavigateTo<SelectDepartmentModel> (initialiser: (m, v) => {
+			Navigation.NavigateTo<SelectDepartmentModel> (initialiser:(m, v) => {
 
 					(m as SelectDepartmentModel).Init ();
 				});

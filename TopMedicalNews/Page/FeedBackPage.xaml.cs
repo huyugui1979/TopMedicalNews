@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
-using XLabs.Forms.Controls;
 
 namespace TopMedicalNews
 {

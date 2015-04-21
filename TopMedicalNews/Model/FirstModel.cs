@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using TopMedicalNews.Model;
 using Refractored.Xam.Settings.Abstractions;
 using System.Collections.ObjectModel;
-using XLabs.Forms.Mvvm;
-using XLabs.Ioc;
 using Xamarin.Forms;
-using XLabs.Data;
 using System.Windows.Input;
-using XLabs.Forms.Behaviors;
+
 using System.Threading.Tasks;
 using System.Threading;
 using System.Linq;
 using Acr.XamForms.UserDialogs;
+using MyFormsLibCore.Ioc;
 
 namespace TopMedicalNews
 {
@@ -75,11 +73,11 @@ namespace TopMedicalNews
 
 
 		public ICommand SettingCommand { get { return new Command (r => {
-				Navigation.NavigateTo<SettingModel> ();	
+			Navigation.NavigateTo<SettingModel> ();	
 			}); } }
 
 		public ICommand OrderColumnCommand { get { return new Command (r => {
-				Navigation.NavigateTo<SelectColumnModel> ();
+			Navigation.NavigateTo<SelectColumnModel> ();
 			}); } }
 		//
 	

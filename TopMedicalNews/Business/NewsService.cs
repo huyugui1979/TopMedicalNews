@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using TopMedicalNews;
 using TopMedicalNews.Model;
 using Refractored.Xam.Settings.Abstractions;
-using XLabs.Ioc;
+
 using RestSharp;
 using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Linq;
+using MyFormsLibCore.Ioc;
+
 
 namespace TopMedicalNews
 {

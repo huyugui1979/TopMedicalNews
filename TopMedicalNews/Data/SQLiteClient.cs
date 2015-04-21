@@ -5,7 +5,6 @@ using Xamarin.Forms;
 using System.Linq.Expressions;
 using System.IO;
 using TopMedicalNews.Model;
-using XLabs.Ioc;
 using Refractored.Xam.Settings;
 using System.Collections;
 
